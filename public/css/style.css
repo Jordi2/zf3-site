@@ -1,0 +1,42 @@
+:root {
+    --brand-color: #013755;
+}
+
+.navbar {
+    background-color: var(--brand-color);
+}
+
+.btn-primary {
+    background-color: var(--brand-color);
+    border-color: var(--brand-color);
+}
+
+/* menu */
+
+.navbar-nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: rgba(255,255,255,.5);
+}
+
+.navbar-nav .active a {
+    color: #fff;
+}
+
+.navbar-nav a:hover, 
+.navbar-nav a:focus {
+    text-decoration: none;
+}
+
+.navbar-nav a.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: default;
+}
+
+.navbar-nav a {
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+
+/* end menu */
