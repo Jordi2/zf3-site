@@ -1,2 +1,268 @@
+<script type="text/javascript">
+console.log("here");
 
-<h1>Test</h1>
+$(document).ready(function() { 
+    var example = $( "#examples" )
+    var reading = $( "#readings" )
+    var examplescontent = $( "#examplescontent" )
+    var readingscontent = $( "#readingscontent" )
+    
+    example.click(function() {
+        examplescontent.removeClass("nodisplay");
+        readingscontent.addClass("nodisplay");
+    });
+    reading.click(function() {
+        examplescontent.addClass("nodisplay");
+        readingscontent.removeClass("nodisplay");
+    });
+});
+
+</script>
+
+<h1>
+    <?= 
+        $this->exerciseName->name; 
+        $this->headTitle($this->exerciseName->name);
+    ?>
+    <small>
+    Alternate names: <?= $this->exerciseName->altNames; ?>
+    </small>
+</h1>
+
+<div>
+<small>
+Classification: 
+<?php foreach ($this->exerciseClassifications as $exerciseClassifications) : ?>
+    <?= $exerciseClassifications['name']; ?>
+<?php endforeach; ?>
+<br/>
+Tags: 
+<?php foreach ($this->exerciseTags as  $key => $exerciseTags) : ?>
+    <?= $exerciseTags->name; 
+        end($this->exerciseTags);
+        if ($key == key($this->exerciseTags))
+            echo ', ';
+    ?>
+<?php endforeach; ?>
+</small>
+</div>
+
+<div class="row">
+    <!-- use this https://www.w3schools.com/bootstrap/bootstrap_button_groups.asp for these 2 -->
+    <div id="examples" class="col-md-6 btn">Examples</div>
+    <div id="readings" class="col-md-6 btn">Readings</div>
+</div>
+<div id="examplescontent" class="row">
+    <div class="col-md-12">
+        <?php foreach ($this->exerciseExamples as $exerciseExamples) : ?>
+            <?= $exerciseExamples->example; ?>
+        <?php endforeach; ?>
+    </div>
+</div>
+<div id="readingscontent" class="row nodisplay">
+    <?php foreach ($this->exerciseReadings as $exerciseReadings) : ?>
+        <div class="col-md-9" style="text-align: center;"><?= $exerciseReadings->desc; ?></div>
+        <div class="col-md-2"><a href="<?= $exerciseReadings->url; ?>"><?= $exerciseReadings->urlName; ?></a></div>
+        <div class="col-md-1"><a href="<?= $exerciseReadings->archive; ?>">archive</a></div>
+    <?php endforeach; ?>
+</div>
+
+<br />
+<br />
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading pointer" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">
+      <h4 class="panel-title">
+        Variations
+        <span class="badge floatright">3</span>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body">
+        <?php foreach ($this->exerciseVariations as $exerciseVariations) : ?>
+            <h5><?= $exerciseVariations->name; ?></h5>
+            <p>
+                <?= $exerciseVariations->example; ?>
+            </p>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading pointer" data-toggle="collapse" data-parent="#accordion" data-target="#collapse2">
+      <h4 class="panel-title">
+        Progression tree
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse in">
+    <div class="panel-body">
+        
+        <ul class="tree">
+                <?php
+                $parent_ids = array();
+                $parent_parent_id = null; //the parent_id of an items parent              
+                $totalOutput = "";
+                
+                foreach ($this->exerciseProgressions as $exerciseProgressions) : 
+                    if($exerciseProgressions->exercise_parent_id == NULL){
+                        array_push($parent_ids, $exerciseProgressions->id);
+                        $totalOutput .= "
+                            <li>
+                                <span><code class='rank1'>".$exerciseProgressions->name."</code></span>
+                                {child".$exerciseProgressions->id."}
+                            </li>
+                            ";
+                    } 
+                    // Is child
+                    else if(in_array($exerciseProgressions->exercise_parent_id, $parent_ids)){        
+                        array_push($parent_ids, $exerciseProgressions->id);
+                        array_shift($parent_ids);//remove first elemetn
+
+                        $parent_parent_id = $exerciseProgressions->exercise_parent_id;
+                        
+                        $output = "
+                            <ul>
+                                <li class='{only".$exerciseProgressions->exercise_parent_id."}'>
+                                    <span><code class='rank1'>".$exerciseProgressions->name."</code></span>
+                                    {child".$exerciseProgressions->id."}
+                                </li>
+                                {sibling".$exerciseProgressions->exercise_parent_id."}
+                            </ul>";
+
+                        $totalOutput = str_replace(
+                            "{child".$exerciseProgressions->exercise_parent_id."}", 
+                            $output, 
+                            $totalOutput
+                        );
+                    } 
+                    // Is sibling
+                    else if($exerciseProgressions->exercise_parent_id == $parent_parent_id) {
+                        array_push($parent_ids, $exerciseProgressions->id);
+                        
+                        $output = "
+                            <li>
+                                <span><code class='rank1'>".$exerciseProgressions->name."</code></span>
+                                {child".$exerciseProgressions->id."}
+                            </li>
+                            {sibling".$exerciseProgressions->exercise_parent_id."}";
+                       
+                        $totalOutput = str_replace(
+                            "{sibling".$exerciseProgressions->exercise_parent_id."}", 
+                            $output, 
+                            $totalOutput
+                        );     
+                       
+                        $totalOutput = str_replace(
+                            "{only".$exerciseProgressions->exercise_parent_id."}", 
+                            "", 
+                            $totalOutput
+                        );
+                    } else {
+                        //die("should not end up here");
+                    }
+                
+                endforeach;
+                for ($i = 1; $i <= 30; $i++) {
+                    $totalOutput = str_replace(
+                        "{child".$i."}", 
+                        "", 
+                        $totalOutput
+                    ); 
+                    $totalOutput = str_replace(
+                        "{sibling".$i."}", 
+                        "", 
+                        $totalOutput
+                    );  
+                    $totalOutput = str_replace(
+                        "{only".$i."}", 
+                        "only", 
+                        $totalOutput
+                    );
+                }
+                echo $totalOutput;
+                
+                ?>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading pointer" data-toggle="collapse" data-parent="#accordion" data-target="#collapse3">
+      <h4 class="panel-title">
+        Community discussion Link
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ul class="tree">
+  <li>
+    <span><code class="rank1">Squats I</code></span>
+    <ul>
+      <li>
+        <span><code class="rank1">Cossack Squat I</code></span>
+        <ul>
+            <li class="only">
+                <span><code class="rank1">Pistol Squat I</code></span>
+                <ul>
+                    <li class="only">
+                        <span><code class="rank2">One-leg natural press II</code></span>
+                        <ul>
+                            <li class="only">
+                                <span><code class="rank3">Elevated One-leg natural press III</code></span>
+                                <ul>
+                                    <li class="only">
+                                        <span><code class="rank4">One-leg natural press IV</code></span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+      </li>
+      <li>
+        <span><code class="rank1">Lunges I</code></span>
+        <ul>
+          <li>
+            <span><code class="rank2">Shrimp Squats II</code></span>
+            <ul>
+                <li>
+                  <span><code class="rank2">Shrimp Squats II</code></span>
+                </li>
+            </ul>
+          </li>
+          <li>
+            <span><code class="rank1">Step Ups I</code></span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <span><code class="rank1">One-leg Deadlift I</code></span>
+    <ul>
+        <li class="only">
+            <span><code class="rank2">Nordic Curl II</code></span>
+            <ul>
+                <li class="only">
+                    <span><code class="rank3">One-Leg Nordic Curl III</code></span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+  </li>
+  <li>
+    <span><code class="rank1">Calf-Raises I</code></span>
+  </li>
+</ul>

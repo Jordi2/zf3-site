@@ -8,10 +8,12 @@ use Laminas\Db\TableGateway\TableGatewayInterface;
 class AlbumTable
 {
     private $tableGateway;
+    private $dbAdapter;
 
     public function __construct(TableGatewayInterface $tableGateway)
     {
         $this->tableGateway = $tableGateway;
+        //$this->dbAdapter->getAdapter();
     }
 
     public function fetchAll()

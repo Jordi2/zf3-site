@@ -6,11 +6,11 @@ use Laminas\Router\Http\Segment;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
-    'controllers' => [
+    /*'controllers' => [
         'factories' => [
             Controller\DetailController::class => InvokableFactory::class,
         ],
-    ],
+    ],*/
     'router' => [
         'routes' => [
             'detail' => [
