@@ -36,7 +36,6 @@ class DetailController extends AbstractActionController
             die('error');
            // return $this->redirect()->toRoute('application', ['action' => 'index']);
         }
-        var_dump($exerciseTags);
 
         return new ViewModel([
             'exerciseName' => $exerciseName, 

@@ -58,7 +58,7 @@ class ExercisesTable
         $where = new Where();
         $where->equalTo('exercises.id', $id);
         $sqlSelect = $this->tableGateway->getSql()->select();
-        $sqlSelect->columns(array());
+        //$sqlSelect->columns(array());
         $sqlSelect->join('classifications', 'classifications.id = exercises.classifications_id', array('name'), 'inner');
         $sqlSelect->where($where);
 
@@ -68,7 +68,7 @@ class ExercisesTable
         return $resultSet;
         
         
-        $exerciseID = (int) $id;
+        /*$exerciseID = (int) $id;
         
         $sql = new Sql($this->dbAdapter);
         $select2 = $sql->select();
@@ -80,22 +80,22 @@ class ExercisesTable
         $selectString = $sql->getSqlStringForSqlObject($select2);
         $results = $this->dbAdapter->query($selectString, $this->dbAdapter::QUERY_MODE_EXECUTE);
 
-        return $results;
+        return $results;*/
     }
     
     public function getAllTagForExerciseId($id)
     {
-        /*$where = new Where();
+        $where = new Where();
         $where->equalTo('exercises.id', $id);
         $sqlSelect = $this->tableGateway->getSql()->select();
-        $sqlSelect->columns(array());
-        $sqlSelect->join('classifications', 'classifications.id = exercises.classifications_id', array('name'), 'inner');
+        $sqlSelect->join('exercise_tags', 'exercise_tags.exercise_id = exercises.id', array(), 'inner');
+        $sqlSelect->join('tags', 'tags.id = exercise_tags.tag_id', array('name'), 'inner');
         $sqlSelect->where($where);
 
         $statement = $this->tableGateway->getSql()->prepareStatementForSqlObject($sqlSelect);
         $resultSet = $statement->execute();
 
-        return $resultSet;*/
+        return $resultSet;
         
         
         $exerciseID = (int) $id;

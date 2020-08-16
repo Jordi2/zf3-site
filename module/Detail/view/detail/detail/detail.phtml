@@ -38,7 +38,7 @@ Classification:
 <br/>
 Tags: 
 <?php foreach ($this->exerciseTags as  $key => $exerciseTags) : ?>
-    <?= $exerciseTags->name; 
+    <?= $exerciseTags['name']; 
         end($this->exerciseTags);
         if ($key == key($this->exerciseTags))
             echo ', ';

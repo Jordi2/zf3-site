@@ -40,3 +40,210 @@
 }
 
 /* end menu */
+
+/* progression tree */
+
+.tree {
+  list-style: none;
+  padding-inline-start: 20px;
+}
+.tree * { 
+  margin: 0; 
+  padding: 0; 
+  list-style-type: none;
+}
+.tree li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tree span {
+    border: 1px solid;
+    text-align: center;
+    padding: 0.33em 0.66em;
+}
+.tree ul, ol {
+    padding-left: 2vw;
+    position: relative; 
+}
+/* Connect parent to child */
+.tree ul::before,
+.tree ol::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border-top: 1px solid;
+    width: 2vw;
+}
+.tree li {
+    position: relative;
+    padding-left: 2vw;
+    padding-top: .5vh;
+    padding-bottom: .5vh;
+}
+/* Connect child to parent */
+.tree li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border-top: 1px solid;
+    width: 2vw;
+}
+/* No connector for root element(s) */
+.tree > li {
+    padding-left: 0;
+}
+.tree > li::before,
+.tree > li::after {
+    display: none;
+}
+
+/* Vertical lines */
+
+/* Connector sibling-to-sibling */
+.tree li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    border-left: 1px solid;
+}
+/* Connector sibling-to-sibling:last-child */
+.tree li:last-of-type::after {
+    height: 50%;
+    top: 0;
+}
+/* Connector sibling-to-sibling:first-child */
+.tree li:first-of-type::after {
+    height: 50%;
+    bottom: 0;
+}
+/* Connector sibling-to-sibling:middle-child(ren) */
+.tree li:not(:first-of-type):not(:last-of-type)::after {
+    height: 100%;
+}
+/* Ranking colors*/
+.tree .rank1{
+    color: #3ce717;
+}
+.tree .rank2{
+    color: #3490ed;
+}
+.tree .rank3{
+    color: #eda434;
+}
+.tree .rank4{
+    color: #d32036;
+}
+
+.tree .only::before {
+    border-left: 0px;
+}
+
+.tree .only::after {
+    border-left: 0px;
+}
+
+/* end progression tree */
+
+/* accordion  */
+
+.panel-group {
+    margin-bottom: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+.panel-group .panel {
+    margin-bottom: 5px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.panel-group .panel-default {
+    border-color: #ddd;
+}
+
+.panel-group .panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+.panel-group .panel-heading {
+    border-bottom: 0;
+}
+.panel-group .pointer {
+    cursor: pointer;
+}
+.panel-group .panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+
+.panel-group .h4,.panel-group h4 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+.panel-group .panel-default>.panel-heading .badge {
+    color: #f5f5f5;
+    background-color: #333;
+}
+
+.floatright {
+    float: right;
+}
+
+.panel-group .panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+    padding: 10px;
+}
+
+.panel-group .panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #ddd;
+}
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+    border-top: 1px solid #ddd;
+}
+.panel-group .panel-body {
+    padding: 15px;
+}
+.panel-group .h5, .panel-group h5 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+.panel-group p {
+    margin: 0 0 10px;
+}
+
+.panel-group .h4, .panel-group h4 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+/* end accordion  */
