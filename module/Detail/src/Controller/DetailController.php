@@ -2,7 +2,6 @@
 
 namespace Detail\Controller;
 
-use Detail\Model\Exercises;
 use Detail\Model\ExercisesTable;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;

@@ -201,4 +201,40 @@ FROM employee_paths ep
 
         return $results;*/
     }
+    
+    public function getAllExercises()
+    {
+        $sql = new Sql($this->dbAdapter);
+        $select2 = $sql->select();
+        $select2->from('exercises');
+
+        $selectString = $sql->getSqlStringForSqlObject($select2);
+        $results = $this->dbAdapter->query($selectString, $this->dbAdapter::QUERY_MODE_EXECUTE);
+
+        return $results;
+    }
+    
+    public function getAllClassifications()
+    {
+        $sql = new Sql($this->dbAdapter);
+        $select2 = $sql->select();
+        $select2->from('classifications');
+
+        $selectString = $sql->getSqlStringForSqlObject($select2);
+        $results = $this->dbAdapter->query($selectString, $this->dbAdapter::QUERY_MODE_EXECUTE);
+
+        return $results;
+    }
+    
+    public function getAllTags()
+    {
+        $sql = new Sql($this->dbAdapter);
+        $select2 = $sql->select();
+        $select2->from('tags');
+
+        $selectString = $sql->getSqlStringForSqlObject($select2);
+        $results = $this->dbAdapter->query($selectString, $this->dbAdapter::QUERY_MODE_EXECUTE);
+
+        return $results;
+    }
 }

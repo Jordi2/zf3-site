@@ -1,2 +1,149 @@
 
-<h1>Test</h1>
+<div class="container">
+    <hgroup class="mb20">
+        <h1>Search Results</h1>
+        <h2 class="lead"><strong class="text-danger">3</strong> results were found for the search for <strong class="text-danger">Lorem</strong></h2>								
+    </hgroup>
+    <div class="floatleft">
+        <ul>
+            <li>
+                <span>Type</span>
+
+                <?php foreach ($this->classifications as $classification) : ?>
+
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="<?= $classification->id; ?>" value="">
+                                <a title="<?= $classification->name; ?>" onclick="toggleOption(this, true, false);"><?= $classification->name; ?></a>
+                            </div>
+                        </div>   
+                    </div>
+
+                <?php endforeach; ?>
+
+
+                <a class="more" href="#" style="display: none;">Meer tonen</a>
+                <a class="less"  href="#">Minder tonen</a>
+            </li>
+            <li>
+                <span>Muscle groups</span>
+
+                <?php foreach ($this->tags as $tags) : ?>
+
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="<?= $tags->id; ?>" value="">
+                                <a title="<?= $tags->name; ?>" onclick="toggleOption(this, true, false);"><?= $tags->name; ?></a>
+                            </div>
+                        </div>   
+                    </div>
+
+                <?php endforeach; ?>
+                <a class="more" href="#" style="display: none;">Meer tonen</a>
+                <a class= "less" href="#">Minder tonen</a>
+            </li>
+        </ul>
+    </div>
+    <section class="floatright col-xs-12 col-sm-6 col-md-12" style="">
+        <?php foreach ($this->exercises as $exercise) : ?>
+            <article class="search-result row">
+                <!--div class="col-xs-12 col-sm-12 col-md-2">
+                   <ul class="meta-search">
+                       <li>
+                           <i class="glyphicon glyphicon-calendar">
+                       </i> 
+                       <span>02/15/2014</span></li>
+                       <li>
+                           <i class="glyphicon glyphicon-time"></i>
+                           <span>4:28 pm</span>
+                       </li>
+                        <li>
+                           <i class="glyphicon glyphicon-tags"></i>
+                           <span>People</span>
+                       </li>
+                   </ul>
+               </div-->        
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="<?= $this->url('album', ['action' => 'join', 'id' => $exercise->id]) ?>" title="">
+                            <?= $exercise->name; ?>
+                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <?= $exercise->example; ?>
+                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="<?= $this->url('album', ['action' => 'join', 'id' => $exercise->id]) ?>"
+                        title="<?= $exercise->name; ?>" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+        <?php endforeach; ?>
+
+        <article class="search-result row">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <a href="#" title="Lorem ipsum" class="thumbnail"><img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <ul class="meta-search">
+                    <li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
+                    <li><i class="glyphicon glyphicon-time"></i> <span>4:28 pm</span></li>
+                    <li><i class="glyphicon glyphicon-tags"></i> <span>People</span></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+                <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>						
+                <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+            </div>
+            <span class="clearfix borda"></span>
+        </article>
+        <article class="search-result row">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <a href="#" title="Lorem ipsum" class="thumbnail"><img src="/fitpro/public/img/food1.jpg" alt="Lorem ipsum" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <ul class="meta-search">
+                    <li><i class="glyphicon glyphicon-calendar"></i> <span>02/13/2014</span></li>
+                    <li><i class="glyphicon glyphicon-time"></i> <span>8:32 pm</span></li>
+                    <li><i class="glyphicon glyphicon-tags"></i> <span>Food</span></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>						
+                <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+            </div>
+            <span class="clearfix borda"></span>
+        </article>
+        <article class="search-result row">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <a href="#" title="Lorem ipsum" class="thumbnail"><img src="/fitpro/public/img/sports1.jpg" alt="Lorem ipsum" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <ul class="meta-search">
+                    <li><i class="glyphicon glyphicon-calendar"></i> <span>01/11/2014</span></li>
+                    <li><i class="glyphicon glyphicon-time"></i> <span>10:13 am</span></li>
+                    <li><i class="glyphicon glyphicon-tags"></i> <span>Sport</span></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>						
+                <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+            </div>
+            <span class="clearfix border"></span>
+        </article>			
+    </section>
+</div>

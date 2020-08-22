@@ -58,6 +58,10 @@ return [
                 'route' => 'home',
             ],
             [
+                'label' => 'Search',
+                'route' => 'search',
+            ],
+            [
                 'label' => 'Album',
                 'route' => 'album',
                 'pages' => [

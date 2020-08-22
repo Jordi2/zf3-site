@@ -3,14 +3,8 @@
 namespace Search;
 
 use Laminas\Router\Http\Segment;
-use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
-    'controllers' => [
-        'factories' => [
-            Controller\SearchController::class => InvokableFactory::class,
-        ],
-    ],
     'router' => [
         'routes' => [
             'search' => [
