@@ -151,24 +151,6 @@ class ExercisesTable
     
     public function getProgressionTreeByExerciseID($id)
     {
-        // write custom query
-        
-        /*$statement = $adapter->createStatement('WITH RECURSIVE employee_paths AS
-( 
-    SELECT e1.*
-   	FROM exercises e1
-   	WHERE e1.exercise_parent_id IS NULL
-     UNION ALL
-     
-    SELECT e2.*
-    FROM exercises e2
-    INNER JOIN employee_paths ep ON ep.id = e2.exercise_parent_id 
-    WHERE e2.isVariation = 0
-)
-SELECT *
-FROM employee_paths ep
-');*/
-
         $results = $this->dbAdapter->query('
             WITH RECURSIVE employee_paths AS
             ( 
@@ -187,31 +169,20 @@ FROM employee_paths ep
             ', $this->dbAdapter::QUERY_MODE_EXECUTE);
         
         return $results;
-        
-        /*$exerciseID = (int) $exercise;
-        
-        $sql = new Sql($adapter);
-        $select2 = $sql->select();
-        $select2->from('exercises');
-        $select2->where(array('id' => 1));
-
-        $selectString = $sql->getSqlStringForSqlObject($select2);
-        $results = $adapter->query($selectString, $adapter::QUERY_MODE_EXECUTE);
-
-
-        return $results;*/
     }
     
-    public function getAllExercises()
-    {
-        $sql = new Sql($this->dbAdapter);
-        $select2 = $sql->select();
-        $select2->from('exercises');
+    public function getAllExercisesForSearch($keyword)
+    {  
+        $where = new Where();
+        if($keyword != null && ! ctype_space($keyword))
+            $where->like('name', '%'.$keyword.'%');
+        $sqlSelect = $this->tableGateway->getSql()->select();
+        $sqlSelect->where($where);
 
-        $selectString = $sql->getSqlStringForSqlObject($select2);
-        $results = $this->dbAdapter->query($selectString, $this->dbAdapter::QUERY_MODE_EXECUTE);
-
-        return $results;
+        $statement = $this->tableGateway->getSql()->prepareStatementForSqlObject($sqlSelect);
+        $resultSet = $statement->execute();
+        
+        return $resultSet;
     }
     
     public function getAllClassifications()

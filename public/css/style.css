@@ -11,6 +11,15 @@
     border-color: var(--brand-color);
 }
 
+
+/* general */
+
+.nodisplay {
+    display: none;
+}
+
+/* end general */
+
 /* menu */
 
 .navbar-nav a {
@@ -37,6 +46,11 @@
 .navbar-nav a {
     padding-right: .5rem;
     padding-left: .5rem;
+}
+
+.fa-search:before {
+    content: "";
+    content: "\f002";
 }
 
 /* end menu */

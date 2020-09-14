@@ -51,37 +51,21 @@
     <section class="floatright col-xs-12 col-sm-6 col-md-12" style="">
         <?php foreach ($this->exercises as $exercise) : ?>
             <article class="search-result row">
-                <!--div class="col-xs-12 col-sm-12 col-md-2">
-                   <ul class="meta-search">
-                       <li>
-                           <i class="glyphicon glyphicon-calendar">
-                       </i> 
-                       <span>02/15/2014</span></li>
-                       <li>
-                           <i class="glyphicon glyphicon-time"></i>
-                           <span>4:28 pm</span>
-                       </li>
-                        <li>
-                           <i class="glyphicon glyphicon-tags"></i>
-                           <span>People</span>
-                       </li>
-                   </ul>
-               </div-->        
                 <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
                     <h3>
-                        <a href="<?= $this->url('album', ['action' => 'join', 'id' => $exercise->id]) ?>" title="">
-                            <?= $exercise->name; ?>
+                        <a href="<?= $this->url('detail', ['action' => 'detail', 'id' => $exercise['id']]) ?>" title="">
+                            <?= $exercise['name']; ?>
                         </a>
                     </h3>
                     <p class="minimize-text">
-                        <?= $exercise->example; ?>
+                        <?= $exercise['example']; ?>
                     </p>
                     <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-3">
                     <a 
-                        href="<?= $this->url('album', ['action' => 'join', 'id' => $exercise->id]) ?>"
-                        title="<?= $exercise->name; ?>" 
+                        href="<?= $this->url('album', ['action' => 'join', 'id' => $exercise['id']]) ?>"
+                        title="<?= $exercise['name']; ?>" 
                         class="thumbnail"
                         >
                         <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />

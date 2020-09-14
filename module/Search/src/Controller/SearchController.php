@@ -19,22 +19,18 @@ class SearchController extends AbstractActionController
     {
         $request = $this->getRequest();
 
-        if (! $request->isPost()) {
-
-        }
-        else {
+        
+        if ( $request->isPost()) {
             $request->getPost();
-        }  
+        }
         
-        
-        //$form = new AlbumForm();
-        //$form->get('submit')->setAttribute('value', 'Send');
+
         try {
-            $exercises = $this->table->getAllExercises();
+            $exercises = $this->table->getAllExercisesForSearch('');
             $classifications = $this->table->getAllClassifications();
             $tags = $this->table->getAllTags();
         } catch (\Exception $e) {
-            return $this->redirect()->toRoute('album', ['action' => 'index']);
+            //return $this->redirect()->toRoute('album', ['action' => 'index']);
         }
         return new ViewModel([
             'exercises' => $exercises,
