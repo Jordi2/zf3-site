@@ -17,7 +17,15 @@ class IndexController extends AbstractActionController
     
     public function indexAction()
     {
-
-        return new ViewModel();
+        try {
+            $exercises = $this->table->fetchAll();
+        } catch (\Exception $e) {
+            die('error');
+           // return $this->redirect()->toRoute('application', ['action' => 'index']);
+        }
+        
+        return new ViewModel([
+            'exercises' => $exercises
+        ]);
     }
 }

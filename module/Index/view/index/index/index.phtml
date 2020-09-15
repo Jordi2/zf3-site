@@ -1,1 +1,6 @@
-here
+<?php foreach ($this->exercises as $exercise) : ?>
+
+    <?= $exercise->name; ?> <br />
+    <?= $exercise->altNames; ?>
+
+<?php endforeach; ?>
