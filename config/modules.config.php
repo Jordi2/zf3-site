@@ -28,5 +28,6 @@ return [
     'Detail',
     'Faq',
     'Progress',
-    'Search'
+    'Search',
+    'Index'
 ];

@@ -12,13 +12,12 @@ return [
     ],*/
     'router' => [
         'routes' => [
-            'detail' => [
+            'index' => [
                 'type'    => Segment::class,
                 'options' => [
-                    'route' => '/index[/:action[/:id]]',
+                    'route' => '/index[/:action]',
                     'constraints' => [
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
                     ],
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
@@ -30,7 +29,7 @@ return [
     ],
     'view_manager' => [
         'template_path_stack' => [
-            'detail' => __DIR__ . '/../view',
+            'index' => __DIR__ . '/../view',
         ],
     ],
 ];

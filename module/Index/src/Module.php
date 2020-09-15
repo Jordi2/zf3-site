@@ -2,6 +2,9 @@
 
 namespace Index;
 
+use Detail\Model\Exercises;
+use Detail\Model\ExercisesTable;
+use Detail\Model\ExercisesTableGateway;
 use Laminas\Db\Adapter\AdapterInterface;
 use Laminas\Db\ResultSet\ResultSet;
 use Laminas\Db\TableGateway\TableGateway;
@@ -18,14 +21,14 @@ class Module implements ConfigProviderInterface
     {
         return [
             'factories' => [
-                Model\ExercisesTable::class => function($container) {
-                    $tableGateway = $container->get(Model\ExercisesTableGateway::class);
-                    return new Model\ExercisesTable($tableGateway);
+                ExercisesTable::class => function($container) {
+                    $tableGateway = $container->get(ExercisesTableGateway::class);
+                    return new ExercisesTable($tableGateway);
                 },
-                Model\ExercisesTableGateway::class => function ($container) {
+                ExercisesTableGateway::class => function ($container) {
                     $dbAdapter = $container->get(AdapterInterface::class);
                     $resultSetPrototype = new ResultSet();
-                    $resultSetPrototype->setArrayObjectPrototype(new Model\Exercises());
+                    $resultSetPrototype->setArrayObjectPrototype(new Exercises());
                     return new TableGateway('exercises', $dbAdapter, null, $resultSetPrototype);
                 },
             ],
@@ -38,7 +41,7 @@ class Module implements ConfigProviderInterface
             'factories' => [
                 Controller\IndexController::class => function($container) {
                     return new Controller\IndexController(
-                        $container->get(Model\ExercisesTable::class)
+                        $container->get(ExercisesTable::class)
                     );
                 },
             ],

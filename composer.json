@@ -27,7 +27,8 @@
             "Detail\\": "module/Detail/src/",
             "Faq\\": "module/Faq/src/",
             "Progress\\": "module/Progress/src/",
-            "Search\\": "module/Search/src/"
+            "Search\\": "module/Search/src/",
+            "Index\\": "module/Index/src/"
         }
     },
     "autoload-dev": {
