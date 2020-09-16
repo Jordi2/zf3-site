@@ -21,7 +21,9 @@ class ExercisesTable
 
     public function fetchAll()
     {
-        return $this->tableGateway->select();
+        $sqlSelect = $this->tableGateway->getSql()->select()->order('name ASC');
+        $statement = $this->tableGateway->getSql()->prepareStatementForSqlObject($sqlSelect);
+        return $statement->execute();  
     }
     
     public function getExercise($id)

@@ -261,3 +261,101 @@
 }
 
 /* end accordion  */
+
+/* index */
+
+/*html.theme-black #tag-container {
+    -webkit-column-rule-color: #2e2e2e;
+    -moz-column-rule-color: #2e2e2e;
+    -ms-column-rule-color: #2e2e2e;
+    -o-column-rule-color: #2e2e2e;
+    column-rule-color: #2e2e2e;
+}*/
+
+#tag-container {
+    -webkit-columns: 200px;
+    -moz-columns: 200px;
+    -ms-columns: 200px;
+    -o-columns: 200px;
+    columns: 200px;
+    -webkit-column-rule-color: #e2e8e9;
+    -webkit-column-rule-width: 1px;
+    -webkit-column-rule-style: solid;
+    -moz-column-rule-color: #e2e8e9;
+    -moz-column-rule-width: 1px;
+    -moz-column-rule-style: solid;
+    -ms-column-rule-color: #e2e8e9;
+    -ms-column-rule-width: 1px;
+    -ms-column-rule-style: solid;
+    -o-column-rule-color: #e2e8e9;
+    -o-column-rule-width: 1px;
+    -o-column-rule-style: solid;
+    column-rule-color: #e2e8e9;
+    column-rule-width: 1px;
+    column-rule-style: solid;
+}
+
+/* html.theme-black #thumbnail-container, html.theme-black .container {
+    background-color: #1f1f1f;
+}*/
+
+#tag-container.container:last-of-type {
+    margin-bottom: 0;
+}
+
+#tag-container section {
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+section {
+    display: block;
+}
+
+#tag-container section:first-of-type h2 {
+    margin-top: 0;
+}
+
+#tag-container h2 {
+    font-weight: 700;
+}
+
+/*html.theme-black #tag-container .tag {
+    color: #d9d9d9;
+}*/
+
+#tag-container .tag {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    page-break-inside: avoid;
+    background-color: transparent;
+    color: #34495e;
+}
+
+/*html.theme-black #tag-container .tag .count {
+    color: grey;
+}
+
+html.theme-black .tag .count {
+    color: grey;
+}*/
+
+.tag .count {
+    font-weight: 400;
+    color: #a5b6c8;
+}
+
+a .count {
+    color: #999;
+}
+
+/* *, :after, :before {
+    box-sizing: inherit;
+}*/
+
+/* end index */
