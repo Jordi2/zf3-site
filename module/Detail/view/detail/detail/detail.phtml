@@ -24,9 +24,11 @@ $(document).ready(function() {
         $this->exerciseName->name; 
         $this->headTitle($this->exerciseName->name);
     ?>
-    <small>
-    Alternate names: <?= $this->exerciseName->altNames; ?>
-    </small>
+    <?php if(trim($this->exerciseName->altNames) !== ''): ?>
+        <small>
+        Alternate names: <?= $this->exerciseName->altNames; ?>
+        </small>
+    <?php endif; ?>
 </h1>
 
 <div>
@@ -74,7 +76,7 @@ Tags:
     <div class="panel-heading pointer" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">
       <h4 class="panel-title">
         Variations
-        <span class="badge floatright">3</span>
+        <span class="badge floatright"><?= $exerciseVariations->count(); ?></span>
       </h4>
     </div>
     <div id="collapse1" class="panel-collapse collapse">

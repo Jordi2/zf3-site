@@ -14,7 +14,7 @@
             </h2>
         <?php endif; ?>
 
-        <a href="/tag/test/" class="tag"><?= $exercise['name']; ?>
+        <a href="<?= $this->url('detail', ['action' => 'detail', 'id' => $exercise['id']]) ?>" class="tag"><?= $exercise['name']; ?>
             <?php if(trim($exercise['altNames']) !== ''): ?>
                 <span class="count"> (<?= $exercise['altNames']; ?>)
                 </span>

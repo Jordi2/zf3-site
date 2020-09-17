@@ -47,15 +47,15 @@ return [
             ],
             [
                 'label' => 'Exercises',
-                'route' => 'home',
+                'route' => 'index',
             ],
             [
                 'label' => 'Track Progress',
-                'route' => 'home',
+                'route' => 'progress',
             ],
             [
                 'label' => 'FAQ',
-                'route' => 'home',
+                'route' => 'faq',
             ],
             [
                 'label' => 'Search',

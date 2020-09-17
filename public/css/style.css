@@ -18,6 +18,12 @@
     display: none;
 }
 
+.clear {
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
 /* end general */
 
 /* menu */
@@ -54,6 +60,20 @@
 }
 
 /* end menu */
+
+/* progression page */
+
+#progressionFilters {
+    float: left;
+    width: 10%;
+}
+
+#progressionContent {
+    float: right;
+    width: 90%;
+}
+
+/* end progression page */
 
 /* progression tree */
 
