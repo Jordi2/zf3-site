@@ -1,12 +1,120 @@
-
 <h1>Progression Chart</h1>
 
-    <p>intro</p>
+<p>intro</p>
 <div id="progressionFilters">
-    test
     
+    <form method="get" action="<?= $this->url('progress', ['action' => 'progress']) ?>">      
+    <fieldset>      
+        <legend>Filters:</legend>  
+        <?php
+        foreach ($this->classifications as $classification) : 
+        ?>
+            <input type="checkbox" name="classification<?= $classification['id']; ?>" <?= $classification['checked']; ?> value="<?= $classification['id']; ?>"><?= $classification['name']; ?>
+        <?php
+        endforeach;
+        ?>
+        <hr>      
+         <?php
+        foreach ($this->tags as $tag) : 
+        ?>
+            <input type="checkbox" name="tag<?= $tag['id']; ?>" <?= $tag['checked']; ?> value="<?= $tag['id']; ?>"><?= $tag['name']; ?>
+        <?php
+        endforeach;
+        ?>
+        <hr> 
+        <input type="checkbox" name="variation" <?= $this->showVariation ?> value="False">Show variation<br/><br/> 
+        <input type="submit" value="Submit now" />      
+    </fieldset>      
+</form>
 </div>
+<div class="clear"></div>
+    
 <div id="progressionContent">
-    test
+    <ul class="tree">
+        <?php
+        $parent_ids = array();
+        $parent_parent_id = null; //the parent_id of an items parent              
+        $totalOutput = "";
+
+        foreach ($this->exerciseProgressions as $exerciseProgressions) : 
+            if($exerciseProgressions->exercise_parent_id == NULL){
+                array_push($parent_ids, $exerciseProgressions->id);
+                $totalOutput .= "
+                    <li>
+                        <span><code class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</code></span>
+                        {child".$exerciseProgressions->id."}
+                    </li>
+                    ";
+            } 
+            // Is child
+            else if(in_array($exerciseProgressions->exercise_parent_id, $parent_ids)){        
+                array_push($parent_ids, $exerciseProgressions->id);
+                array_shift($parent_ids);//remove first elemetn
+
+                $parent_parent_id = $exerciseProgressions->exercise_parent_id;
+
+                $output = "
+                    <ul>
+                        <li class='{only".$exerciseProgressions->exercise_parent_id."}'>
+                            <span><code class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</code></span>
+                            {child".$exerciseProgressions->id."}
+                        </li>
+                        {sibling".$exerciseProgressions->exercise_parent_id."}
+                    </ul>";
+
+                $totalOutput = str_replace(
+                    "{child".$exerciseProgressions->exercise_parent_id."}", 
+                    $output, 
+                    $totalOutput
+                );
+            } 
+            // Is sibling
+            else if($exerciseProgressions->exercise_parent_id == $parent_parent_id) {
+                array_push($parent_ids, $exerciseProgressions->id);
+
+                $output = "
+                    <li>
+                        <span><code class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</code></span>
+                        {child".$exerciseProgressions->id."}
+                    </li>
+                    {sibling".$exerciseProgressions->exercise_parent_id."}";
+
+                $totalOutput = str_replace(
+                    "{sibling".$exerciseProgressions->exercise_parent_id."}", 
+                    $output, 
+                    $totalOutput
+                );     
+
+                $totalOutput = str_replace(
+                    "{only".$exerciseProgressions->exercise_parent_id."}", 
+                    "", 
+                    $totalOutput
+                );
+            } else {
+                //die("should not end up here");
+            }
+
+        endforeach;
+        for ($i = 1; $i <= 30; $i++) {
+            $totalOutput = str_replace(
+                "{child".$i."}", 
+                "", 
+                $totalOutput
+            ); 
+            $totalOutput = str_replace(
+                "{sibling".$i."}", 
+                "", 
+                $totalOutput
+            );  
+            $totalOutput = str_replace(
+                "{only".$i."}", 
+                "only", 
+                $totalOutput
+            );
+        }
+        echo $totalOutput;
+
+        ?>
+    </ul>
 </div>
 <div class="clear"></div>

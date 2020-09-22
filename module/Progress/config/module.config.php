@@ -3,14 +3,8 @@
 namespace Progress;
 
 use Laminas\Router\Http\Segment;
-use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
-    'controllers' => [
-        'factories' => [
-            Controller\ProgressController::class => InvokableFactory::class,
-        ],
-    ],
     'router' => [
         'routes' => [
             'progress' => [

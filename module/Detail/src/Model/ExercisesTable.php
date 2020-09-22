@@ -151,6 +151,64 @@ class ExercisesTable
         return $results;
     }
     
+    public function getProgressionTreeByFilter($classificationsIds, $tagIds, $showVariations)
+    {
+        $filterQuery = '';
+        // Don't show variations
+        $variationFilterQuery = 'ep.isVariation = false AND ';
+        
+        if($showVariations)
+            // Show variations
+            $variationFilterQuery = '';
+
+        if($classificationsIds != null && $tagIds != null){
+            $filterQuery = '
+                INNER JOIN exercise_tags et ON et.exercise_id = ep.`id` 
+                WHERE 
+                    '.$variationFilterQuery.'
+                    ep.classifications_id IN ('.$classificationsIds.' ) AND
+                    et.tag_id IN ('.$tagIds.')';
+        }
+        else if ($classificationsIds != null){
+            $filterQuery = '
+                WHERE 
+                    '.$variationFilterQuery.'
+                    ep.classifications_id IN ('.$classificationsIds.')';
+        }
+        else if ($tagIds != null){
+            $filterQuery = '
+                INNER JOIN exercise_tags et ON et.exercise_id = ep.`id` 
+                WHERE 
+                    '.$variationFilterQuery.'
+                    et.tag_id IN ('.$tagIds.')';
+        } else if (!$showVariations){
+            $filterQuery = '
+                WHERE 
+                    ep.isVariation = false ';
+        }
+        
+        $results = $this->dbAdapter->query('
+                WITH RECURSIVE employee_paths AS
+                ( 
+                    SELECT e1.*
+                        FROM exercises e1
+                        WHERE 
+                            e1.exercise_parent_id IS NULL
+                     UNION ALL
+
+                    SELECT e2.*
+                    FROM exercises e2
+                    INNER JOIN employee_paths ep ON ep.id = e2.exercise_parent_id
+                )
+                SELECT *
+                FROM employee_paths ep
+                '.$filterQuery.'
+                
+                ', $this->dbAdapter::QUERY_MODE_EXECUTE);
+        
+        return $results;
+    }
+    
     public function getProgressionTreeByExerciseID($id)
     {
         $results = $this->dbAdapter->query('
@@ -158,7 +216,37 @@ class ExercisesTable
             ( 
                 SELECT e1.*
                     FROM exercises e1
-                    WHERE e1.exercise_parent_id IS NULL
+                    WHERE 
+                        e1.exercise_parent_id IS NULL
+                 UNION ALL
+
+                SELECT e2.*
+                FROM exercises e2
+                INNER JOIN employee_paths ep ON ep.id = e2.exercise_parent_id 
+                WHERE e2.isVariation = 0
+            )
+            SELECT *
+            FROM employee_paths ep
+            ', $this->dbAdapter::QUERY_MODE_EXECUTE);
+        
+        return $results;
+    }
+    
+    public function getProgressionTreeByExerciseClassification($id)
+    {
+        $results = $this->dbAdapter->query('
+            WITH RECURSIVE employee_paths AS
+            ( 
+                SELECT e1.*
+                    FROM exercises e1
+                    WHERE 
+                        e1.exercise_parent_id IS NULL AND
+                        e1.classifications_id = (
+                            SELECT `classifications_id` 
+                            FROM exercises 
+                            WHERE id = '.$id.' 
+                            LIMIT 1
+                        )
                  UNION ALL
 
                 SELECT e2.*

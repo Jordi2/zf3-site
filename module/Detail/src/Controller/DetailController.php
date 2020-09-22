@@ -30,7 +30,7 @@ class DetailController extends AbstractActionController
             $exerciseExamples = $this->table->getExerciseTemp($id);
             $exerciseReadings = $this->table->getAllReadingsForExerciseId($id);
             $exerciseVariations = $this->table->getAllVariationsForExerciseId($id);
-            $exerciseProgressions = $this->table->getProgressionTreeByExerciseID($id);
+            $exerciseProgressions = $this->table->getProgressionTreeByExerciseClassification($id);
         } catch (\Exception $e) {
             die('error');
            // return $this->redirect()->toRoute('application', ['action' => 'index']);

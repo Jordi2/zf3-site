@@ -3,7 +3,6 @@
 namespace Detail;
 
 use Laminas\Router\Http\Segment;
-use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
     /*'controllers' => [

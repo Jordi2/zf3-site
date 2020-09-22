@@ -64,13 +64,11 @@
 /* progression page */
 
 #progressionFilters {
-    float: left;
-    width: 10%;
+
 }
 
 #progressionContent {
-    float: right;
-    width: 90%;
+
 }
 
 /* end progression page */
