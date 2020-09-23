@@ -187,6 +187,9 @@ class ExercisesTable
                     ep.isVariation = false ';
         }
         
+        
+        var_dump($filterQuery);
+        
         $results = $this->dbAdapter->query('
                 WITH RECURSIVE employee_paths AS
                 ( 
@@ -203,6 +206,7 @@ class ExercisesTable
                 SELECT *
                 FROM employee_paths ep
                 '.$filterQuery.'
+                ORDER BY ep.classifications_id, ep.exercise_parent_id, ep.difficulty
                 
                 ', $this->dbAdapter::QUERY_MODE_EXECUTE);
         

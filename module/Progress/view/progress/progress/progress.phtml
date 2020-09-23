@@ -41,7 +41,7 @@
                 array_push($parent_ids, $exerciseProgressions->id);
                 $totalOutput .= "
                     <li>
-                        <span><code class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</code></span>
+                        <span class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</span>
                         {child".$exerciseProgressions->id."}
                     </li>
                     ";
@@ -49,14 +49,18 @@
             // Is child
             else if(in_array($exerciseProgressions->exercise_parent_id, $parent_ids)){        
                 array_push($parent_ids, $exerciseProgressions->id);
-                array_shift($parent_ids);//remove first elemetn
-
+       
                 $parent_parent_id = $exerciseProgressions->exercise_parent_id;
+                
+                if (($key = array_search($parent_parent_id, $parent_ids)) !== false) {
+                   // unset($messages[$key]);
+                     unset($parent_ids[$key]); 
+                }
 
                 $output = "
                     <ul>
                         <li class='{only".$exerciseProgressions->exercise_parent_id."}'>
-                            <span><code class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</code></span>
+                            <span class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</span>
                             {child".$exerciseProgressions->id."}
                         </li>
                         {sibling".$exerciseProgressions->exercise_parent_id."}
@@ -74,7 +78,7 @@
 
                 $output = "
                     <li>
-                        <span><code class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</code></span>
+                        <span class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</span>
                         {child".$exerciseProgressions->id."}
                     </li>
                     {sibling".$exerciseProgressions->exercise_parent_id."}";
@@ -91,11 +95,11 @@
                     $totalOutput
                 );
             } else {
-                //die("should not end up here");
+               // die("should not end up here");
             }
 
         endforeach;
-        for ($i = 1; $i <= 30; $i++) {
+        for ($i = 1; $i <= 100; $i++) {
             $totalOutput = str_replace(
                 "{child".$i."}", 
                 "", 

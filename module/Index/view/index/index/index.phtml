@@ -1,14 +1,18 @@
 <div class="container" id="tag-container">
     <section id="num">
 
+    <h2>
+        #
+    </h2>
+        
     <?php
         $firstLetter = "#";
     ?>
 
     <?php foreach ($this->exercises as $exercise) : ?>
 
-        <?php if( $exercise['name'][0] !== $firstLetter && !ctype_digit($exercise['name'][0]) ): ?>
-            <?php $firstLetter =  $exercise['name'][0]; ?>
+        <?php if( $exercise['name'][0] !== $firstLetter && !ctype_digit($exercise['name'][0]) ): 
+            $firstLetter =  $exercise['name'][0]; ?>
             <h2>
                 <?= $exercise['name'][0]; ?>
             </h2>
