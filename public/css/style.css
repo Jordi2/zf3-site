@@ -28,6 +28,10 @@
 
 /* menu */
 
+.navbar {
+    /*background-color: #007bff!important;*/
+}
+
 .navbar-nav a {
     display: block;
     padding: 0.5rem 1rem;
@@ -93,6 +97,7 @@
     border: 1px solid;
     text-align: center;
     padding: 0.33em 0.66em;
+    cursor: pointer;
 }
 .tree ul, ol {
     padding-left: 2vw;
@@ -169,12 +174,48 @@
     color: #d32036;
 }
 
+.tree .rank1:hover {
+    background: #3ce717;
+    color: cadetblue;
+}
+.tree .rank2:hover {
+    background: #3490ed;
+    color: grey;
+}
+.tree .rank3:hover {
+    background: #eda434;
+    color: cadetblue;
+}
+.tree .rank4:hover {
+    background: #d32036;
+    color: cadetblue;
+}
+
 .tree .only::before {
     border-left: 0px;
 }
 
 .tree .only::after {
     border-left: 0px;
+}
+
+.tree .dropdown-menu {
+    top: 50%;
+    left: 5%;
+    position: absolute;
+    display: block;
+    padding: 0;
+    display: none;
+}
+
+.tree .dropdown-menu:before,
+.tree .dropdown-menu li:before {
+    content: none;
+}
+
+.tree .dropdown-menu:after,
+.tree .dropdown-menu li:after {
+    content: none;
 }
 
 /* end progression tree */
