@@ -18,6 +18,10 @@
     display: none;
 }
 
+.nodisplayever {
+    display: none !important;
+}
+
 .clear {
     width: 100%;
     display: block;
@@ -74,6 +78,34 @@
 #progressionContent {
 
 }
+
+
+/* ============ only desktop view ============ */
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu {  
+            display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  
+        }
+	.navbar .nav-item:hover .nav-link { 
+            color: #fff;  
+        }
+	.navbar .dropdown-menu.fade-down { 
+            top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; 
+        }
+	.navbar .dropdown-menu.fade-up { 
+            top:180%;  
+        }
+	.navbar .nav-item:hover .dropdown-menu {
+            transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); 
+        }
+
+        span.primary:hover + .dropdown-menu{
+            display: block;
+        }
+        .dropdown-menu.fade-up:only-child {
+            display: none !important;
+        }
+}	
+/* ============ desktop view .end// ============ */
 
 /* end progression page */
 
@@ -201,11 +233,15 @@
 
 .tree .dropdown-menu {
     top: 50%;
-    left: 5%;
+    left: 50%;
     position: absolute;
     display: block;
     padding: 0;
     display: none;
+}
+
+.tree li ul.dropdown-menu.root {
+     left: 5%;
 }
 
 .tree .dropdown-menu:before,
