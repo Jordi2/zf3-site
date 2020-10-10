@@ -5,7 +5,7 @@
 window.addEventListener('load', (event) => {
     var removeEmptyVariantLists = $('.dropdown-menu.fade-up');
     removeEmptyVariantLists.each(function( index, value ) {
-        if($(value).find('span.variant').length === 0){
+        if($(value).find('div.variant').length === 0){
             $(value).addClass('nodisplayever');
         }
     });
@@ -13,22 +13,6 @@ window.addEventListener('load', (event) => {
 
 </script>
 
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
- 
-<ul class="navbar-nav">
-
-	<li class="nav-item dropdown">
-	    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Hover up  </a>
-	    <ul class="dropdown-menu fade-up">
-		  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
-		  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
-		  <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
-	    </ul>
-	</li>
-</ul>
-
-</nav>
 <p>intro</p>
 <div id="progressionFilters">
     
@@ -57,13 +41,15 @@ window.addEventListener('load', (event) => {
 </form>
 </div>
 <div class="clear"></div>
-    
+
 <div id="progressionContent">
     <ul class="tree">
         <?php
         
+        $difficultyranking_array  = array(1 => 'Beginner', 2 => 'Intermediate', 3 => 'Advanced', 4 => 'Elite');
+        
         // todo: make variations only show when clicking parent, instead of showing as child
-        // show classification blocks; use tab pages
+        // show classification blocks; use tab pages?
              
         // hover event: https://stackoverflow.com/questions/41196530/wrap-image-with-div-on-hover-using-jquery
         // show small icon that exercise has variations
@@ -77,7 +63,12 @@ window.addEventListener('load', (event) => {
                 array_push($parent_ids, $exerciseProgressions->id);
                 $totalOutput .= "
                     <li>
-                        <span class='primary rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</span>
+                        <div class='rank$exerciseProgressions->difficulty primary'>
+                            <div class='text-rank'>".
+                                $difficultyranking_array[$exerciseProgressions->difficulty]."
+                            </div>".
+                            $exerciseProgressions->name."
+                        </div>
                         <ul class='dropdown-menu fade-up root'>
                             <li><a class='dropdown-item' >Variants:</a></li>
                             {variant".$exerciseProgressions->id."}
@@ -90,7 +81,7 @@ window.addEventListener('load', (event) => {
             else if($exerciseProgressions->isVariation){
                 $output = "
                     <li>
-                        <span class='variant here rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</span>
+                        <div class='rank$exerciseProgressions->difficulty variant'>".$exerciseProgressions->name."</div>
                     </li>
                     {variant".$exerciseProgressions->exercise_parent_id."}";
 
@@ -113,7 +104,12 @@ window.addEventListener('load', (event) => {
                 $output = "
                     <ul>
                         <li class='{only".$exerciseProgressions->exercise_parent_id."}'>
-                            <span class='primary rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</span>
+                            <div class='rank$exerciseProgressions->difficulty primary'>
+                                <div class='text-rank'>".
+                                    $difficultyranking_array[$exerciseProgressions->difficulty]."
+                                </div>".
+                                $exerciseProgressions->name."
+                            </div>
                             <ul class='dropdown-menu fade-up'>
                                 <li><a class='dropdown-item' >Variants:</a></li>
                                 {variant".$exerciseProgressions->id."}
@@ -137,7 +133,12 @@ window.addEventListener('load', (event) => {
           
                 $output = "
                     <li>
-                        <span class='sibling rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</span>
+                        <div class='rank$exerciseProgressions->difficulty sibling'>
+                            <div class='text-rank'>".
+                                $difficultyranking_array[$exerciseProgressions->difficulty]."
+                            </div>".
+                            $exerciseProgressions->name."
+                        </div>
                         <ul class='dropdown-menu fade-up'>
                             <li><a class='dropdown-item' >Variants:</a></li>
                             {variant".$exerciseProgressions->id."}
@@ -162,7 +163,7 @@ window.addEventListener('load', (event) => {
             }
 
         endforeach;
-        for ($i = 1; $i <= 100; $i++) {
+        for ($i = 1; $i <= 200; $i++) {
             $totalOutput = str_replace(
                 "{child".$i."}", 
                 "", 

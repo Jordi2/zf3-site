@@ -79,35 +79,48 @@
 
 }
 
-
-/* ============ only desktop view ============ */
-@media all and (min-width: 992px) {
-	.navbar .nav-item .dropdown-menu {  
-            display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  
-        }
-	.navbar .nav-item:hover .nav-link { 
-            color: #fff;  
-        }
-	.navbar .dropdown-menu.fade-down { 
-            top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; 
-        }
-	.navbar .dropdown-menu.fade-up { 
-            top:180%;  
-        }
-	.navbar .nav-item:hover .dropdown-menu {
-            transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); 
-        }
-
-        span.primary:hover + .dropdown-menu{
-            display: block;
-        }
-        .dropdown-menu.fade-up:only-child {
-            display: none !important;
-        }
-}	
-/* ============ desktop view .end// ============ */
+.navbar .nav-item .dropdown-menu {  
+    display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  
+}
+.navbar .nav-item:hover .nav-link { 
+    color: #fff;  
+}
+.navbar .dropdown-menu.fade-down { 
+    top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; 
+}
+.navbar .dropdown-menu.fade-up { 
+    top:180%;  
+}
+div.primary:hover + .dropdown-menu,
+div.sibling:hover + .dropdown-menu{
+    transition: .3s; opacity:1; visibility:visible; transform: rotateX(0deg); 
+    display: block;
+}
+.dropdown-menu.fade-up:only-child {
+    display: none !important;
+}
+	
 
 /* end progression page */
+
+.newbox,
+span.test {
+    border: 1px solid;
+    text-align: center;
+    padding: 0.33em 0.66em;
+    cursor: pointer;
+}
+
+.newbox,
+.test.rank1{
+    color: #3ce717;
+   /* color: #3AB54A !important;*/
+}
+.newbox:hover,
+.test.rank1:hover {
+    background: #3ce717;
+    color: cadetblue;
+}
 
 /* progression tree */
 
@@ -125,11 +138,14 @@
     flex-direction: row;
     align-items: center;
 }
-.tree span {
+.tree div[class^='rank'] {
+    position: relative;
     border: 1px solid;
     text-align: center;
     padding: 0.33em 0.66em;
     cursor: pointer;
+    padding-top: 13px;
+    min-width: 89px;
 }
 .tree ul, ol {
     padding-left: 2vw;
@@ -252,6 +268,16 @@
 .tree .dropdown-menu:after,
 .tree .dropdown-menu li:after {
     content: none;
+}
+
+.tree .text-rank {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    text-align:right;
+    opacity:0.5;
+    font-size:0.8em;
+    margin-right: 5px;
 }
 
 /* end progression tree */
