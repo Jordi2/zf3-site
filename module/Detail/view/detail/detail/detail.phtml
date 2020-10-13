@@ -109,7 +109,7 @@ Tags:
                         array_push($parent_ids, $exerciseProgressions->id);
                         $totalOutput .= "
                             <li>
-                                <span><code class='rank1'>".$exerciseProgressions->name."</code></span>
+                                <div class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</div>
                                 {child".$exerciseProgressions->id."}
                             </li>
                             ";
@@ -124,7 +124,7 @@ Tags:
                         $output = "
                             <ul>
                                 <li class='{only".$exerciseProgressions->exercise_parent_id."}'>
-                                    <span><code class='rank1'>".$exerciseProgressions->name."</code></span>
+                                    <div class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</div>
                                     {child".$exerciseProgressions->id."}
                                 </li>
                                 {sibling".$exerciseProgressions->exercise_parent_id."}
@@ -142,7 +142,7 @@ Tags:
                         
                         $output = "
                             <li>
-                                <span><code class='rank1'>".$exerciseProgressions->name."</code></span>
+                                <div class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</div>
                                 {child".$exerciseProgressions->id."}
                             </li>
                             {sibling".$exerciseProgressions->exercise_parent_id."}";
@@ -163,7 +163,7 @@ Tags:
                     }
                 
                 endforeach;
-                for ($i = 1; $i <= 30; $i++) {
+                for ($i = 1; $i <= 200; $i++) {
                     $totalOutput = str_replace(
                         "{child".$i."}", 
                         "", 
@@ -203,67 +203,3 @@ Tags:
     </div>
   </div>
 </div>
-
-
-<ul class="tree">
-  <li>
-    <span><code class="rank1">Squats I</code></span>
-    <ul>
-      <li>
-        <span><code class="rank1">Cossack Squat I</code></span>
-        <ul>
-            <li class="only">
-                <span><code class="rank1">Pistol Squat I</code></span>
-                <ul>
-                    <li class="only">
-                        <span><code class="rank2">One-leg natural press II</code></span>
-                        <ul>
-                            <li class="only">
-                                <span><code class="rank3">Elevated One-leg natural press III</code></span>
-                                <ul>
-                                    <li class="only">
-                                        <span><code class="rank4">One-leg natural press IV</code></span>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-      </li>
-      <li>
-        <span><code class="rank1">Lunges I</code></span>
-        <ul>
-          <li>
-            <span><code class="rank2">Shrimp Squats II</code></span>
-            <ul>
-                <li>
-                  <span><code class="rank2">Shrimp Squats II</code></span>
-                </li>
-            </ul>
-          </li>
-          <li>
-            <span><code class="rank1">Step Ups I</code></span>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <span><code class="rank1">One-leg Deadlift I</code></span>
-    <ul>
-        <li class="only">
-            <span><code class="rank2">Nordic Curl II</code></span>
-            <ul>
-                <li class="only">
-                    <span><code class="rank3">One-Leg Nordic Curl III</code></span>
-                </li>
-            </ul>
-        </li>
-    </ul>
-  </li>
-  <li>
-    <span><code class="rank1">Calf-Raises I</code></span>
-  </li>
-</ul>

@@ -96,6 +96,10 @@ div.sibling:hover + .dropdown-menu{
     transition: .3s; opacity:1; visibility:visible; transform: rotateX(0deg); 
     display: block;
 }
+div.primary + .dropdown-menu:hover,
+div.sibling + .dropdown-menu:hover {
+    display: block;
+}
 .dropdown-menu.fade-up:only-child {
     display: none !important;
 }

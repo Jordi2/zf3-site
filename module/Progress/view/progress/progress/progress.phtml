@@ -35,7 +35,6 @@ window.addEventListener('load', (event) => {
         endforeach;
         ?>
         <hr> 
-        <input type="checkbox" name="variation" <?= $this->showVariation ?> value="False">Show variation<br/><br/> 
         <input type="submit" value="Submit now" />      
     </fieldset>      
 </form>
@@ -53,7 +52,8 @@ window.addEventListener('load', (event) => {
              
         // hover event: https://stackoverflow.com/questions/41196530/wrap-image-with-div-on-hover-using-jquery
         // show small icon that exercise has variations
-             
+        // show small icon for categories e.g. push-up icon, sit-up, squat, pull-up
+                  
         $parent_ids = array();
         $parent_parent_id = null; //the parent_id of an items parent              
         $totalOutput = "";

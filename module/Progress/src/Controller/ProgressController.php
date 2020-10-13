@@ -56,7 +56,7 @@ class ProgressController extends AbstractActionController
             $showVariations = true;
         
         try {
-            $exerciseProgressions = $this->table->getProgressionTreeByFilter($classifications, $tags, $showVariations);
+            $exerciseProgressions = $this->table->getProgressionTreeByFilter($classifications, $tags, true);
         } catch (\Exception $e) {
             die('error');
            // return $this->redirect()->toRoute('application', ['action' => 'index']);
