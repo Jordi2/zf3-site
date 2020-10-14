@@ -68,11 +68,11 @@ window.addEventListener('load', (event) => {
                                 $difficultyranking_array[$exerciseProgressions->difficulty]."
                             </div>".
                             $exerciseProgressions->name."
+                            <ul class='dropdown-menu fade-up root'>
+                                <li><a class='dropdown-item' >Variants:</a></li>
+                                {variant".$exerciseProgressions->id."}
+                            </ul>
                         </div>
-                        <ul class='dropdown-menu fade-up root'>
-                            <li><a class='dropdown-item' >Variants:</a></li>
-                            {variant".$exerciseProgressions->id."}
-                        </ul>
                         {child".$exerciseProgressions->id."}
                     </li>
                     ";
@@ -109,11 +109,11 @@ window.addEventListener('load', (event) => {
                                     $difficultyranking_array[$exerciseProgressions->difficulty]."
                                 </div>".
                                 $exerciseProgressions->name."
+                                <ul class='dropdown-menu fade-up'>
+                                    <li><a class='dropdown-item' >Variants:</a></li>
+                                    {variant".$exerciseProgressions->id."}
+                                </ul>
                             </div>
-                            <ul class='dropdown-menu fade-up'>
-                                <li><a class='dropdown-item' >Variants:</a></li>
-                                {variant".$exerciseProgressions->id."}
-                            </ul>
                             {child".$exerciseProgressions->id."}
                         </li>
                         {sibling".$exerciseProgressions->exercise_parent_id."}
@@ -138,11 +138,11 @@ window.addEventListener('load', (event) => {
                                 $difficultyranking_array[$exerciseProgressions->difficulty]."
                             </div>".
                             $exerciseProgressions->name."
+                            <ul class='dropdown-menu fade-up'>
+                                <li><a class='dropdown-item' >Variants:</a></li>
+                                {variant".$exerciseProgressions->id."}
+                            </ul>
                         </div>
-                        <ul class='dropdown-menu fade-up'>
-                            <li><a class='dropdown-item' >Variants:</a></li>
-                            {variant".$exerciseProgressions->id."}
-                        </ul>
                         {child".$exerciseProgressions->id."}
                     </li>
                     {sibling".$exerciseProgressions->exercise_parent_id."}";

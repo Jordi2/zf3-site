@@ -91,13 +91,13 @@
 .navbar .dropdown-menu.fade-up { 
     top:180%;  
 }
-div.primary:hover + .dropdown-menu,
-div.sibling:hover + .dropdown-menu{
+div.primary:hover .dropdown-menu,
+div.sibling:hover .dropdown-menu{
     transition: .3s; opacity:1; visibility:visible; transform: rotateX(0deg); 
     display: block;
 }
-div.primary + .dropdown-menu:hover,
-div.sibling + .dropdown-menu:hover {
+div.primary .dropdown-menu:hover,
+div.sibling .dropdown-menu:hover {
     display: block;
 }
 .dropdown-menu.fade-up:only-child {
@@ -258,10 +258,6 @@ span.test {
     display: block;
     padding: 0;
     display: none;
-}
-
-.tree li ul.dropdown-menu.root {
-     left: 5%;
 }
 
 .tree .dropdown-menu:before,
