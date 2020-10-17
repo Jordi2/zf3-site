@@ -256,7 +256,6 @@ class ExercisesTable
                 SELECT e2.*
                 FROM exercises e2
                 INNER JOIN employee_paths ep ON ep.id = e2.exercise_parent_id 
-                WHERE e2.isVariation = 0
             )
             SELECT *
             FROM employee_paths ep

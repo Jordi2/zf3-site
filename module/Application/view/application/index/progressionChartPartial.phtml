@@ -1,0 +1,144 @@
+<ul class="tree">
+    <?php
+    $difficultyranking_array  = array(1 => 'Beginner', 2 => 'Intermediate', 3 => 'Advanced', 4 => 'Elite');
+
+    // todo: make variations only show when clicking parent, instead of showing as child
+    // show classification blocks; use tab pages?
+
+    // hover event: https://stackoverflow.com/questions/41196530/wrap-image-with-div-on-hover-using-jquery
+    // show small icon that exercise has variations
+    // show small icon for categories e.g. push-up icon, sit-up, squat, pull-up
+
+    $parent_ids = array();
+    $parent_parent_id = null; //the parent_id of an items parent              
+    $totalOutput = "";
+
+    foreach ($this->exerciseProgressions as $exerciseProgressions) : 
+        if($exerciseProgressions->exercise_parent_id == NULL){
+            array_push($parent_ids, $exerciseProgressions->id);
+            $totalOutput .= "
+                <li>
+                    <div class='rank$exerciseProgressions->difficulty primary'>
+                        <div class='text-rank'>".
+                            $difficultyranking_array[$exerciseProgressions->difficulty]."
+                        </div>".
+                        $exerciseProgressions->name."
+                        <ul class='dropdown-menu fade-up root'>
+                            <li><a class='dropdown-item' >Variants:</a></li>
+                            {variant".$exerciseProgressions->id."}
+                        </ul>
+                    </div>
+                    {child".$exerciseProgressions->id."}
+                </li>
+                ";
+        } 
+        // Is variation
+        else if($exerciseProgressions->isVariation){
+            $output = "
+                <li>
+                    <div class='rank$exerciseProgressions->difficulty variant'>".$exerciseProgressions->name."</div>
+                </li>
+                {variant".$exerciseProgressions->exercise_parent_id."}";
+
+            $totalOutput = str_replace(
+                "{variant".$exerciseProgressions->exercise_parent_id."}", 
+                $output, 
+                $totalOutput
+            );
+        }
+        // Is child
+        else if(in_array($exerciseProgressions->exercise_parent_id, $parent_ids)){        
+            array_push($parent_ids, $exerciseProgressions->id);
+
+            $parent_parent_id = $exerciseProgressions->exercise_parent_id;
+
+            if (($key = array_search($parent_parent_id, $parent_ids)) !== false) {
+                 unset($parent_ids[$key]); 
+            }
+
+            $output = "
+                <ul>
+                    <li class='{only".$exerciseProgressions->exercise_parent_id."}'>
+                        <div class='rank$exerciseProgressions->difficulty primary'>
+                            <div class='text-rank'>".
+                                $difficultyranking_array[$exerciseProgressions->difficulty]."
+                            </div>".
+                            $exerciseProgressions->name."
+                            <ul class='dropdown-menu fade-up'>
+                                <li><a class='dropdown-item' >Variants:</a></li>
+                                {variant".$exerciseProgressions->id."}
+                            </ul>
+                        </div>
+                        {child".$exerciseProgressions->id."}
+                    </li>
+                    {sibling".$exerciseProgressions->exercise_parent_id."}
+                </ul>";
+
+            $totalOutput = str_replace(
+                "{child".$exerciseProgressions->exercise_parent_id."}", 
+                $output, 
+                $totalOutput
+            );
+        } 
+        // Is sibling
+        else if($exerciseProgressions->exercise_parent_id == $parent_parent_id) {
+            array_push($parent_ids, $exerciseProgressions->id);
+
+            $output = "
+                <li>
+                    <div class='rank$exerciseProgressions->difficulty sibling'>
+                        <div class='text-rank'>".
+                            $difficultyranking_array[$exerciseProgressions->difficulty]."
+                        </div>".
+                        $exerciseProgressions->name."
+                        <ul class='dropdown-menu fade-up'>
+                            <li><a class='dropdown-item' >Variants:</a></li>
+                            {variant".$exerciseProgressions->id."}
+                        </ul>
+                    </div>
+                    {child".$exerciseProgressions->id."}
+                </li>
+                {sibling".$exerciseProgressions->exercise_parent_id."}";
+
+            $totalOutput = str_replace(
+                "{sibling".$exerciseProgressions->exercise_parent_id."}", 
+                $output, 
+                $totalOutput
+            );     
+
+            $totalOutput = str_replace(
+                "{only".$exerciseProgressions->exercise_parent_id."}", 
+                "", 
+                $totalOutput
+            );
+        } else {
+           // die("should not end up here");
+        }
+
+    endforeach;
+    for ($i = 1; $i <= 200; $i++) {
+        $totalOutput = str_replace(
+            "{child".$i."}", 
+            "", 
+            $totalOutput
+        ); 
+        $totalOutput = str_replace(
+            "{sibling".$i."}", 
+            "", 
+            $totalOutput
+        );  
+        $totalOutput = str_replace(
+            "{variant".$i."}", 
+            "", 
+            $totalOutput
+        );  
+        $totalOutput = str_replace(
+            "{only".$i."}", 
+            "only", 
+            $totalOutput
+        );
+    }
+    echo $totalOutput;
+
+    ?>
+</ul>

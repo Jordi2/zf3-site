@@ -1,5 +1,4 @@
 <script type="text/javascript">
-console.log("here");
 
 $(document).ready(function() { 
     var example = $( "#examples" )
@@ -14,6 +13,16 @@ $(document).ready(function() {
     reading.click(function() {
         examplescontent.addClass("nodisplay");
         readingscontent.removeClass("nodisplay");
+    });
+});
+
+
+window.addEventListener('load', (event) => {
+    var removeEmptyVariantLists = $('.dropdown-menu.fade-up');
+    removeEmptyVariantLists.each(function( index, value ) {
+        if($(value).find('div.variant').length === 0){
+            $(value).addClass('nodisplayever');
+        }
     });
 });
 
@@ -38,14 +47,16 @@ Classification:
     <?= $exerciseClassifications['name']; ?>
 <?php endforeach; ?>
 <br/>
-Tags: 
-<?php foreach ($this->exerciseTags as  $key => $exerciseTags) : ?>
-    <?= $exerciseTags['name']; 
-        end($this->exerciseTags);
-        if ($key == key($this->exerciseTags))
-            echo ', ';
-    ?>
-<?php endforeach; ?>
+<?php if(count($this->exerciseTags) > 0): ?>
+    Tags: 
+    <?php foreach ($this->exerciseTags as $key => $exerciseTags) : ?>
+        <?= $exerciseTags['name']; 
+            end($this->exerciseTags);
+            if ($key == key($this->exerciseTags))
+                echo ', ';
+        ?>
+    <?php endforeach; ?>
+<?php endif; ?>
 </small>
 </div>
 
@@ -98,92 +109,10 @@ Tags:
     </div>
     <div id="collapse2" class="panel-collapse collapse in">
     <div class="panel-body">        
-        <ul class="tree">
-                <?php
-                $parent_ids = array();
-                $parent_parent_id = null; //the parent_id of an items parent              
-                $totalOutput = "";
-                
-                foreach ($this->exerciseProgressions as $exerciseProgressions) : 
-                    if($exerciseProgressions->exercise_parent_id == NULL){
-                        array_push($parent_ids, $exerciseProgressions->id);
-                        $totalOutput .= "
-                            <li>
-                                <div class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</div>
-                                {child".$exerciseProgressions->id."}
-                            </li>
-                            ";
-                    } 
-                    // Is child
-                    else if(in_array($exerciseProgressions->exercise_parent_id, $parent_ids)){        
-                        array_push($parent_ids, $exerciseProgressions->id);
-                        array_shift($parent_ids);//remove first elemetn
-
-                        $parent_parent_id = $exerciseProgressions->exercise_parent_id;
-                        
-                        $output = "
-                            <ul>
-                                <li class='{only".$exerciseProgressions->exercise_parent_id."}'>
-                                    <div class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</div>
-                                    {child".$exerciseProgressions->id."}
-                                </li>
-                                {sibling".$exerciseProgressions->exercise_parent_id."}
-                            </ul>";
-
-                        $totalOutput = str_replace(
-                            "{child".$exerciseProgressions->exercise_parent_id."}", 
-                            $output, 
-                            $totalOutput
-                        );
-                    } 
-                    // Is sibling
-                    else if($exerciseProgressions->exercise_parent_id == $parent_parent_id) {
-                        array_push($parent_ids, $exerciseProgressions->id);
-                        
-                        $output = "
-                            <li>
-                                <div class='rank$exerciseProgressions->difficulty'>".$exerciseProgressions->name."</div>
-                                {child".$exerciseProgressions->id."}
-                            </li>
-                            {sibling".$exerciseProgressions->exercise_parent_id."}";
-                       
-                        $totalOutput = str_replace(
-                            "{sibling".$exerciseProgressions->exercise_parent_id."}", 
-                            $output, 
-                            $totalOutput
-                        );     
-                       
-                        $totalOutput = str_replace(
-                            "{only".$exerciseProgressions->exercise_parent_id."}", 
-                            "", 
-                            $totalOutput
-                        );
-                    } else {
-                        //die("should not end up here");
-                    }
-                
-                endforeach;
-                for ($i = 1; $i <= 200; $i++) {
-                    $totalOutput = str_replace(
-                        "{child".$i."}", 
-                        "", 
-                        $totalOutput
-                    ); 
-                    $totalOutput = str_replace(
-                        "{sibling".$i."}", 
-                        "", 
-                        $totalOutput
-                    );  
-                    $totalOutput = str_replace(
-                        "{only".$i."}", 
-                        "only", 
-                        $totalOutput
-                    );
-                }
-                echo $totalOutput;
-                
-                ?>
-          </ul>
+        <?php 
+        echo $this->partial('application/index/progressionChartPartial', 
+                ['exerciseProgressions'=>$this->exerciseProgressions]); 
+        ?>
       </div>
     </div>
   </div>
