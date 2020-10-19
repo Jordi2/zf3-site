@@ -1,3 +1,5 @@
+
+
 <ul class="tree">
     <?php
     $difficultyranking_array  = array(1 => 'Beginner', 2 => 'Intermediate', 3 => 'Advanced', 4 => 'Elite');
@@ -8,6 +10,7 @@
     // hover event: https://stackoverflow.com/questions/41196530/wrap-image-with-div-on-hover-using-jquery
     // show small icon that exercise has variations
     // show small icon for categories e.g. push-up icon, sit-up, squat, pull-up
+    // change hover popup to right with arrow e.g. srs
 
     $parent_ids = array();
     $parent_parent_id = null; //the parent_id of an items parent              
@@ -18,16 +21,16 @@
             array_push($parent_ids, $exerciseProgressions->id);
             $totalOutput .= "
                 <li>
-                    <div class='rank$exerciseProgressions->difficulty primary'>
+                    <a href='".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."' class='rank$exerciseProgressions->difficulty primary'>
                         <div class='text-rank'>".
                             $difficultyranking_array[$exerciseProgressions->difficulty]."
                         </div>".
                         $exerciseProgressions->name."
                         <ul class='dropdown-menu fade-up root'>
-                            <li><a class='dropdown-item' >Variants:</a></li>
+                            <li>Variants:</li>
                             {variant".$exerciseProgressions->id."}
                         </ul>
-                    </div>
+                    </a>
                     {child".$exerciseProgressions->id."}
                 </li>
                 ";
@@ -59,16 +62,16 @@
             $output = "
                 <ul>
                     <li class='{only".$exerciseProgressions->exercise_parent_id."}'>
-                        <div class='rank$exerciseProgressions->difficulty primary'>
+                        <a href='".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."' class='rank$exerciseProgressions->difficulty primary'>
                             <div class='text-rank'>".
                                 $difficultyranking_array[$exerciseProgressions->difficulty]."
                             </div>".
                             $exerciseProgressions->name."
                             <ul class='dropdown-menu fade-up'>
-                                <li><a class='dropdown-item' >Variants:</a></li>
+                                <li>Variants:</li>
                                 {variant".$exerciseProgressions->id."}
                             </ul>
-                        </div>
+                        </a>
                         {child".$exerciseProgressions->id."}
                     </li>
                     {sibling".$exerciseProgressions->exercise_parent_id."}
@@ -86,16 +89,16 @@
 
             $output = "
                 <li>
-                    <div class='rank$exerciseProgressions->difficulty sibling'>
+                    <a href='".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."' class='rank$exerciseProgressions->difficulty sibling'>
                         <div class='text-rank'>".
                             $difficultyranking_array[$exerciseProgressions->difficulty]."
                         </div>".
                         $exerciseProgressions->name."
                         <ul class='dropdown-menu fade-up'>
-                            <li><a class='dropdown-item' >Variants:</a></li>
+                            <li>Variants:</li>
                             {variant".$exerciseProgressions->id."}
                         </ul>
-                    </div>
+                    </a>
                     {child".$exerciseProgressions->id."}
                 </li>
                 {sibling".$exerciseProgressions->exercise_parent_id."}";
