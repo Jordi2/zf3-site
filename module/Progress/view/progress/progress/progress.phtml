@@ -1,18 +1,5 @@
 <h1>Progression Chart</h1>
 
-<script>
-
-window.addEventListener('load', (event) => {
-    var removeEmptyVariantLists = $('.dropdown-menu.fade-up');
-    removeEmptyVariantLists.each(function( index, value ) {
-        if($(value).find('div.variant').length === 0){
-            $(value).addClass('nodisplayever');
-        }
-    });
-});
-
-</script>
-
 <p>intro</p>
 <div id="progressionFilters">
     
@@ -61,7 +48,7 @@ window.addEventListener('load', (event) => {
                 
                         </ul>
 
-    <div class="popover container-drop right in" style="top: 374.5px; left: 424px; display: block;">
+    <div class="popover container-drop right in" style="display: none !important; top: 374.5px; left: 424px; display: block;">
         <div class="arrow"></div>
         <div>
             <h3 class="dropdown-title">Variants:</h3>

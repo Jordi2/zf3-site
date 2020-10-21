@@ -1,4 +1,13 @@
-
+<script>
+    window.addEventListener('load', (event) => {
+        var removeEmptyVariantLists = $('.dropdown-menu.fade-up');
+        removeEmptyVariantLists.each(function( index, value ) {
+            if($(value).find('div.variant').length === 0){
+                $(value).addClass('nodisplayever');
+            }
+        });
+    });
+</script>
 
 <ul class="tree">
     <?php
@@ -15,10 +24,17 @@
     $parent_ids = array();
     $parent_parent_id = null; //the parent_id of an items parent              
     $totalOutput = "";
+    $currentClassification = 0;
 
     foreach ($this->exerciseProgressions as $exerciseProgressions) : 
         if($exerciseProgressions->exercise_parent_id == NULL){
             array_push($parent_ids, $exerciseProgressions->id);
+            if($currentClassification != $exerciseProgressions->classifications_id) {
+                $totalOutput .= "<hr/>";
+                $currentClassification = $exerciseProgressions->classifications_id;
+            }
+            
+            
             $totalOutput .= "
                 <li>
                     <a href='".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."' class='rank$exerciseProgressions->difficulty primary'>
