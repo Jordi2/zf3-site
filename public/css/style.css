@@ -69,6 +69,32 @@
 
 /* end menu */
 
+/* homepage */
+
+.card-deck .card .card-body p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}
+
+/* end homepage */
+
+/* detail page */
+
+#examples {
+    margin-right: 0.5%;
+}
+
+#examples, #readings {
+    background-image: linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%);
+    max-width: 49.75%;
+}
+
+
+/* end detail page */
+
 /* progression page */
 
 #progressionFilters {

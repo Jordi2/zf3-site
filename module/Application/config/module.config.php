@@ -86,7 +86,7 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            Controller\IndexController::class => InvokableFactory::class,
+            Controller\IndexController::class,
         ],
     ],
     'view_manager' => [

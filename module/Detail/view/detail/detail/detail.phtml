@@ -74,9 +74,9 @@ Classification:
 </div>
 <div id="readingscontent" class="row nodisplay">
     <?php foreach ($this->exerciseReadings as $exerciseReadings) : ?>
-        <div class="col-md-9" style="text-align: center;"><?= $exerciseReadings->desc; ?></div>
+        <div class="col-md-8" style="text-align: center;"><?= $exerciseReadings->desc; ?></div>
         <div class="col-md-2"><a href="<?= $exerciseReadings->url; ?>"><?= $exerciseReadings->urlName; ?></a></div>
-        <div class="col-md-1"><a href="<?= $exerciseReadings->archive; ?>">archive</a></div>
+        <div class="col-md-2"><a href="<?= $exerciseReadings->archive; ?>">archive</a></div>
     <?php endforeach; ?>
 </div>
 

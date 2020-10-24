@@ -16,35 +16,35 @@
 
 <div class="card-deck">
     <div class="card">
-        <h2 class="card-header">Box 1</h2>
+        <h2 class="card-header"><?= $this->exercise1->name ?></h2>
         <div class="card-body">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mauris sagittis, egestas lectus ac, auctor mi. In feugiat mollis tortor et tincidunt. Nulla eget accumsan lacus. Donec rhoncus ornare commodo. Ut et neque nunc. Nunc vitae consequat turpis, vitae ultricies arcu.
+                <?= $this->exercise1->example ?>
             </p>
 
-            <a class="btn btn-primary" href="https://getlaminas.org/" target="_blank">Button 1 &raquo;</a>
+            <a class="btn btn-primary" href="<?= $this->url('detail', ['action' => 'detail', 'id' => $this->exercise1->id])?>" target="_self">Visit &raquo;</a>
         </div>
     </div>
 
     <div class="card">
-        <h2 class="card-header">Box 2</h2>
+        <h2 class="card-header"><?= $this->exercise2->name ?></h2>
         <div class="card-body">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mauris sagittis, egestas lectus ac, auctor mi. In feugiat mollis tortor et tincidunt. Nulla eget accumsan lacus. Donec rhoncus ornare commodo. Ut et neque nunc. Nunc vitae consequat turpis, vitae ultricies arcu.
+                 <?= $this->exercise2->example ?>
             </p>
 
-            <a class="btn btn-primary" href="https://packagist.org/?tags=module~zf2~zendframework~zend%20framework~zend%20framework%202~zf3~zf~zend~laminas" target="_blank">Button 2 &raquo;</a>
+            <a class="btn btn-primary" href="<?= $this->url('detail', ['action' => 'detail', 'id' => $this->exercise1->id])?>" target="_self">Visit &raquo;</a>
         </div>
     </div>
 
     <div class="card">
-        <h2 class="card-header">Box 3</h2>
+        <h2 class="card-header"><?= $this->exercise3->name ?></h2>
         <div class="card-body">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mauris sagittis, egestas lectus ac, auctor mi. In feugiat mollis tortor et tincidunt. Nulla eget accumsan lacus. Donec rhoncus ornare commodo. Ut et neque nunc. Nunc vitae consequat turpis, vitae ultricies arcu.
+                 <?= $this->exercise3->example ?>
             </p>
 
-            <a class="btn btn-primary" href="https://laminas.dev/chat" target="_blank">Button 3 &raquo;</a>
+            <a class="btn btn-primary" href="<?= $this->url('detail', ['action' => 'detail', 'id' => $this->exercise1->id])?>" target="_self">Visit &raquo;</a>
         </div>
     </div>
 </div>
