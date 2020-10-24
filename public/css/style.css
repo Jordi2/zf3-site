@@ -312,6 +312,99 @@ span.test {
     margin-right: 5px;
 }
 
+/* progression tree tabs */
+
+nav.main-navigation {
+  overflow: hidden;
+  position: relative;
+  padding: 0 0 0 1rem;
+}
+
+nav.main-navigation ul {
+    list-style: none;
+    padding: 0;
+}
+  
+nav.main-navigation  li {
+    float: left;
+    width: 12rem;
+    height: 5rem;
+    margin: 0 0 0 -1rem;
+    position: relative; 
+}
+
+nav.main-navigation ul li.active {
+    z-index: 6; 
+}
+  
+nav.main-navigation  a {
+    position: relative;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+nav.main-navigation svg {
+    width: 120%;
+    height: 100%;
+    /* for tab shadows
+    also screws up Firefox */
+    filter: url(#shadow);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+nav.main-navigation span {
+    position: relative;
+    padding: 1rem 0 0 3.3rem;
+    z-index: 2;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+nav.main-navigation .tab-1 {
+    z-index: 4;
+}
+
+nav.main-navigation .tab-1   svg {
+    fill: url(#tab-1-bg); 
+}
+  
+nav.main-navigation .tab-2 {
+   z-index: 3;
+}
+
+nav.main-navigation .tab-2 svg {
+    fill: url(#tab-2-bg); 
+}
+  
+nav.main-navigation .tab-3 {
+    z-index: 2;
+}
+  
+nav.main-navigation .tab-3 svg {
+    fill: url(#tab-3-bg);
+}
+
+nav.main-navigation .tab-4 {
+    z-index: 1;  
+}
+  
+nav.main-navigation .tab-4 svg {
+    fill: url(#tab-4-bg);
+}
+
+/* end progression tree tabs */
+
 /* end progression tree */
 
 /* accordion  */

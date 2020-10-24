@@ -187,9 +187,6 @@ class ExercisesTable
                     ep.isVariation = false ';
         }
         
-        
-        var_dump($filterQuery);
-        
         $results = $this->dbAdapter->query('
                 WITH RECURSIVE employee_paths AS
                 ( 
