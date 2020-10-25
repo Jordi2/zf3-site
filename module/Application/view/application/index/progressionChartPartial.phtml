@@ -15,7 +15,7 @@
 
             $(this).addClass("active");
 
-            $(".main-content").css({
+            $(".tree-container").css({
                 "background": $(this).data("bg-color")
             });
 
@@ -107,8 +107,9 @@
 
 
 
-
+<div class="tree-container">
 <ul class="tree">
+    
     <?php
     $difficultyranking_array  = array(1 => 'Beginner', 2 => 'Intermediate', 3 => 'Advanced', 4 => 'Elite');
 
@@ -260,3 +261,4 @@
 
     ?>
 </ul>
+    </div>

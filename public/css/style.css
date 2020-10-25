@@ -161,6 +161,9 @@ span.test {
   list-style: none;
   padding-inline-start: 20px;
   margin-bottom: 50px;
+  background: white;
+  padding: 3rem;
+  border-radius: 8px;
 }
 .tree * { 
   margin: 0; 
@@ -401,6 +404,16 @@ nav.main-navigation .tab-4 {
   
 nav.main-navigation .tab-4 svg {
     fill: url(#tab-4-bg);
+}
+
+.tree-container{
+  position: relative;
+  z-index: 10;
+  background: rgba(118, 160, 192, 1.0);
+  margin: -1.6rem 0 0 0;
+  padding: 3rem;
+  border-radius: 15px;
+  border-top-left-radius: 0;
 }
 
 /* end progression tree tabs */
