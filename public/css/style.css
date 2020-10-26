@@ -216,11 +216,14 @@ span.test {
     width: 2vw;
 }
 /* No connector for root element(s) */
-.tree > li {
+.tree > li,
+.tree > li{
     padding-left: 0;
 }
 .tree > li::before,
-.tree > li::after {
+.tree > li::after,
+.tree >  li::before,
+.tree >  li::after{
     display: none;
 }
 

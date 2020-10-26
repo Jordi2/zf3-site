@@ -124,19 +124,21 @@
     $parent_ids = array();
     $parent_parent_id = null; //the parent_id of an items parent              
     $totalOutput = "";
-    $currentClassification = 0;
+    $currentClassification = 100;
 
     foreach ($this->exerciseProgressions as $exerciseProgressions) : 
         if($exerciseProgressions->exercise_parent_id == NULL){
             array_push($parent_ids, $exerciseProgressions->id);
             if($currentClassification != $exerciseProgressions->classifications_id) {
-                $totalOutput .= "<hr/>";
+                // Mark the different classifications
+                $totalOutput .= "<li class='classification$exerciseProgressions->classifications_id'>";
                 $currentClassification = $exerciseProgressions->classifications_id;
             }
-            
+            else {
+                $totalOutput .= "<li>";
+            }
             
             $totalOutput .= "
-                <li>
                     <a href='".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."' class='rank$exerciseProgressions->difficulty primary'>
                         <div class='text-rank'>".
                             $difficultyranking_array[$exerciseProgressions->difficulty]."
