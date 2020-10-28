@@ -1,14 +1,30 @@
 <script>
     window.addEventListener('load', (event) => {
+        // Variants
         var removeEmptyVariantLists = $('.dropdown-menu.fade-up');
         removeEmptyVariantLists.each(function( index, value ) {
             if($(value).find('div.variant').length === 0){
                 $(value).addClass('nodisplayever');
             }
         });
-        
+
+        // menu items
         var menuItems = $('.main-navigation li');
 
+        // set colors
+        var myStringArray = [
+            "118, 160, 192, 1.0",
+            "112, 153, 213, 1.0",
+            "43, 130, 197, 1.0",
+            "71, 194, 243, 1.0",
+            "71, 194, 243, 1.0",
+            "71, 194, 243, 1.0"];
+        
+        for (var i = 0; i < menuItems.length; i++) {
+            menuItems[i].setAttribute('data-bg-color', 'rgba('+myStringArray[i]+')')
+        }
+
+        // set menu click event
         menuItems.on("click", function(event) {
 
             menuItems.removeClass("active");
@@ -44,18 +60,23 @@
       <stop offset="0%" style="stop-color: rgba(136, 195, 229, 1.0);" />
       <stop offset="100%" style="stop-color: rgba(118, 160, 192, 1.0);" />
     </linearGradient>
-    
     <linearGradient id="tab-2-bg" x1="0%" y1="0%" x2="0%" y2="65%">
       <stop offset="0%" style="stop-color: rgba(149, 190, 233, 1.0);" />
       <stop offset="100%" style="stop-color: rgba(112, 153, 213, 1.0);" />
     </linearGradient>
-    
     <linearGradient id="tab-3-bg" x1="0%" y1="0%" x2="0%" y2="65%">
       <stop offset="0%" style="stop-color: rgba(61, 149, 218, 1.0);" />
       <stop offset="100%" style="stop-color: rgba(43, 130, 197, 1.0);" />
     </linearGradient>
-    
     <linearGradient id="tab-4-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+      <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
+      <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
+    </linearGradient>
+    <linearGradient id="tab-5-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+      <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
+      <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
+    </linearGradient>
+    <linearGradient id="tab-6-bg" x1="0%" y1="0%" x2="0%" y2="65%">
       <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
       <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
     </linearGradient>
@@ -69,42 +90,22 @@
 
 <nav role="navigation" class="main-navigation">
   <ul>
-    <li class="tab-1 active" data-bg-color="rgba(118, 160, 192, 1.0)">
+    <?php
+    foreach ($this->classifications as $classification) : 
+    ?>
+    <li class="tab-<?= $classification['id']; ?> active">
       <a href="#home">
-        <span>Home</span>
+        <span><?= $classification['name']; ?></span>
         <svg viewBox="0 0 122 40">
            <use xlink:href="#tab-shape"></use>
         </svg>
       </a>
     </li>
-    <li class="tab-2" data-bg-color="rgba(112, 153, 213, 1.0)">
-      <a href="#about">
-        <span>About</span>
-        <svg viewBox="0 0 122 40">
-          <use xlink:href="#tab-shape"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="tab-3" data-bg-color="rgba(43, 130, 197, 1.0)">
-      <a href="#clients">
-        <span>Clients</span>
-        <svg viewBox="0 0 122 40">
-          <use xlink:href="#tab-shape"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="tab-4" data-bg-color="rgba(71, 194, 243, 1.0)">
-      <a href="#contact">
-        <span>Contact</span>
-        <svg viewBox="0 0 122 40">
-          <use xlink:href="#tab-shape"></use>
-        </svg>
-      </a>
-    </li>
+    <?php
+    endforeach;
+    ?>
   </ul>
 </nav>
-
-
 
 
 <div class="tree-container">
