@@ -28,6 +28,15 @@
     clear: both;
 }
 
+
+body div.container {
+    min-height: 800px;
+}
+
+body nav.navbar div.container {
+    min-height: auto;
+}
+
 /* end general */
 
 /* menu */
@@ -318,6 +327,8 @@ span.test {
     margin-right: 5px;
 }
 
+
+
 /* progression tree tabs */
 
 nav.main-navigation {
@@ -351,7 +362,7 @@ nav.main-navigation  a {
     height: 100%;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
@@ -370,7 +381,7 @@ nav.main-navigation svg {
 
 nav.main-navigation span {
     position: relative;
-    padding: 1rem 0 0 3.3rem;
+    padding: 1rem 0 0 1rem;
     z-index: 2;
     display: inline-block;
     width: 100%;
@@ -407,6 +418,22 @@ nav.main-navigation .tab-4 {
   
 nav.main-navigation .tab-4 svg {
     fill: url(#tab-4-bg);
+}
+
+nav.main-navigation .tab-5 {
+    z-index: 1;  
+}
+  
+nav.main-navigation .tab-5 svg {
+    fill: url(#tab-5-bg);
+}
+
+nav.main-navigation .tab-6 {
+    z-index: 1;  
+}
+  
+nav.main-navigation .tab-6 svg {
+    fill: url(#tab-6-bg);
 }
 
 .tree-container{

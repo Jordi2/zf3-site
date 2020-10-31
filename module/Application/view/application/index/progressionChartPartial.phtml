@@ -34,6 +34,16 @@
             $(".tree-container").css({
                 "background": $(this).data("bg-color")
             });
+            
+            // hide all elements
+            $(".classification").css({
+                "display": "none"
+            });
+            
+            // only show chosen classification
+            $(".classification"+$(this).data("classification-id")).css({
+                "display": "flex"
+            });
 
             event.preventDefault();
         });
@@ -55,7 +65,7 @@
       <feOffset dx="5" dy="1" result="shadow"/>
       <feComposite in="SourceGraphic" />
     </filter>
-        
+        <!-- red  orange yellow purple   green blue   -->
     <linearGradient id="tab-1-bg" x1="0%" y1="0%" x2="0%" y2="65%">
       <stop offset="0%" style="stop-color: rgba(136, 195, 229, 1.0);" />
       <stop offset="100%" style="stop-color: rgba(118, 160, 192, 1.0);" />
@@ -93,7 +103,7 @@
     <?php
     foreach ($this->classifications as $classification) : 
     ?>
-    <li class="tab-<?= $classification['id']; ?> active">
+    <li class="tab-<?= $classification['id']; ?> active" data-classification-id="<?= $classification['id']; ?>">
       <a href="#home">
         <span><?= $classification['name']; ?></span>
         <svg viewBox="0 0 122 40">
@@ -130,14 +140,11 @@
     foreach ($this->exerciseProgressions as $exerciseProgressions) : 
         if($exerciseProgressions->exercise_parent_id == NULL){
             array_push($parent_ids, $exerciseProgressions->id);
-            if($currentClassification != $exerciseProgressions->classifications_id) {
-                // Mark the different classifications
-                $totalOutput .= "<li class='classification$exerciseProgressions->classifications_id'>";
+            if($currentClassification != $exerciseProgressions->classifications_id) 
                 $currentClassification = $exerciseProgressions->classifications_id;
-            }
-            else {
-                $totalOutput .= "<li>";
-            }
+            
+            // Mark the different classifications
+            $totalOutput .= "<li class='classification classification$exerciseProgressions->classifications_id'>";
             
             $totalOutput .= "
                     <a href='".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."' class='rank$exerciseProgressions->difficulty primary'>

@@ -60,6 +60,7 @@ class DetailController extends AbstractActionController
             //$albumLinks = $this->table2->getAlbumLinkByAlbum($id);
             $exerciseNames = $this->table->getExercise($id, $this->adapter);
             $exerciseClassifications = $this->table->getAllClassificationsByExerciseId($id, $this->adapter);
+            $exerciseClassifications2 = $this->table->getAllClassificationsByExerciseId($id, $this->adapter);
             $exerciseTags = $this->table->getAllTagForExerciseId($id, $this->adapter);
             $exerciseExamples = $this->table->getExercise($id, $this->adapter);
             $exerciseReadings = $this->table->getAllReadingsForExerciseId($id, $this->adapter);
@@ -76,6 +77,7 @@ class DetailController extends AbstractActionController
         return new ViewModel([
             'exerciseNames' => $exerciseNames, 
             'exerciseClassifications' => $exerciseClassifications,
+            'exerciseClassifications2' => $exerciseClassifications2,
             'exerciseTags' => $exerciseTags,
             'exerciseExamples' => $exerciseExamples,
             'exerciseReadings' => $exerciseReadings,

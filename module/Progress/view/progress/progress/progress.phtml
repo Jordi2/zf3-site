@@ -9,11 +9,10 @@
         <?php
         foreach ($this->classifications as $classification) : 
         ?>
-            <input type="checkbox" name="classification<?= $classification['id']; ?>" <?= $classification['checked']; ?> value="<?= $classification['id']; ?>"><?= $classification['name']; ?>
+            <input style="display:none !important;" type="checkbox" name="classification<?= $classification['id']; ?>" <?= $classification['checked']; ?> value="<?= $classification['id']; ?>">
         <?php
         endforeach;
         ?>
-        <hr>      
          <?php
         foreach ($this->tags as $tag) : 
         ?>
@@ -21,7 +20,7 @@
         <?php
         endforeach;
         ?>
-        <hr> 
+            </br>
         <input type="submit" value="Submit now" />      
     </fieldset>      
 </form>
