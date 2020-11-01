@@ -26,6 +26,7 @@ class DetailController extends AbstractActionController
         try {
             $exerciseName = $this->table->getExercise($id);
             $exerciseClassifications = $this->table->getAllClassificationsByExerciseId($id);
+            $exerciseClassifications2 = $this->table->getAllClassificationsByExerciseId($id);
             $exerciseTags = $this->table->getAllTagForExerciseId($id);
             $exerciseExamples = $this->table->getExerciseTemp($id);
             $exerciseReadings = $this->table->getAllReadingsForExerciseId($id);
@@ -39,6 +40,7 @@ class DetailController extends AbstractActionController
         return new ViewModel([
             'exerciseName' => $exerciseName, 
             'exerciseClassifications' => $exerciseClassifications,
+            'exerciseClassifications2' => $exerciseClassifications2,
             'exerciseTags' => $exerciseTags,
             'exerciseExamples' => $exerciseExamples,
             'exerciseReadings' => $exerciseReadings,
@@ -60,7 +62,7 @@ class DetailController extends AbstractActionController
             //$albumLinks = $this->table2->getAlbumLinkByAlbum($id);
             $exerciseNames = $this->table->getExercise($id, $this->adapter);
             $exerciseClassifications = $this->table->getAllClassificationsByExerciseId($id, $this->adapter);
-            $exerciseClassifications2 = $this->table->getAllClassificationsByExerciseId($id, $this->adapter);
+            $exerciseClassifications2 = $this->table->getAllClassificationsByExerciseId($id, $this->adapter)->toArray();
             $exerciseTags = $this->table->getAllTagForExerciseId($id, $this->adapter);
             $exerciseExamples = $this->table->getExercise($id, $this->adapter);
             $exerciseReadings = $this->table->getAllReadingsForExerciseId($id, $this->adapter);
@@ -69,11 +71,7 @@ class DetailController extends AbstractActionController
         } catch (\Exception $e) {
             return $this->redirect()->toRoute('album', ['action' => 'index']);
         }
-        /*foreach ($exerciseNames as $row)
-        {
-            echo $row['name'] . "\n";
-        }*/
-        //die();
+
         return new ViewModel([
             'exerciseNames' => $exerciseNames, 
             'exerciseClassifications' => $exerciseClassifications,

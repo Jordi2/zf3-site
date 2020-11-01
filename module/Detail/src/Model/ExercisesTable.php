@@ -69,7 +69,6 @@ class ExercisesTable
 
         return $resultSet;
         
-        
         /*$exerciseID = (int) $id;
         
         $sql = new Sql($this->dbAdapter);
