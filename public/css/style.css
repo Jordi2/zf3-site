@@ -101,6 +101,14 @@ body nav.navbar div.container {
     max-width: 49.75%;
 }
 
+#examples.disabled-button,
+#readings.disabled-button
+{
+    background-image: none;
+    color: grey;
+    cursor: not-allowed;
+}
+
 
 /* end detail page */
 

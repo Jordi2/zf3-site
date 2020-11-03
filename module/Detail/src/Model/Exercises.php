@@ -12,6 +12,7 @@ class Exercises implements InputFilterAwareInterface
     public $name;
     public $altNames;
     public $example;
+    public $media;
     public $isVariation;
     public $exercise_parent_id;
     public $classifications_id;
@@ -22,6 +23,7 @@ class Exercises implements InputFilterAwareInterface
         $this->name = !empty($data['name']) ? $data['name'] : null;
         $this->altNames  = !empty($data['altNames']) ? $data['altNames'] : null;
         $this->example     = !empty($data['example']) ? $data['example'] : null;
+        $this->media     = !empty($data['media']) ? $data['media'] : null;
         $this->isVariation = !empty($data['isVariation']) ? $data['isVariation'] : null;
         $this->exercise_parent_id  = !empty($data['exercise_parent_id']) ? $data['exercise_parent_id'] : null;
         $this->classifications_id = !empty($data['classifications_id']) ? $data['classifications_id'] : null;
@@ -34,6 +36,7 @@ class Exercises implements InputFilterAwareInterface
             'name' => $this->name,
             'altNames'  => $this->altNames,
             'example'  => $this->example,
+            'media'  => $this->media,
             'isVariation'  => $this->isVariation,
             'exercise_parent_id'  => $this->exercise_parent_id,
             'classifications_id'  => $this->classifications_id,

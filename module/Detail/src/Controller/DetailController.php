@@ -24,7 +24,7 @@ class DetailController extends AbstractActionController
         }
         
         try {
-            $exerciseName = $this->table->getExercise($id);
+            $exerciseCurrentRow = $this->table->getExercise($id);
             $exerciseClassifications = $this->table->getAllClassificationsByExerciseId($id);
             $exerciseClassifications2 = $this->table->getAllClassificationsByExerciseId($id);
             $exerciseTags = $this->table->getAllTagForExerciseId($id);
@@ -38,7 +38,7 @@ class DetailController extends AbstractActionController
         }
         
         return new ViewModel([
-            'exerciseName' => $exerciseName, 
+            'exerciseCurrentRow' => $exerciseCurrentRow, 
             'exerciseClassifications' => $exerciseClassifications,
             'exerciseClassifications2' => $exerciseClassifications2,
             'exerciseTags' => $exerciseTags,
