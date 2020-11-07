@@ -26,7 +26,7 @@ class DetailController extends AbstractActionController
         try {
             $exerciseCurrentRow = $this->table->getExercise($id);
             $exerciseClassifications = $this->table->getAllClassificationsByExerciseId($id);
-            $exerciseClassifications2 = $this->table->getAllClassificationsByExerciseId($id);
+            $exerciseClassifications2 = $this->table->getAllClassificationsByExerciseId($id)->toArray();
             $exerciseTags = $this->table->getAllTagForExerciseId($id);
             $exerciseExamples = $this->table->getExerciseTemp($id);
             $exerciseReadings = $this->table->getAllReadingsForExerciseId($id);

@@ -78,7 +78,7 @@ if(count($this->exerciseReadings) > 0)
 </div>
 
 <div>
-    <div style="float: right; margin-left: 20px;">
+    <div class="detail-media">
         <?php if($this->exerciseCurrentRow->media !== null && $this->exerciseCurrentRow->media !== ''): ?>
             <iframe width="560" height="315" src="<?=$this->exerciseCurrentRow->media; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
          <?php endif; ?>

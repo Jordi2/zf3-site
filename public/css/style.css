@@ -110,6 +110,11 @@ body nav.navbar div.container {
 }
 
 
+.detail-media{
+        float: right;
+        margin-left: 20px;
+    }
+
 /* end detail page */
 
 /* progression page */
@@ -944,3 +949,22 @@ a .count {
     float: right;
     font-weight: bold;
 }*/
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+    /*detail*/
+    
+    .row{
+        margin-left: 0;
+    }
+    .detail-media{
+        float: none;
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    /*end detail*/
+}

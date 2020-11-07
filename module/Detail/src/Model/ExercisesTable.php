@@ -57,7 +57,18 @@ class ExercisesTable
     
     public function getAllClassificationsByExerciseId($id)
     {
-        $where = new Where();
+        $sql = new Sql($this->dbAdapter);
+        $select2 = $sql->select();
+        $select2->from('classifications');
+        $select2->join('exercises', 'classifications.id = exercises.classifications_id', array(), 'inner');
+        $select2->where(array('exercises.id' => $id));
+
+        $selectString = $sql->getSqlStringForSqlObject($select2);
+        $results = $this->dbAdapter->query($selectString, $this->dbAdapter::QUERY_MODE_EXECUTE);
+
+        return $results;
+        
+        /*$where = new Where();
         $where->equalTo('exercises.id', $id);
         $sqlSelect = $this->tableGateway->getSql()->select();
         //$sqlSelect->columns(array());
@@ -67,7 +78,7 @@ class ExercisesTable
         $statement = $this->tableGateway->getSql()->prepareStatementForSqlObject($sqlSelect);
         $resultSet = $statement->execute();
 
-        return $resultSet;
+        return $resultSet;*/
         
         /*$exerciseID = (int) $id;
         
