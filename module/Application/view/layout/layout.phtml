@@ -19,10 +19,13 @@
             ->prependStylesheet($this->basePath('css/style.css'))
             ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
             ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+            ->prependStylesheet($this->basePath('css/tabs.css'))
         ?>
         
         <!-- Scripts -->
         <?= $this->headScript()->appendFile($this->basePath().'/js/jquery-3.5.1.min.js'); ?>
+        <?= $this->headScript()->appendFile($this->basePath().'/js/cbpFWTabs.js'); ?>
+
         
     </head>
     <body>

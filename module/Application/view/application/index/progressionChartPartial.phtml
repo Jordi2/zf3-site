@@ -97,18 +97,18 @@
 			z">
   
 </svg>
-
-<nav role="navigation" class="main-navigation">
+<div class="tabs tabs-style-shape">
+<nav role="navigation" class="">
   <ul>
     <?php
     foreach ($this->classifications as $classification) : 
     ?>
-    <li class="tab-<?= $classification['id']; ?> active" data-classification-id="<?= $classification['id']; ?>">
-      <a href="#home">
+    <li class="">
+      <a href="#section-shape-<?= $classification['id']; ?>">
+        
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
         <span><?= $classification['name']; ?></span>
-        <svg viewBox="0 0 122 40">
-           <use xlink:href="#tab-shape"></use>
-        </svg>
       </a>
     </li>
     <?php
@@ -119,7 +119,8 @@
 
 
 <div class="tree-container">
-<ul class="tree">
+    <div class="content-wrap">
+
     
     <?php
     $difficultyranking_array  = array(1 => 'Beginner', 2 => 'Intermediate', 3 => 'Advanced', 4 => 'Elite');
@@ -141,7 +142,12 @@
         if($exerciseProgressions->exercise_parent_id == NULL){
             array_push($parent_ids, $exerciseProgressions->id);
             if($currentClassification != $exerciseProgressions->classifications_id) 
+            {
+                if($currentClassification != 100)
+                    $totalOutput .= "</ul>";
                 $currentClassification = $exerciseProgressions->classifications_id;
+                $totalOutput .= "<ul class='tree $exerciseProgressions->classifications_id'>";
+            }
             
             // Mark the different classifications
             $totalOutput .= "<li class='classification classification$exerciseProgressions->classifications_id'>";
@@ -267,8 +273,23 @@
             $totalOutput
         );
     }
-    echo $totalOutput;
+    echo $totalOutput . "</ul>";
 
     ?>
-</ul>
-    </div>
+
+        </div>
+</div>
+</div><!-- /tabs -->
+<svg class="hidden">
+    <defs>
+        <path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"/>
+    </defs>
+</svg>
+
+<script>
+    (function() {
+        [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+                new CBPFWTabs( el );
+        });
+    })();
+</script>
