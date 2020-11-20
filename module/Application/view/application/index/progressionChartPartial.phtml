@@ -9,7 +9,7 @@
         });
 
         // menu items
-        var menuItems = $('.main-navigation li');
+        /*var menuItems = $('.main-navigation li');
 
         // set colors
         var myStringArray = [
@@ -22,38 +22,12 @@
         
         for (var i = 0; i < menuItems.length; i++) {
             menuItems[i].setAttribute('data-bg-color', 'rgba('+myStringArray[i]+')')
-        }
-
-        // set menu click event
-        menuItems.on("click", function(event) {
-
-            menuItems.removeClass("active");
-
-            $(this).addClass("active");
-
-            $(".tree-container").css({
-                "background": $(this).data("bg-color")
-            });
-            
-            // hide all elements
-            $(".classification").css({
-                "display": "none"
-            });
-            
-            // only show chosen classification
-            $(".classification"+$(this).data("classification-id")).css({
-                "display": "flex"
-            });
-
-            event.preventDefault();
-        });
+        }*/
     });
 </script>
 
-<svg height="0" width="0" style="position: absolute; margin-left: -100%;">
-  
+<svg height="0" width="0" style="position: absolute; margin-left: -100%;"> 
   <defs>
-    
     <filter id='shadow'>
       <feComponentTransfer in="SourceGraphic">
         <feFuncR type="discrete" tableValues="0"/>
@@ -90,13 +64,11 @@
       <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
       <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
     </linearGradient>
-    
-  </defs>
-  
+  </defs
   <path id="tab-shape" class="tab-shape" d="M116.486,29.036c-23.582-8-14.821-29-42.018-29h-62.4C5.441,0.036,0,5.376,0,12.003v28.033h122v-11H116.486
 			z">
-  
 </svg>
+<br />
 <div class="tabs tabs-style-shape">
 <nav role="navigation" class="">
   <ul>
@@ -105,7 +77,6 @@
     ?>
     <li class="">
       <a href="#section-shape-<?= $classification['id']; ?>">
-        
         <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
         <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
         <span><?= $classification['name']; ?></span>
@@ -117,11 +88,9 @@
   </ul>
 </nav>
 
-
 <div class="tree-container">
     <div class="content-wrap">
 
-    
     <?php
     $difficultyranking_array  = array(1 => 'Beginner', 2 => 'Intermediate', 3 => 'Advanced', 4 => 'Elite');
 
@@ -276,8 +245,7 @@
     echo $totalOutput . "</ul>";
 
     ?>
-
-        </div>
+    </div>
 </div>
 </div><!-- /tabs -->
 <svg class="hidden">
@@ -289,7 +257,7 @@
 <script>
     (function() {
         [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
-                new CBPFWTabs( el );
+            new CBPFWTabs( el );
         });
     })();
 </script>

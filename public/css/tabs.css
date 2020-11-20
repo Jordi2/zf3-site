@@ -201,11 +201,12 @@ ul.tree.content-current {
 }
 
 .tabs-style-shape nav li.tab-current a span {
-	background: #fff;
+	background: rgba(118, 160, 192, 1.0);
+        color: #fff;
 }
 
 .tabs-style-shape nav li.tab-current a svg {
-	fill: #fff;
+	fill: rgba(118, 160, 192, 1.0);
 }
 
 .tabs-style-shape .content-wrap {

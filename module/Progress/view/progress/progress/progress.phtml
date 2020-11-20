@@ -17,7 +17,9 @@ The progressions below are further sorted by categories of movements that tend t
          <?php
         foreach ($this->tags as $tag) : 
         ?>
-            <input type="checkbox" name="tag<?= $tag['id']; ?>" <?= $tag['checked']; ?> value="<?= $tag['id']; ?>"><?= $tag['name']; ?>
+            
+            <input type="checkbox" id="tag<?= $tag['id']; ?>" class="checkbox" name="tag<?= $tag['id']; ?>" <?= $tag['checked']; ?> value="<?= $tag['id']; ?>"/>
+            <label for="tag<?= $tag['id']; ?>"><?= $tag['name']; ?></label>
         <?php
         endforeach;
         ?>
