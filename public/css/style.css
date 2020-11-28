@@ -358,34 +358,45 @@ span.test {
     height: 100%;
 }
 /* Ranking colors*/
+.tree .rank1,
+.tree .rank2,
+.tree .rank3,
+.tree .rank4 {
+    transition: .3s;
+}
+
 .tree .rank1{
     color: #3ce717;
+    color: #80b826;
 }
 .tree .rank2{
-    color: #3490ed;
+    color: #5d83cd;
 }
 .tree .rank3{
-    color: #eda434;
+    color: #F57C00;
 }
 .tree .rank4{
-    color: #d32036;
+    color: #b72c30;
 }
 
 .tree .rank1:hover {
-    background: #3ce717;
-    color: cadetblue;
+    background: #3f6700;
+    color: #daeabf;
+
 }
 .tree .rank2:hover {
-    background: #3490ed;
-    color: grey;
+    background: #264176;
+    color: #cfdbf0;
+
 }
 .tree .rank3:hover {
-    background: #eda434;
-    color: cadetblue;
+    background: #FFA726;
+    color: #FFE0B2;
+
 }
 .tree .rank4:hover {
-    background: #d32036;
-    color: cadetblue;
+    background: #aa070b;
+    color: #eac1c2;
 }
 
 .tree .only::before {
@@ -1053,3 +1064,36 @@ a .count {
     
     /*end detail*/
 }
+
+
+
+/**/
+
+.sumbit-button {
+  padding: 20px;
+  border: 2px solid black;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  overflow:hidden;
+  transition: .3s;
+    font-family: 'Lato', sans-serif;
+color: black;
+}
+.sumbit-button:after {
+  position: absolute;
+  transition: .3s;
+  content: '';
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  height: 3px;
+  background: black;
+}
+.sumbit-button:hover {
+  cursor: pointer;
+  box-shadow: inset 0px 0px 0px 3px black;
+}
+
+    
+  
