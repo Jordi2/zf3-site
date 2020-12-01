@@ -139,6 +139,11 @@ ul.tree.content-current {
 	padding: 0;
 	color: #fff;
 	font-weight: 500;
+      
+}
+
+.tabs-style-shape nav li a:first-child {
+      
 }
 
 .tabs-style-shape nav li:first-child a span {
@@ -213,7 +218,7 @@ ul.tree.content-current {
 	background: #fff;
 }
 
-@media screen and (max-width: 58em) {
+@media screen and (max-width: 1200px) {
 	.tabs-style-shape nav ul {
 		display: block;
 		padding-top: 1.5em;
@@ -237,7 +242,7 @@ ul.tree.content-current {
 		line-height: 1;
 	}
 	.tabs-style-shape nav ul li:last-child a span {
-		padding: 1.25em 0 !important;
+		/*padding: 1.25em 0 !important;*/
 	}
 	.tabs-style-shape nav ul li.tab-current {
 		z-index: 1;

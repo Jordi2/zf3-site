@@ -555,6 +555,27 @@ nav.main-navigation .tab-6 svg {
   border-top-left-radius: 0;
 }
 
+.tree-container .content-wrap{
+  overflow-x: scroll;
+}
+
+.tree-container .content-wrap::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+.tree-container .content-wrap::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+.tree-container .content-wrap::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+}
+
 /* end progression tree tabs */
 
 /* end progression tree */
@@ -1094,6 +1115,3 @@ color: black;
   cursor: pointer;
   box-shadow: inset 0px 0px 0px 3px black;
 }
-
-    
-  
