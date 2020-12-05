@@ -411,9 +411,9 @@ span.test {
     top: 50%;
     left: 50%;
     position: absolute;
-    display: block;
     padding: 0;
     display: none;
+    display:block;
 }
 
 .tree .dropdown-menu:before,
@@ -429,13 +429,68 @@ span.test {
 .tree .text-rank {
     position: absolute; 
     top: 0; 
-    right: 0; 
+    right: 15px; 
     text-align:right;
     opacity:0.5;
     font-size:0.8em;
     margin-right: 5px;
 }
 
+.tree svg {
+    position:absolute;
+    top: 5px;
+    right: 5px;
+    width:10px;
+    height:10px;
+}
+
+.tree .rank1.variant svg {
+    fill: #80b826;
+    stroke: #80b826;
+}
+
+.tree .rank2.variant svg {
+    fill: #5d83cd;
+    stroke: #5d83cd;
+}
+
+.tree .rank3.variant svg {
+    fill: #F57C00;
+    stroke: #F57C00;
+}
+
+.tree .rank4.variant svg {
+    fill: #b72c30;
+    stroke: #b72c30;
+}
+
+.tree .rank1.variant:hover svg {
+    fill: #daeabf;
+    stroke: #daeabf;
+}
+
+.tree .rank2.variant:hover svg {
+    fill: #cfdbf0;
+    stroke: #cfdbf0;
+}
+
+.tree .rank3.variant:hover svg {
+    fill: #FFE0B2;
+    stroke: #FFE0B2;
+}
+
+.tree .rank4.variant:hover svg {
+    fill: #aa070b;
+    stroke: #aa070b;
+}
+
+.tree .variant svg.ranking0{
+     stroke: initial;   
+}
+
+.tree .variant:hover svg.ranking0{
+     stroke: initial;   
+}
 
 
 /* progression tree tabs */

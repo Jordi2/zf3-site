@@ -206,7 +206,7 @@ class ExercisesTable
                             e1.exercise_parent_id IS NULL
                      UNION ALL
 
-                    SELECT e2.*, IF((ep.difficulty-e2.difficulty)=0, 0, IF((ep.difficulty-e2.difficulty)>0, 1, -1)) AS ranking
+                    SELECT e2.*, IF((e2.difficulty-ep.difficulty)=0, 0, IF((e2.difficulty-ep.difficulty)>0, 1, -1)) AS ranking
                     FROM exercises e2
                     INNER JOIN employee_paths ep ON ep.id = e2.exercise_parent_id
                 )

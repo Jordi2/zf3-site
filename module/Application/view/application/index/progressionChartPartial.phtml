@@ -27,44 +27,60 @@
 </script>
 
 <svg height="0" width="0" style="position: absolute; margin-left: -100%;"> 
-  <defs>
-    <filter id='shadow'>
-      <feComponentTransfer in="SourceGraphic">
-        <feFuncR type="discrete" tableValues="0"/>
-        <feFuncG type="discrete" tableValues="0"/>
-        <feFuncB type="discrete" tableValues="0"/>
-      </feComponentTransfer>
-      <feGaussianBlur stdDeviation="1"/>
-       <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
-      <feOffset dx="5" dy="1" result="shadow"/>
-      <feComposite in="SourceGraphic" />
-    </filter>
-        <!-- red  orange yellow purple   green blue   -->
-    <linearGradient id="tab-1-bg" x1="0%" y1="0%" x2="0%" y2="65%">
-      <stop offset="0%" style="stop-color: rgba(136, 195, 229, 1.0);" />
-      <stop offset="100%" style="stop-color: rgba(118, 160, 192, 1.0);" />
-    </linearGradient>
-    <linearGradient id="tab-2-bg" x1="0%" y1="0%" x2="0%" y2="65%">
-      <stop offset="0%" style="stop-color: rgba(149, 190, 233, 1.0);" />
-      <stop offset="100%" style="stop-color: rgba(112, 153, 213, 1.0);" />
-    </linearGradient>
-    <linearGradient id="tab-3-bg" x1="0%" y1="0%" x2="0%" y2="65%">
-      <stop offset="0%" style="stop-color: rgba(61, 149, 218, 1.0);" />
-      <stop offset="100%" style="stop-color: rgba(43, 130, 197, 1.0);" />
-    </linearGradient>
-    <linearGradient id="tab-4-bg" x1="0%" y1="0%" x2="0%" y2="65%">
-      <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
-      <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
-    </linearGradient>
-    <linearGradient id="tab-5-bg" x1="0%" y1="0%" x2="0%" y2="65%">
-      <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
-      <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
-    </linearGradient>
-    <linearGradient id="tab-6-bg" x1="0%" y1="0%" x2="0%" y2="65%">
-      <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
-      <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
-    </linearGradient>
-  </defs
+    <defs>
+        <filter id='shadow'>
+          <feComponentTransfer in="SourceGraphic">
+            <feFuncR type="discrete" tableValues="0"/>
+            <feFuncG type="discrete" tableValues="0"/>
+            <feFuncB type="discrete" tableValues="0"/>
+          </feComponentTransfer>
+          <feGaussianBlur stdDeviation="1"/>
+           <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+          <feOffset dx="5" dy="1" result="shadow"/>
+          <feComposite in="SourceGraphic" />
+        </filter>
+            <!-- red  orange yellow purple   green blue   -->
+        <linearGradient id="tab-1-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(136, 195, 229, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(118, 160, 192, 1.0);" />
+        </linearGradient>
+        <linearGradient id="tab-2-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(149, 190, 233, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(112, 153, 213, 1.0);" />
+        </linearGradient>
+        <linearGradient id="tab-3-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(61, 149, 218, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(43, 130, 197, 1.0);" />
+        </linearGradient>
+        <linearGradient id="tab-4-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
+        </linearGradient>
+        <linearGradient id="tab-5-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
+        </linearGradient>
+        <linearGradient id="tab-6-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
+        </linearGradient>
+        
+        
+        <path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"/>
+        <!-- neutral lv -->
+         <g id="shape-0">
+            <circle cx="5" cy="5" r="5" stroke-width="4" />
+        </g>
+        <!-- easier lv -->
+        <g id="shape--1">
+            <line x1="0" y1="5" x2="10" y2="5" stroke-width="4" />
+        </g>
+        <!-- harder lv -->
+        <g id="shape-1">
+            <line x1="5" y1="0" x2="5" y2="10" stroke-width="4" />
+            <line x1="0" y1="5" x2="10" y2="5" stroke-width="4" />
+        </g>
+    </defs>
   <path id="tab-shape" class="tab-shape" d="M116.486,29.036c-23.582-8-14.821-29-42.018-29h-62.4C5.441,0.036,0,5.376,0,12.003v28.033h122v-11H116.486
 			z">
 </svg>
@@ -140,7 +156,11 @@
         else if($exerciseProgressions->isVariation){
             $output = "
                 <li>
-                    <div class='rank$exerciseProgressions->difficulty variant'>".$exerciseProgressions->name."</div>
+                    <div class='rank$exerciseProgressions->difficulty variant'>".
+                        "<svg title='here' class='ranking$exerciseProgressions->ranking' ><use xlink:href='#shape-$exerciseProgressions->ranking'></use></svg>".
+                        "<div class='text-rank'>".$difficultyranking_array[$exerciseProgressions->difficulty]."</div>"
+                        .$exerciseProgressions->name.
+                    "</div>
                 </li>
                 {variant".$exerciseProgressions->exercise_parent_id."}";
 
@@ -248,11 +268,6 @@
     </div>
 </div>
 </div><!-- /tabs -->
-<svg class="hidden">
-    <defs>
-        <path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"/>
-    </defs>
-</svg>
 
 <script>
     (function() {
