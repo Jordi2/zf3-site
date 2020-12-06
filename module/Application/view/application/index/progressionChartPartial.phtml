@@ -109,6 +109,7 @@
 
     <?php
     $difficultyranking_array  = array(1 => 'Beginner', 2 => 'Intermediate', 3 => 'Advanced', 4 => 'Elite');
+    $variationdifficultyranking_array  = array(0 => 'Variation', 1 => 'Harder Variation', -1 => 'Easier Variation');
 
     // todo: make variations only show when clicking parent, instead of showing as child
     // show classification blocks; use tab pages?
@@ -157,7 +158,10 @@
             $output = "
                 <li>
                     <div class='rank$exerciseProgressions->difficulty variant'>".
-                        "<svg title='here' class='ranking$exerciseProgressions->ranking' ><use xlink:href='#shape-$exerciseProgressions->ranking'></use></svg>".
+                        "<svg class='ranking$exerciseProgressions->ranking' >". 
+                            "<use xlink:href='#shape-$exerciseProgressions->ranking'></use>".
+                            "<title>".$variationdifficultyranking_array[$exerciseProgressions->ranking]."</title>".
+                        "</svg>".
                         "<div class='text-rank'>".$difficultyranking_array[$exerciseProgressions->difficulty]."</div>"
                         .$exerciseProgressions->name.
                     "</div>

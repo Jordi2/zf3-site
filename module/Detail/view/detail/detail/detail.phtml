@@ -121,7 +121,9 @@ if(count($this->exerciseReadings) > 0)
     <div id="collapse1" class="panel-collapse collapse">
       <div class="panel-body">
         <?php foreach ($this->exerciseVariations as $exerciseVariations) : ?>
+            <a href="<?=$this->url('detail', ['action' => 'detail', 'id' => $exerciseVariations['id']]); ?>">
             <h5><?= $exerciseVariations->name; ?></h5>
+            </a>
             <p>
                 <?= $exerciseVariations->example; ?>
             </p>
