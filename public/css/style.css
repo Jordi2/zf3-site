@@ -246,7 +246,7 @@ div.sibling .dropdown-menu:hover {
     padding-bottom: 0.5vh;
 }
  
-.tree div[class^='rank'].variant {
+.tree a[class^='rank'].variant {
     min-width: 200px;
 }
 	

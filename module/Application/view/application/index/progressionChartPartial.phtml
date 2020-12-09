@@ -1,9 +1,12 @@
 <script>
+    function showDetail(detailpageurl) {
+        window.location.href = detailpageurl;
+    }
     window.addEventListener('load', (event) => {
         // Variants
         var removeEmptyVariantLists = $('.dropdown-menu.fade-up');
         removeEmptyVariantLists.each(function( index, value ) {
-            if($(value).find('div.variant').length === 0){
+            if($(value).find('a.variant').length === 0){
                 $(value).addClass('nodisplayever');
             }
         });
@@ -139,7 +142,7 @@
             $totalOutput .= "<li class='classification classification$exerciseProgressions->classifications_id'>";
             
             $totalOutput .= "
-                    <a href='".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."' class='rank$exerciseProgressions->difficulty primary'>
+                    <div onclick='showDetail(\"".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."\")' class='rank$exerciseProgressions->difficulty primary'>
                         <div class='text-rank'>".
                             $difficultyranking_array[$exerciseProgressions->difficulty]."
                         </div>".
@@ -148,7 +151,7 @@
                             <li>Variants:</li>
                             {variant".$exerciseProgressions->id."}
                         </ul>
-                    </a>
+                    </div>
                     {child".$exerciseProgressions->id."}
                 </li>
                 ";
@@ -157,14 +160,14 @@
         else if($exerciseProgressions->isVariation){
             $output = "
                 <li>
-                    <div class='rank$exerciseProgressions->difficulty variant'>".
+                    <a href='".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."' class='rank$exerciseProgressions->difficulty variant'>".
                         "<svg class='ranking$exerciseProgressions->ranking' >". 
                             "<use xlink:href='#shape-$exerciseProgressions->ranking'></use>".
                             "<title>".$variationdifficultyranking_array[$exerciseProgressions->ranking]."</title>".
                         "</svg>".
                         "<div class='text-rank'>".$difficultyranking_array[$exerciseProgressions->difficulty]."</div>"
                         .$exerciseProgressions->name.
-                    "</div>
+                    "</a>
                 </li>
                 {variant".$exerciseProgressions->exercise_parent_id."}";
 
@@ -187,7 +190,7 @@
             $output = "
                 <ul>
                     <li class='{only".$exerciseProgressions->exercise_parent_id."}'>
-                        <a href='".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."' class='rank$exerciseProgressions->difficulty primary'>
+                        <div onclick='showDetail(\"".$this->url('detail', ['action' => 'detail', 'id' => $exerciseProgressions['id']])."\")' class='rank$exerciseProgressions->difficulty primary'>
                             <div class='text-rank'>".
                                 $difficultyranking_array[$exerciseProgressions->difficulty]."
                             </div>".
@@ -196,7 +199,7 @@
                                 <li>Variants:</li>
                                 {variant".$exerciseProgressions->id."}
                             </ul>
-                        </a>
+                        </div>
                         {child".$exerciseProgressions->id."}
                     </li>
                     {sibling".$exerciseProgressions->exercise_parent_id."}
