@@ -33,6 +33,7 @@ window.addEventListener('load', (event) => {
 
 </script>
 <?php
+$difficultyrankingdetail_array  = array(1 => 'Beginner', 2 => 'Intermediate', 3 => 'Advanced', 4 => 'Elite');
 
 $exampleClass = 'disabled-button';
 $readingClass = 'disabled-button';
@@ -64,12 +65,14 @@ if(count($this->exerciseReadings) > 0)
         <?= $exerciseClassifications['name']; ?>
     <?php endforeach; ?>
     <br/>
+    Difficulty: 
+    <?= $difficultyrankingdetail_array[$this->exerciseCurrentRow->difficulty]; ?>
+    <br/>
     <?php if(count($this->exerciseTags) > 0): ?>
         Tags: 
         <?php foreach ($this->exerciseTags as $key => $exerciseTags) : ?>
             <?= $exerciseTags['name']; 
                 end($this->exerciseTags);
-                if ($key == key($this->exerciseTags))
                     echo ', ';
             ?>
         <?php endforeach; ?>
@@ -107,9 +110,8 @@ if(count($this->exerciseReadings) > 0)
         <?php endforeach; ?>
     </div>
 </div>
+<div class="clear"></div>
 
-<br />
-<br />
 <div class="panel-group" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading pointer" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">

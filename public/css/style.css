@@ -1135,10 +1135,6 @@ a .count {
 }*/
 
 @media (max-width: 991px) {
-
-}
-
-@media (max-width: 767px) {
     /*detail*/
     
     .row{
@@ -1153,7 +1149,9 @@ a .count {
     /*end detail*/
 }
 
+@media (max-width: 767px) {
 
+}
 
 /**/
 

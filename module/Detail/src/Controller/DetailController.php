@@ -27,6 +27,7 @@ class DetailController extends AbstractActionController
             $exerciseCurrentRow = $this->table->getExercise($id);
             $exerciseClassifications = $this->table->getAllClassificationsByExerciseId($id);
             $exerciseClassifications2 = $this->table->getAllClassificationsByExerciseId($id)->toArray();
+            $exerciseDifficulty = $this->table->getAllDifficultyByExerciseId($id);
             $exerciseTags = $this->table->getAllTagForExerciseId($id);
             $exerciseExamples = $this->table->getExerciseTemp($id);
             $exerciseReadings = $this->table->getAllReadingsForExerciseId($id);
@@ -36,11 +37,12 @@ class DetailController extends AbstractActionController
             die('error');
            // return $this->redirect()->toRoute('application', ['action' => 'index']);
         }
-        
+
         return new ViewModel([
             'exerciseCurrentRow' => $exerciseCurrentRow, 
             'exerciseClassifications' => $exerciseClassifications,
             'exerciseClassifications2' => $exerciseClassifications2,
+            'exerciseDifficulty' => $exerciseDifficulty,
             'exerciseTags' => $exerciseTags,
             'exerciseExamples' => $exerciseExamples,
             'exerciseReadings' => $exerciseReadings,
