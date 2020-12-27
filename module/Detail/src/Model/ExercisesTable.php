@@ -264,7 +264,7 @@ class ExercisesTable
         $results = $this->dbAdapter->query('
             WITH RECURSIVE employee_paths AS
             ( 
-                SELECT e1.*
+                SELECT e1.*, 0 AS ranking
                     FROM exercises e1
                     WHERE 
                         e1.exercise_parent_id IS NULL AND
@@ -276,7 +276,7 @@ class ExercisesTable
                         )
                  UNION ALL
 
-                SELECT e2.*
+                SELECT e2.*, IF((e2.difficulty-ep.difficulty)=0, 0, IF((e2.difficulty-ep.difficulty)>0, 1, -1)) AS ranking
                 FROM exercises e2
                 INNER JOIN employee_paths ep ON ep.id = e2.exercise_parent_id 
             )

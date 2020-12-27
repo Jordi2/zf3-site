@@ -11,7 +11,6 @@
     border-color: var(--brand-color);
 }
 
-
 /* general */
 
 .nodisplay {
@@ -198,6 +197,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .detail-media{
     float: right;
     margin-left: 20px;
+}
+
+#readingscontent {
+
+}
+
+#readingscontent .col-alter{
+   
 }
 
 /* end detail page */

@@ -84,7 +84,7 @@ if(count($this->exerciseReadings) > 0)
     <div class="detail-media">
         <?php if($this->exerciseCurrentRow->media !== null && $this->exerciseCurrentRow->media !== ''): ?>
             <iframe width="560" height="315" src="<?=$this->exerciseCurrentRow->media; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-         <?php endif; ?>
+        <?php endif; ?>
     </div>
     <div class="row">
         <!-- use this https://www.w3schools.com/bootstrap/bootstrap_button_groups.asp for these 2 -->
@@ -104,9 +104,49 @@ if(count($this->exerciseReadings) > 0)
     </div>
     <div id="readingscontent" class="row nodisplay">
         <?php foreach ($this->exerciseReadings as $exerciseReadings) : ?>
-            <div class="col-md-8" style="text-align: center;"><?= $exerciseReadings->desc; ?></div>
-            <div class="col-md-2"><a href="<?= $exerciseReadings->url; ?>"><?= $exerciseReadings->urlName; ?></a></div>
-            <div class="col-md-2"><a href="<?= $exerciseReadings->archive; ?>">archive</a></div>
+        
+        <?php
+        $hasDesc = true;
+        $hasUrl = true;
+        $hasArchive = false;
+        
+        $col1 = 7;
+        $col2 = 2;
+        $col3 = 3;
+        
+        $count = 0;
+        
+        /*if(!empty($exerciseReadings->desc))
+        {
+            $hasDesc = true;
+            $count++;
+        }
+        
+        if(!empty($exerciseReadings->urlName))
+        {
+            $hasUrl = true;
+            $count++;
+        }*/
+        
+        if(!empty($exerciseReadings->archive))
+        {
+            $hasArchive = true;
+            $count++;
+        }
+        
+        if($hasArchive == false){
+            $col1 = 7;
+            $col2 = 5;
+            $col3 = 0;
+        }
+        // todo change styling to fit smaller spaces
+        ?>
+        
+            <div class="col-alter col-md-<?= $col1 ?>"><?= $exerciseReadings->desc; ?></div>
+            <div class="col-alter col-md-<?= $col2 ?>"><a href="<?= $exerciseReadings->url; ?>">Link</a></div>
+            <?php if($hasArchive == true): ?>
+                <div class="col-alter col-md-<?= $col3 ?>"><a href="<?= $exerciseReadings->archive; ?>">Archive</a></div>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
 </div>

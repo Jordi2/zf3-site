@@ -13,17 +13,24 @@
     <p>
         For a list of all exercise make sure to check out our <a href="<?= $this->url('index', ['action' => 'index']) ?>">exercises wiki</a>
         </p>
-    <hr class="my-4">
+    <hr class="my-4" style="display:none;">
 
-    <a class="btn btn-primary btn-lg" href="https://github.com/laminas" target="_blank">Button &raquo;</a>
+    <a class="btn btn-primary btn-lg" href="https://github.com/laminas" target="_blank" style="display:none;">Button &raquo;</a>
 </div>
+
+<?php 
+$tags = array("<p>", "</p>");
+?>
 
 <div class="card-deck">
     <div class="card">
         <h2 class="card-header"><?= $this->exercise1->name ?></h2>
         <div class="card-body">
             <p>
-                <?= $this->exercise1->example ?>
+                <?php
+                $stripped_content = str_replace($tags, "", $this->exercise1->example);
+                echo $stripped_content;
+                ?>
             </p>
 
             <a class="btn btn-primary" href="<?= $this->url('detail', ['action' => 'detail', 'id' => $this->exercise1->id])?>" target="_self">Visit &raquo;</a>
@@ -34,7 +41,10 @@
         <h2 class="card-header"><?= $this->exercise2->name ?></h2>
         <div class="card-body">
             <p>
-                 <?= $this->exercise2->example ?>
+                <?php
+                $stripped_content = str_replace($tags, "", $this->exercise2->example);
+                echo $stripped_content;
+                ?>
             </p>
 
             <a class="btn btn-primary" href="<?= $this->url('detail', ['action' => 'detail', 'id' => $this->exercise1->id])?>" target="_self">Visit &raquo;</a>
@@ -45,7 +55,10 @@
         <h2 class="card-header"><?= $this->exercise3->name ?></h2>
         <div class="card-body">
             <p>
-                 <?= $this->exercise3->example ?>
+                <?php
+                $stripped_content = str_replace($tags, "", $this->exercise3->example);
+                echo $stripped_content;
+                ?>
             </p>
 
             <a class="btn btn-primary" href="<?= $this->url('detail', ['action' => 'detail', 'id' => $this->exercise1->id])?>" target="_self">Visit &raquo;</a>

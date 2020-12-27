@@ -57,7 +57,7 @@ return [
                 'label' => 'FAQ',
                 'route' => 'faq',
             ],
-            [
+            /*[
                 'label' => 'Search',
                 'route' => 'search',
             ],
@@ -81,7 +81,7 @@ return [
                         'action' => 'delete',
                     ],
                 ],
-            ],
+            ],*/
         ],
     ],
     'controllers' => [
