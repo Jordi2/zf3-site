@@ -57,11 +57,11 @@ return [
                 'label' => 'FAQ',
                 'route' => 'faq',
             ],
-            /*[
+            [
                 'label' => 'Search',
                 'route' => 'search',
             ],
-            [
+             /*[
                 'label' => 'Album',
                 'route' => 'album',
                 'pages' => [

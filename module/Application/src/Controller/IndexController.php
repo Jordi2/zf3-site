@@ -28,8 +28,8 @@ class IndexController extends AbstractActionController
         
         try {
             $exercise1 = $this->table->getExercise(1);
-            $exercise2 = $this->table->getExercise(2);
-            $exercise3 = $this->table->getExercise(3);
+            $exercise2 = $this->table->getExercise(18);
+            $exercise3 = $this->table->getExercise(54);
         } catch (\Exception $e) {
             die('error');
            // return $this->redirect()->toRoute('application', ['action' => 'index']);

@@ -22,15 +22,6 @@ $(document).ready(function() {
     }
 });
 
-window.addEventListener('load', (event) => {
-    var removeEmptyVariantLists = $('.dropdown-menu.fade-up');
-    removeEmptyVariantLists.each(function( index, value ) {
-        if($(value).find('div.variant').length === 0){
-            $(value).addClass('nodisplayever');
-        }
-    });
-});
-
 </script>
 <?php
 $difficultyrankingdetail_array  = array(1 => 'Beginner', 2 => 'Intermediate', 3 => 'Advanced', 4 => 'Elite');
@@ -38,13 +29,12 @@ $difficultyrankingdetail_array  = array(1 => 'Beginner', 2 => 'Intermediate', 3 
 $exampleClass = 'disabled-button';
 $readingClass = 'disabled-button';
 
-if($this->exerciseCurrentRow->example !== null && $this->exerciseCurrentRow->example !== '')
+if($this->exerciseCurrentRow->example !== null && $this->exerciseCurrentRow->example !== '' && $this->exerciseCurrentRow->example !== '<p></p>')
     $exampleClass = '';
 
 if(count($this->exerciseReadings) > 0)
     $readingClass = '';
 ?>
-
 
 <h1>
     <?= 
@@ -169,6 +159,7 @@ if(count($this->exerciseReadings) > 0)
             <p>
                 <?= $exerciseVariations->example; ?>
             </p>
+            <hr/>
         <?php endforeach; ?>
       </div>
     </div>
