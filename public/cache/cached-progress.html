@@ -1,0 +1,1559 @@
+<!DOCTYPE html><html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>FitnessPlan for Clever Progress</title>
+        <meta name="viewport" content="width&#x3D;device-width,&#x20;initial-scale&#x3D;1.0">
+<meta http-equiv="X-UA-Compatible" content="IE&#x3D;edge">
+        <!-- Styles -->
+        <link href="&#x2F;18laminas&#x2F;public&#x2F;css&#x2F;tabs.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;18laminas&#x2F;public&#x2F;css&#x2F;bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;18laminas&#x2F;public&#x2F;css&#x2F;bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;18laminas&#x2F;public&#x2F;css&#x2F;style.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;18laminas&#x2F;public&#x2F;img&#x2F;favicon.ico" rel="shortcut&#x20;icon" type="image&#x2F;vnd.microsoft.icon">        
+        <!-- Scripts -->
+        <script type="text&#x2F;javascript" src="&#x2F;18laminas&#x2F;public&#x2F;js&#x2F;jquery-3.5.1.min.js"></script>        <script type="text&#x2F;javascript" src="&#x2F;18laminas&#x2F;public&#x2F;js&#x2F;jquery-3.5.1.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;18laminas&#x2F;public&#x2F;js&#x2F;cbpFWTabs.js"></script>
+        
+    </head>
+    <body>
+        <svg height="0" width="0" style="position: absolute; margin-left: -100%;"> 
+            <defs>
+                <g id="shape-logo">
+                    <line x1="0" y1="50" x2="150" y2="50" stroke-width="4" />
+                    <path d="M 25 50 q 50 -50 100 0" stroke-width="5" fill="none" />
+                    <line x1="35" y1="15" x2="50" y2="30" stroke-width="4" />
+                    <line x1="75" y1="4" x2="75" y2="25" stroke-width="4" />
+                    <line x1="115" y1="15" x2="100" y2="30" stroke-width="4" />
+                </g>
+            </defs>
+        </svg>
+        <nav class="navbar navbar-expand-md navbar-dark mb-4" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="/18laminas/public/" style="width:150px;">
+                        <svg style="stroke: white;height:55px;width:150px;display:inline-block;float:left;"> 
+                                <use xlink:href='#shape-logo'></use>
+                                <title>title</title>
+                        </svg>
+                        <span style="display:inline-block;float:left;margin-left:27px;">FitnessPlan</span>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav&#x20;navbar-nav">
+    <li>
+        <a href="&#x2F;18laminas&#x2F;public&#x2F;">Home</a>
+    </li>
+    <li>
+        <a href="&#x2F;18laminas&#x2F;public&#x2F;index">Exercises</a>
+    </li>
+    <li class="active">
+        <a href="&#x2F;18laminas&#x2F;public&#x2F;progress">Track Progress</a>
+    </li>
+    <li>
+        <a href="&#x2F;18laminas&#x2F;public&#x2F;faq">FAQ</a>
+    </li>
+    <li>
+        <a href="&#x2F;18laminas&#x2F;public&#x2F;search">Search</a>
+    </li>
+</ul>                    <!--ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/18laminas/public/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul-->
+                </div>
+                <div class="input-group md-form form-sm form-2 pl-0" style="flex-basis:200px; display:none;">
+                    <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                      <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+                          aria-hidden="true"></i></span>
+                    </div>
+                  </div>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Progression Chart</h1>
+
+<p>
+Exercises that build on one another are called progressions, with each exercise requiring more mobility and/or strength than the previous. 
+The progressions below are further sorted by categories of movements that tend to have overlap in muscles used. For a full body exercise try to practice at least one exercise for each category!
+</p>
+<p>
+For a list of all exercise check out our <a href="/18laminas/public/index">exercises wiki</a>
+</p>
+<div id="progressionFilters" style="display:none;">
+    
+    <form method="get" action="/18laminas/public/progress">      
+    <fieldset>      
+        <legend>Filters:</legend>  
+                    <input style="display:none !important;" type="checkbox" name="classification1"  value="1">
+                    <input style="display:none !important;" type="checkbox" name="classification2"  value="2">
+                    <input style="display:none !important;" type="checkbox" name="classification3"  value="3">
+                    <input style="display:none !important;" type="checkbox" name="classification4"  value="4">
+                    <input style="display:none !important;" type="checkbox" name="classification5"  value="5">
+                    <input style="display:none !important;" type="checkbox" name="classification6"  value="6">
+                             
+            <input type="checkbox" id="tag1" class="checkbox" name="tag1"  value="1"/>
+            <label for="tag1">Abdominals</label>
+                    
+            <input type="checkbox" id="tag2" class="checkbox" name="tag2"  value="2"/>
+            <label for="tag2">Biceps</label>
+                    
+            <input type="checkbox" id="tag3" class="checkbox" name="tag3"  value="3"/>
+            <label for="tag3">Calves</label>
+                    
+            <input type="checkbox" id="tag4" class="checkbox" name="tag4"  value="4"/>
+            <label for="tag4">Deltoids</label>
+                    
+            <input type="checkbox" id="tag5" class="checkbox" name="tag5"  value="5"/>
+            <label for="tag5">Forearms</label>
+                    
+            <input type="checkbox" id="tag6" class="checkbox" name="tag6"  value="6"/>
+            <label for="tag6">Glutes</label>
+                    
+            <input type="checkbox" id="tag7" class="checkbox" name="tag7"  value="7"/>
+            <label for="tag7">Hamstrings</label>
+                    
+            <input type="checkbox" id="tag8" class="checkbox" name="tag8"  value="8"/>
+            <label for="tag8">Hip Flexor</label>
+                    
+            <input type="checkbox" id="tag9" class="checkbox" name="tag9"  value="9"/>
+            <label for="tag9">Lats</label>
+                    
+            <input type="checkbox" id="tag10" class="checkbox" name="tag10"  value="10"/>
+            <label for="tag10">Lower Back</label>
+                    
+            <input type="checkbox" id="tag11" class="checkbox" name="tag11"  value="11"/>
+            <label for="tag11">Obliques</label>
+                    
+            <input type="checkbox" id="tag12" class="checkbox" name="tag12"  value="12"/>
+            <label for="tag12">Pectorals</label>
+                    
+            <input type="checkbox" id="tag13" class="checkbox" name="tag13"  value="13"/>
+            <label for="tag13">Scapular</label>
+                    
+            <input type="checkbox" id="tag14" class="checkbox" name="tag14"  value="14"/>
+            <label for="tag14">Serratus Anterior</label>
+                    
+            <input type="checkbox" id="tag15" class="checkbox" name="tag15"  value="15"/>
+            <label for="tag15">Traps</label>
+                    
+            <input type="checkbox" id="tag16" class="checkbox" name="tag16"  value="16"/>
+            <label for="tag16">Triceps</label>
+                    
+            <input type="checkbox" id="tag17" class="checkbox" name="tag17"  value="17"/>
+            <label for="tag17">Quadriceps</label>
+                    </br>
+
+        <button type="submit" class="btn btn-light" style="border-color: black;">Submit</button>
+        <div style="display:none;" class="sumbit-button">Submit</div>
+    </fieldset>      
+</form>
+</div>
+<div class="clear"></div>
+
+<div id="progressionContent">
+    <script>
+    function showDetail(detailpageurl) {
+        window.location.href = detailpageurl;
+    }
+    window.addEventListener('load', (event) => {
+        // Variants
+        var removeEmptyVariantLists = $('.dropdown-menu.fade-up');
+        removeEmptyVariantLists.each(function( index, value ) {
+            if($(value).find('a.variant').length === 0){
+                $(value).addClass('nodisplayever');
+            }
+        });
+
+        // menu items
+        /*var menuItems = $('.main-navigation li');
+
+        // set colors
+        var myStringArray = [
+            "118, 160, 192, 1.0",
+            "112, 153, 213, 1.0",
+            "43, 130, 197, 1.0",
+            "71, 194, 243, 1.0",
+            "71, 194, 243, 1.0",
+            "71, 194, 243, 1.0"];
+        
+        for (var i = 0; i < menuItems.length; i++) {
+            menuItems[i].setAttribute('data-bg-color', 'rgba('+myStringArray[i]+')')
+        }*/
+    });
+</script>
+
+<svg height="0" width="0" style="position: absolute; margin-left: -100%;"> 
+    <defs>
+        <filter id='shadow'>
+          <feComponentTransfer in="SourceGraphic">
+            <feFuncR type="discrete" tableValues="0"/>
+            <feFuncG type="discrete" tableValues="0"/>
+            <feFuncB type="discrete" tableValues="0"/>
+          </feComponentTransfer>
+          <feGaussianBlur stdDeviation="1"/>
+           <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+          <feOffset dx="5" dy="1" result="shadow"/>
+          <feComposite in="SourceGraphic" />
+        </filter>
+            <!-- red  orange yellow purple   green blue   -->
+        <linearGradient id="tab-1-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(136, 195, 229, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(118, 160, 192, 1.0);" />
+        </linearGradient>
+        <linearGradient id="tab-2-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(149, 190, 233, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(112, 153, 213, 1.0);" />
+        </linearGradient>
+        <linearGradient id="tab-3-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(61, 149, 218, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(43, 130, 197, 1.0);" />
+        </linearGradient>
+        <linearGradient id="tab-4-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
+        </linearGradient>
+        <linearGradient id="tab-5-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
+        </linearGradient>
+        <linearGradient id="tab-6-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+          <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
+          <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
+        </linearGradient>
+        
+        
+        <path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"/>
+        <!-- neutral lv -->
+         <g id="shape-0">
+            <circle cx="5" cy="5" r="5" stroke-width="4" />
+        </g>
+        <!-- easier lv -->
+        <g id="shape--1">
+            <line x1="0" y1="5" x2="10" y2="5" stroke-width="4" />
+        </g>
+        <!-- harder lv -->
+        <g id="shape-1">
+            <line x1="5" y1="0" x2="5" y2="10" stroke-width="4" />
+            <line x1="0" y1="5" x2="10" y2="5" stroke-width="4" />
+        </g>
+    </defs>
+  <path id="tab-shape" class="tab-shape" d="M116.486,29.036c-23.582-8-14.821-29-42.018-29h-62.4C5.441,0.036,0,5.376,0,12.003v28.033h122v-11H116.486
+			z">
+</svg>
+<br />
+<div class="tabs tabs-style-shape">
+<nav role="navigation" class="">
+  <ul>
+        <li class="">
+      <a href="#section-shape-1">
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <span>Horizontal push</span>
+      </a>
+    </li>
+        <li class="">
+      <a href="#section-shape-2">
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <span>Vertical push</span>
+      </a>
+    </li>
+        <li class="">
+      <a href="#section-shape-3">
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <span>Horizontal pull</span>
+      </a>
+    </li>
+        <li class="">
+      <a href="#section-shape-4">
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <span>Vertical pull</span>
+      </a>
+    </li>
+        <li class="">
+      <a href="#section-shape-5">
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <span>Core</span>
+      </a>
+    </li>
+        <li class="">
+      <a href="#section-shape-6">
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
+        <span>Legs</span>
+      </a>
+    </li>
+      </ul>
+</nav>
+
+<div class="tree-container">
+    <div class="content-wrap">
+
+    <ul class='tree 1'><li class='classification classification1'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/18")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Push-Ups
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                <li>
+                    <a href='/18laminas/public/detail/detail/26' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Wall Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/27' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Knee Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/28' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Incline Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/29' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Knuckle Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/30' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Maltese Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/31' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Hindu Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/32' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Guillotine Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/33' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Backhanded Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/34' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Ring Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/35' class='rank2 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Intermediate</div>Ring Turned Out Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/36' class='rank2 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Intermediate</div>Superman Push-Ups</a>
+                </li>
+                
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class=''>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/19")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Diamond Push-Ups
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/21")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Archer Push-Ups
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/40' class='rank2 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Intermediate</div>Ring Archer Push-Ups</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/22")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>One-Arm Push-Ups
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/41' class='rank3 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Advanced</div>Ring One-Arm Push-Ups</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                <li>
+                    <a href='/18laminas/public/detail/detail/20' class='rank1 sibling'>
+                        <div class='text-rank'>Beginner
+                        </div>Explosive Push-Ups
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </a>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/23")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Clap Push-Ups
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/37' class='rank2 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Intermediate</div>Muay Thai Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/38' class='rank2 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Intermediate</div>Double Clap Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/39' class='rank2 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Intermediate</div>Triple Clap Push-Ups</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/24")' class='rank3 primary'>
+                            <div class='text-rank'>Advanced
+                            </div>Flying Superman Push-Ups
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/25")' class='rank4 primary'>
+                            <div class='text-rank'>Elite
+                            </div>Aztec Push-Ups
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                
+                </ul>
+                </li>
+                <li class='classification classification1'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/122")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Frog Stand
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/123")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>Straddle Planch
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class=''>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/124")' class='rank3 primary'>
+                            <div class='text-rank'>Advanced
+                            </div>Planch
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class=''>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/126")' class='rank4 primary'>
+                            <div class='text-rank'>Elite
+                            </div>Inverted Cross
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                <li>
+                    <a href='/18laminas/public/detail/detail/127' class='rank4 sibling'>
+                        <div class='text-rank'>Elite
+                        </div>Planch Push-Ups
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </a>
+                    
+                </li>
+                
+                </ul>
+                    </li>
+                    
+                <li>
+                    <a href='/18laminas/public/detail/detail/125' class='rank3 sibling'>
+                        <div class='text-rank'>Advanced
+                        </div>Straddle Planch Push-Ups
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </a>
+                    
+                </li>
+                
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                </ul><ul class='tree 2'><li class='classification classification2'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/128")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Dips
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/129")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Ring Dips
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/130")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>Ring Turned Out Dips
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                <li class='classification classification2'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/131")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Pike Push-Ups
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/132")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Handstand
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/134' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Wall plank</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/135' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Wall Headstand</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/136' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Wall Handstand</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/133' class='rank2 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Intermediate</div>Ring Handstand</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class=''>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/138")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>Handstand Push-Ups
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/139' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>Wall Handstand Negative Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/140' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>Wall Handstand Push-Ups</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/141' class='rank3 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Advanced</div>Ring Handstand Push-Ups</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                <li>
+                    <a href='/18laminas/public/detail/detail/137' class='rank3 sibling'>
+                        <div class='text-rank'>Advanced
+                        </div>Straddle One-Arm Handstand
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </a>
+                    
+                </li>
+                
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                </ul><ul class='tree 3'><li class='classification classification3'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/88")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Rows
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                <li>
+                    <a href='/18laminas/public/detail/detail/91' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Vertical Row</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/92' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Incline Row</a>
+                </li>
+                
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/89")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Archer Row
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/90")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>One-Arm Row
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                <li class='classification classification3'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/93")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>German Hang
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/94")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Skin the Cat
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/100' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Tuck Skin the Cat</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class=''>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/95")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>Front Lever
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/104' class='rank1 variant'><svg class='ranking-1' ><use xlink:href='#shape--1'></use><title>Easier Variation</title></svg><div class='text-rank'>Beginner</div>Tuck Front Lever</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/105' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>One-leg/Straddle Front Lever</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class=''>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/96")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>Front Lever Row
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                <li>
+                    <a href='/18laminas/public/detail/detail/97' class='rank3 sibling'>
+                        <div class='text-rank'>Advanced
+                        </div>360° Pull
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                <li>
+                    <a href='/18laminas/public/detail/detail/106' class='rank3 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Advanced</div>Front Lever to Inverted</a>
+                </li>
+                
+                        </ul>
+                    </a>
+                    
+                </li>
+                
+                </ul>
+                    </li>
+                    
+                <li>
+                    <a href='/18laminas/public/detail/detail/98' class='rank2 sibling'>
+                        <div class='text-rank'>Intermediate
+                        </div>Back Lever
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                <li>
+                    <a href='/18laminas/public/detail/detail/101' class='rank1 variant'><svg class='ranking-1' ><use xlink:href='#shape--1'></use><title>Easier Variation</title></svg><div class='text-rank'>Beginner</div>Tuck Back Lever</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/102' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>One-leg/Straddle Back Lever</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/103' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>Back Lever Pullout</a>
+                </li>
+                
+                        </ul>
+                    </a>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/99")' class='rank3 primary'>
+                            <div class='text-rank'>Advanced
+                            </div>Handstand to Back Lever
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                </li>
+                
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                </ul><ul class='tree 4'><li class='classification classification4'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/70")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Pull-Ups
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                <li>
+                    <a href='/18laminas/public/detail/detail/78' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Scapular Pull</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/79' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Arch Hang</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/80' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Pull-Up Negative</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/81' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Chin-Ups Negative</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/82' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Chin-Ups</a>
+                </li>
+                
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class=''>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/74")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>L-Sit Pull-Up
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/75")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>Pullover
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                <li>
+                    <a href='/18laminas/public/detail/detail/71' class='rank2 sibling'>
+                        <div class='text-rank'>Intermediate
+                        </div>Archer Pull-Up
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </a>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/72")' class='rank3 primary'>
+                            <div class='text-rank'>Advanced
+                            </div>One-Arm Pull-Up
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/83' class='rank2 variant'><svg class='ranking-1' ><use xlink:href='#shape--1'></use><title>Easier Variation</title></svg><div class='text-rank'>Intermediate</div>Typewriter Pull-Up</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/84' class='rank2 variant'><svg class='ranking-1' ><use xlink:href='#shape--1'></use><title>Easier Variation</title></svg><div class='text-rank'>Intermediate</div>One-Arm Pull-Up Negative</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/73")' class='rank4 primary'>
+                            <div class='text-rank'>Elite
+                            </div>High One-Arm Pull-Up
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/76' class='rank2 sibling'>
+                        <div class='text-rank'>Intermediate
+                        </div>Muscle up
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </a>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/77")' class='rank3 primary'>
+                            <div class='text-rank'>Advanced
+                            </div>One-Arm Muscle up
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                </li>
+                
+                </ul>
+                </li>
+                </ul><ul class='tree 5'><li class='classification classification5'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/50")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Hollow Hold
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/51")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Tuck-Up Crunch
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/52")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Seated Pike Leg Lift
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/53")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Hanging Leg Raise
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/57' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Hanging Knees to Chest</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/54")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>Dragon Flag
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/58' class='rank1 variant'><svg class='ranking-1' ><use xlink:href='#shape--1'></use><title>Easier Variation</title></svg><div class='text-rank'>Beginner</div>Straddle One-Leg Dragon Flag Negative</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/59' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>Straddle One-Leg Dragon Flag</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/60' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>One-Arm Dragon Flag</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/55")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>Dragon Press
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/61' class='rank1 variant'><svg class='ranking-1' ><use xlink:href='#shape--1'></use><title>Easier Variation</title></svg><div class='text-rank'>Beginner</div>One-Leg Dragon Press Negative</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/62' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>One-Leg Dragon Flag</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/56")' class='rank3 primary'>
+                            <div class='text-rank'>Advanced
+                            </div>One-Arm Dragon Press
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                <li class='classification classification5'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/63")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Plank
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/64")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>One-Arm Plank
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/67' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>One-Arm One-Leg Plank</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/65")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>Straight Leg Ab Wheel
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/68' class='rank1 variant'><svg class='ranking-1' ><use xlink:href='#shape--1'></use><title>Easier Variation</title></svg><div class='text-rank'>Beginner</div>Knees Ab Wheel</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/69' class='rank1 variant'><svg class='ranking-1' ><use xlink:href='#shape--1'></use><title>Easier Variation</title></svg><div class='text-rank'>Beginner</div>Straight Leg Ab Wheel Negative</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/66")' class='rank3 primary'>
+                            <div class='text-rank'>Advanced
+                            </div>One-Arm Ab Wheel
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                <li class='classification classification5'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/107")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>L-Sit
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                <li>
+                    <a href='/18laminas/public/detail/detail/110' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Foot Supported L-Sit</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/111' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Tuck L-Sit</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/112' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>One-Leg L-Sit</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/113' class='rank3 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Advanced</div>Maximum Compression L-Sit</a>
+                </li>
+                
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/108")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>45° V-Sit
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/114' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>90° V-Sit</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/115' class='rank3 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Advanced</div>120° V-Sit</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/116' class='rank3 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Advanced</div>140° V-Sit</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/117' class='rank3 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Advanced</div>155° V-Sit</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/118' class='rank3 variant'><svg class='ranking1' ><use xlink:href='#shape-1'></use><title>Harder Variation</title></svg><div class='text-rank'>Advanced</div>170° V-Sit</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/109")' class='rank4 primary'>
+                            <div class='text-rank'>Elite
+                            </div>Manna
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                <li class='classification classification5'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/119")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Reverse Plank
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/120")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Bridge
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/121")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>One-Arm One-Leg Bridge
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                <li class='classification classification5'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/85")' class='rank2 primary'>
+                        <div class='text-rank'>Intermediate
+                        </div>Human Flag
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                <li>
+                    <a href='/18laminas/public/detail/detail/86' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>Vertical Flag</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/87' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>Straddle Flag</a>
+                </li>
+                
+                        </ul>
+                    </div>
+                    
+                </li>
+                </ul><ul class='tree 6'><li class='classification classification6'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/1")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Squats
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                <li>
+                    <a href='/18laminas/public/detail/detail/2' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Assisted Squats</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/3' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Narrow Squats</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/4' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Hindu Squats</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/5' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Jump Squats</a>
+                </li>
+                
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class=''>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/6")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Cossack Squats
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/10")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Pistol Squats
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/11")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>One-Leg Natural Press
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/12")' class='rank3 primary'>
+                            <div class='text-rank'>Advanced
+                            </div>Elevated Friction Pistol
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                <li>
+                    <a href='/18laminas/public/detail/detail/7' class='rank1 sibling'>
+                        <div class='text-rank'>Beginner
+                        </div>Lunges
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </a>
+                    
+                <ul>
+                    <li class=''>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/14")' class='rank1 primary'>
+                            <div class='text-rank'>Beginner
+                            </div>Step Ups
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/15' class='rank1 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Beginner</div>Deep Step Ups</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                <li>
+                    <a href='/18laminas/public/detail/detail/13' class='rank2 sibling'>
+                        <div class='text-rank'>Intermediate
+                        </div>Shrimp Squats
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                <li>
+                    <a href='/18laminas/public/detail/detail/16' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>Two-handed Shrimp Squats</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/17' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>Elevated Two-handed Shrimp Squats</a>
+                </li>
+                
+                        </ul>
+                    </a>
+                    
+                </li>
+                
+                </ul>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/8' class='rank1 sibling'>
+                        <div class='text-rank'>Beginner
+                        </div>Split Squats
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/9' class='rank1 sibling'>
+                        <div class='text-rank'>Beginner
+                        </div>Bulgerian Split Squats
+                        <ul class='dropdown-menu fade-up'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </a>
+                    
+                </li>
+                
+                </ul>
+                </li>
+                <li class='classification classification6'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/42")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>One-Leg Deadlift
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </div>
+                    
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/43")' class='rank2 primary'>
+                            <div class='text-rank'>Intermediate
+                            </div>Nordic Curl
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                <li>
+                    <a href='/18laminas/public/detail/detail/44' class='rank1 variant'><svg class='ranking-1' ><use xlink:href='#shape--1'></use><title>Easier Variation</title></svg><div class='text-rank'>Beginner</div>90° Nordic Curl</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/45' class='rank1 variant'><svg class='ranking-1' ><use xlink:href='#shape--1'></use><title>Easier Variation</title></svg><div class='text-rank'>Beginner</div>45° Nordic Curl</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/46' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>Nordic Curl Negative</a>
+                </li>
+                
+                <li>
+                    <a href='/18laminas/public/detail/detail/47' class='rank2 variant'><svg class='ranking0' ><use xlink:href='#shape-0'></use><title>Variation</title></svg><div class='text-rank'>Intermediate</div>Nordic Curl Arms Overhead</a>
+                </li>
+                
+                            </ul>
+                        </div>
+                        
+                <ul>
+                    <li class='only'>
+                        <div onclick='showDetail("/18laminas/public/detail/detail/48")' class='rank3 primary'>
+                            <div class='text-rank'>Advanced
+                            </div>One-Leg Nordic Curl
+                            <ul class='dropdown-menu fade-up'>
+                                <li>Variants:</li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    
+                </ul>
+                    </li>
+                    
+                </ul>
+                </li>
+                <li class='classification classification6'>
+                    <div onclick='showDetail("/18laminas/public/detail/detail/49")' class='rank1 primary'>
+                        <div class='text-rank'>Beginner
+                        </div>Calf Raises
+                        <ul class='dropdown-menu fade-up root'>
+                            <li>Variants:</li>
+                            
+                        </ul>
+                    </div>
+                    
+                </li>
+                </ul>    </div>
+</div>
+</div><!-- /tabs -->
+
+<script>
+    (function() {
+        [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+            new CBPFWTabs( el );
+        });
+    })();
+</script>
+
+<svg> 
+    <use xlink:href='#shape-1'></use>
+    <title>title</title>
+</svg></div>
+
+<ul class="dropdown-menu fade-up root">
+                            <li><a class="dropdown-item">Variants:</a></li>
+                            
+                <li>
+                    <div class="rank1 variant">Vertical Row</div>
+                </li>
+                
+                <li>
+                    <div class="rank1 variant">Incline Row</div>
+                </li>
+                
+                        </ul>
+
+    <div class="popover container-drop right in" style="display: none !important; top: 374.5px; left: 424px; display: block;">
+        <div class="arrow"></div>
+        <div>
+            <h3 class="dropdown-title">Variants:</h3>
+            <div class="dropdown-content">
+                <ul >
+                    
+                    
+                    <li>Vertical Row</li>
+                    <li>Incline Row</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div class="clear"></div>
+            <hr>
+            <!--footer>
+                <p>&copy; 2021 <a href="https://getlaminas.org/">Laminas Project</a> a Series of LF Projects, LLC.</p>
+            </footer-->
+        </div>
+        <script type="text&#x2F;javascript" src="&#x2F;18laminas&#x2F;public&#x2F;js&#x2F;jquery-3.5.1.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;18laminas&#x2F;public&#x2F;js&#x2F;bootstrap.min.js"></script>    </body>
+</html>
+
+<br/>here/18laminas/public<br/>/18laminas/public/cache/cached-progress.html<br/>C:/wamp64-3.2.0/www

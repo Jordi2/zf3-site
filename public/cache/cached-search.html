@@ -1,0 +1,3397 @@
+<!DOCTYPE html><html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>FitnessPlan for Clever Progress</title>
+        <meta name="viewport" content="width&#x3D;device-width,&#x20;initial-scale&#x3D;1.0">
+<meta http-equiv="X-UA-Compatible" content="IE&#x3D;edge">
+        <!-- Styles -->
+        <link href="&#x2F;18laminas&#x2F;public&#x2F;css&#x2F;tabs.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;18laminas&#x2F;public&#x2F;css&#x2F;bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;18laminas&#x2F;public&#x2F;css&#x2F;bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;18laminas&#x2F;public&#x2F;css&#x2F;style.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;18laminas&#x2F;public&#x2F;img&#x2F;favicon.ico" rel="shortcut&#x20;icon" type="image&#x2F;vnd.microsoft.icon">        
+        <!-- Scripts -->
+        <script type="text&#x2F;javascript" src="&#x2F;18laminas&#x2F;public&#x2F;js&#x2F;jquery-3.5.1.min.js"></script>        <script type="text&#x2F;javascript" src="&#x2F;18laminas&#x2F;public&#x2F;js&#x2F;jquery-3.5.1.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;18laminas&#x2F;public&#x2F;js&#x2F;cbpFWTabs.js"></script>
+        
+    </head>
+    <body>
+        <svg height="0" width="0" style="position: absolute; margin-left: -100%;"> 
+            <defs>
+                <g id="shape-logo">
+                    <line x1="0" y1="50" x2="150" y2="50" stroke-width="4" />
+                    <path d="M 25 50 q 50 -50 100 0" stroke-width="5" fill="none" />
+                    <line x1="35" y1="15" x2="50" y2="30" stroke-width="4" />
+                    <line x1="75" y1="4" x2="75" y2="25" stroke-width="4" />
+                    <line x1="115" y1="15" x2="100" y2="30" stroke-width="4" />
+                </g>
+            </defs>
+        </svg>
+        <nav class="navbar navbar-expand-md navbar-dark mb-4" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="/18laminas/public/" style="width:150px;">
+                        <svg style="stroke: white;height:55px;width:150px;display:inline-block;float:left;"> 
+                                <use xlink:href='#shape-logo'></use>
+                                <title>title</title>
+                        </svg>
+                        <span style="display:inline-block;float:left;margin-left:27px;">FitnessPlan</span>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav&#x20;navbar-nav">
+    <li>
+        <a href="&#x2F;18laminas&#x2F;public&#x2F;">Home</a>
+    </li>
+    <li>
+        <a href="&#x2F;18laminas&#x2F;public&#x2F;index">Exercises</a>
+    </li>
+    <li>
+        <a href="&#x2F;18laminas&#x2F;public&#x2F;progress">Track Progress</a>
+    </li>
+    <li>
+        <a href="&#x2F;18laminas&#x2F;public&#x2F;faq">FAQ</a>
+    </li>
+    <li class="active">
+        <a href="&#x2F;18laminas&#x2F;public&#x2F;search">Search</a>
+    </li>
+</ul>                    <!--ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/18laminas/public/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul-->
+                </div>
+                <div class="input-group md-form form-sm form-2 pl-0" style="flex-basis:200px; display:none;">
+                    <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                      <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+                          aria-hidden="true"></i></span>
+                    </div>
+                  </div>
+            </div>
+        </nav>
+        <div class="container">
+            
+<div class="container">
+    <hgroup class="mb20">
+        <h1>Search Results</h1>
+        <h2 class="lead"><strong class="text-danger">3</strong> results were found for the search for <strong class="text-danger">Lorem</strong></h2>								
+    </hgroup>
+    <div class="floatleft">
+        <ul>
+            <li>
+                <span>Type</span>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="1" value="">
+                                <a title="Horizontal push" onclick="toggleOption(this, true, false);">Horizontal push</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="2" value="">
+                                <a title="Vertical push" onclick="toggleOption(this, true, false);">Vertical push</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="3" value="">
+                                <a title="Horizontal pull" onclick="toggleOption(this, true, false);">Horizontal pull</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="4" value="">
+                                <a title="Vertical pull" onclick="toggleOption(this, true, false);">Vertical pull</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="5" value="">
+                                <a title="Core" onclick="toggleOption(this, true, false);">Core</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="6" value="">
+                                <a title="Legs" onclick="toggleOption(this, true, false);">Legs</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+
+                <a class="more" href="#" style="display: none;">Meer tonen</a>
+                <a class="less"  href="#">Minder tonen</a>
+            </li>
+            <li>
+                <span>Muscle groups</span>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="1" value="">
+                                <a title="Abdominals" onclick="toggleOption(this, true, false);">Abdominals</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="2" value="">
+                                <a title="Biceps" onclick="toggleOption(this, true, false);">Biceps</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="3" value="">
+                                <a title="Calves" onclick="toggleOption(this, true, false);">Calves</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="4" value="">
+                                <a title="Deltoids" onclick="toggleOption(this, true, false);">Deltoids</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="5" value="">
+                                <a title="Forearms" onclick="toggleOption(this, true, false);">Forearms</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="6" value="">
+                                <a title="Glutes" onclick="toggleOption(this, true, false);">Glutes</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="7" value="">
+                                <a title="Hamstrings" onclick="toggleOption(this, true, false);">Hamstrings</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="8" value="">
+                                <a title="Hip Flexor" onclick="toggleOption(this, true, false);">Hip Flexor</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="9" value="">
+                                <a title="Lats" onclick="toggleOption(this, true, false);">Lats</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="10" value="">
+                                <a title="Lower Back" onclick="toggleOption(this, true, false);">Lower Back</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="11" value="">
+                                <a title="Obliques" onclick="toggleOption(this, true, false);">Obliques</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="12" value="">
+                                <a title="Pectorals" onclick="toggleOption(this, true, false);">Pectorals</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="13" value="">
+                                <a title="Scapular" onclick="toggleOption(this, true, false);">Scapular</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="14" value="">
+                                <a title="Serratus Anterior" onclick="toggleOption(this, true, false);">Serratus Anterior</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="15" value="">
+                                <a title="Traps" onclick="toggleOption(this, true, false);">Traps</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="16" value="">
+                                <a title="Triceps" onclick="toggleOption(this, true, false);">Triceps</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                
+                    <div>
+                        <div>
+                            <div>
+                                <div onclick="toggleOption(this, true, false);"></div>
+                                <input type="checkbox" id="17" value="">
+                                <a title="Quadriceps" onclick="toggleOption(this, true, false);">Quadriceps</a>
+                            </div>
+                        </div>   
+                    </div>
+
+                                <a class="more" href="#" style="display: none;">Meer tonen</a>
+                <a class= "less" href="#">Minder tonen</a>
+            </li>
+        </ul>
+    </div>
+    <section class="floatright col-xs-12 col-sm-6 col-md-12" style="">
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/1" title="">
+                            Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>
+	Squats help develop the lower body and isometrically work the core. The body is lowered until the knees are at least 90 degrees before rising. 
+	Squats that stop at 90 degrees and those that go beyond can be called Parralel Squats and Deep Squats respectively.
+	</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/1"
+                        title="Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/2" title="">
+                            Assisted Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/2"
+                        title="Assisted Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/3" title="">
+                            Narrow Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/3"
+                        title="Narrow Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/4" title="">
+                            Hindu Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/4"
+                        title="Hindu Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/5" title="">
+                            Jump Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/5"
+                        title="Jump Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/6" title="">
+                            Cossack Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/6"
+                        title="Cossack Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/7" title="">
+                            Lunges                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/7"
+                        title="Lunges" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/8" title="">
+                            Split Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/8"
+                        title="Split Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/9" title="">
+                            Bulgerian Split Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/9"
+                        title="Bulgerian Split Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/10" title="">
+                            Pistol Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/10"
+                        title="Pistol Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/11" title="">
+                            One-Leg Natural Press                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/11"
+                        title="One-Leg Natural Press" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/12" title="">
+                            Elevated Friction Pistol                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/12"
+                        title="Elevated Friction Pistol" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/13" title="">
+                            Shrimp Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/13"
+                        title="Shrimp Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/14" title="">
+                            Step Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/14"
+                        title="Step Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/15" title="">
+                            Deep Step Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/15"
+                        title="Deep Step Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/16" title="">
+                            Two-handed Shrimp Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/16"
+                        title="Two-handed Shrimp Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/17" title="">
+                            Elevated Two-handed Shrimp Squats                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/17"
+                        title="Elevated Two-handed Shrimp Squats" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/18" title="">
+                            Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        
+	<p>Push-ups are a well known and commonly practised exercise with a lot of variantions and progressions. During the exercise a person pushes about 60% to 75% of their body mass. 
+	The exact amount depending on how high or low one currently is in the exercise.</p>
+	<p>If you often find yourself sagging at the hips or otherwise fail to keep the body as a straight line you may need to strengthen your core muscles. The plank is an excellent exercise for focusing on this as it puts you in the same position a push-up.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/18"
+                        title="Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/19" title="">
+                            Diamond Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>Like the push-up but with the hands closer together and the index fingers and thumbs of both hands touching each other. This puts greater stress on the tricep muscles that regular push-ups.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/19"
+                        title="Diamond Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/20" title="">
+                            Explosive Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A push-up performed with enough force to lift the palms of the floor.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/20"
+                        title="Explosive Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/21" title="">
+                            Archer Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>Putting increasingly more weight on one arm increases both the strength required and developed by the exercise.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/21"
+                        title="Archer Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/22" title="">
+                            One-Arm Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>This exercise can put as much as 70% of one's bodyweight on one-arm.</p>
+	<p>The feet are often shoulder width apart for this exercise. The closer together the feet the more difficult the exercise. Some people consider doing this exercise with the feet completely together and no twisting of the a body a 'Perfect one-arm push-up'.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/22"
+                        title="One-Arm Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/23" title="">
+                            Clap Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A push-up performed with enough force to lift the hands entirely of the floor. The body must rise high enough that there is enough time to clap the hands and replace them on the floor.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/23"
+                        title="Clap Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/24" title="">
+                            Flying Superman Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/24"
+                        title="Flying Superman Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/25" title="">
+                            Aztec Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/25"
+                        title="Aztec Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/26" title="">
+                            Wall Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A simpler variation of the push-up.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/26"
+                        title="Wall Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/27" title="">
+                            Knee Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A simpler variation of the push-up.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/27"
+                        title="Knee Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/28" title="">
+                            Incline Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A more difficult variation of the push-up. Also targets the pecs from a different angle than the regular push-up.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/28"
+                        title="Incline Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/29" title="">
+                            Knuckle Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A variation of the push-up that is performed on the knuckles. Puts less stress on the wrist so can be used as an alternative in case of wrist pains. Also used in various combat sports to harden the knuckles.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/29"
+                        title="Knuckle Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/30" title="">
+                            Maltese Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/30"
+                        title="Maltese Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/31" title="">
+                            Hindu Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/31"
+                        title="Hindu Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/32" title="">
+                            Guillotine Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/32"
+                        title="Guillotine Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/33" title="">
+                            Backhanded Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/33"
+                        title="Backhanded Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/34" title="">
+                            Ring Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/34"
+                        title="Ring Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/35" title="">
+                            Ring Turned Out Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/35"
+                        title="Ring Turned Out Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/36" title="">
+                            Superman Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/36"
+                        title="Superman Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/37" title="">
+                            Muay Thai Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/37"
+                        title="Muay Thai Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/38" title="">
+                            Double Clap Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/38"
+                        title="Double Clap Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/39" title="">
+                            Triple Clap Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/39"
+                        title="Triple Clap Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/40" title="">
+                            Ring Archer Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/40"
+                        title="Ring Archer Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/41" title="">
+                            Ring One-Arm Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/41"
+                        title="Ring One-Arm Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/42" title="">
+                            One-Leg Deadlift                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>An exercise for developing the hamstrings as well as improve balance.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/42"
+                        title="One-Leg Deadlift" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/43" title="">
+                            Nordic Curl                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>An exercise for developing the hamstrings and a good way to prevent hamstring injuries.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/43"
+                        title="Nordic Curl" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/44" title="">
+                            90° Nordic Curl                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A nordic curl performed with the hips at 90°.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/44"
+                        title="90° Nordic Curl" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/45" title="">
+                            45° Nordic Curl                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A nordic curl performed with the hips at 45°.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/45"
+                        title="45° Nordic Curl" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/46" title="">
+                            Nordic Curl Negative                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/46"
+                        title="Nordic Curl Negative" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/47" title="">
+                            Nordic Curl Arms Overhead                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/47"
+                        title="Nordic Curl Arms Overhead" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/48" title="">
+                            One-Leg Nordic Curl                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/48"
+                        title="One-Leg Nordic Curl" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/49" title="">
+                            Calf Raises                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/49"
+                        title="Calf Raises" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/50" title="">
+                            Hollow Hold                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/50"
+                        title="Hollow Hold" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/51" title="">
+                            Tuck-Up Crunch                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/51"
+                        title="Tuck-Up Crunch" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/52" title="">
+                            Seated Pike Leg Lift                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/52"
+                        title="Seated Pike Leg Lift" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/53" title="">
+                            Hanging Leg Raise                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/53"
+                        title="Hanging Leg Raise" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/54" title="">
+                            Dragon Flag                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>In addition to being a core exercise the dragon flag is also a pulling exercise. In fact a lack of pulling strength, not core strength, may prove to be a limiting factor with this exercise.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/54"
+                        title="Dragon Flag" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/55" title="">
+                            Dragon Press                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/55"
+                        title="Dragon Press" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/56" title="">
+                            One-Arm Dragon Press                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/56"
+                        title="One-Arm Dragon Press" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/57" title="">
+                            Hanging Knees to Chest                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/57"
+                        title="Hanging Knees to Chest" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/58" title="">
+                            Straddle One-Leg Dragon Flag Negative                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/58"
+                        title="Straddle One-Leg Dragon Flag Negative" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/59" title="">
+                            Straddle One-Leg Dragon Flag                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/59"
+                        title="Straddle One-Leg Dragon Flag" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/60" title="">
+                            One-Arm Dragon Flag                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/60"
+                        title="One-Arm Dragon Flag" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/61" title="">
+                            One-Leg Dragon Press Negative                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/61"
+                        title="One-Leg Dragon Press Negative" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/62" title="">
+                            One-Leg Dragon Flag                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/62"
+                        title="One-Leg Dragon Flag" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/63" title="">
+                            Plank                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>An isometric exercise for developing the core in which one holds a push-up position for extended times. 
+	The exercise can also be performed on the forearms. Remember to engage the core and keep breathing during the exercise.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/63"
+                        title="Plank" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/64" title="">
+                            One-Arm Plank                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>By using only one arm it becomes more difficult to maintain stability forcing the muscles to work harder.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/64"
+                        title="One-Arm Plank" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/65" title="">
+                            Straight Leg Ab Wheel                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/65"
+                        title="Straight Leg Ab Wheel" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/66" title="">
+                            One-Arm Ab Wheel                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/66"
+                        title="One-Arm Ab Wheel" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/67" title="">
+                            One-Arm One-Leg Plank                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>By using only one leg and arm the muscles are forced to work harder to maintain stability.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/67"
+                        title="One-Arm One-Leg Plank" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/68" title="">
+                            Knees Ab Wheel                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/68"
+                        title="Knees Ab Wheel" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/69" title="">
+                            Straight Leg Ab Wheel Negative                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/69"
+                        title="Straight Leg Ab Wheel Negative" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/70" title="">
+                            Pull-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        
+	<p>
+	An exercise for developing the upper body. It uses a overhand/pronated grip where the palms face away from the body.
+	</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/70"
+                        title="Pull-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/71" title="">
+                            Archer Pull-Up                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>Putting increasingly more weight on one side increases both the strength required and developed by the exercise.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/71"
+                        title="Archer Pull-Up" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/72" title="">
+                            One-Arm Pull-Up                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/72"
+                        title="One-Arm Pull-Up" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/73" title="">
+                            High One-Arm Pull-Up                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/73"
+                        title="High One-Arm Pull-Up" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/74" title="">
+                            L-Sit Pull-Up                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>Assuming a l-sit moves more of the body's weight to the front. This decreases the leverage of the weight forcing the muscles to work harder.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/74"
+                        title="L-Sit Pull-Up" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/75" title="">
+                            Pullover                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/75"
+                        title="Pullover" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/76" title="">
+                            Muscle up                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/76"
+                        title="Muscle up" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/77" title="">
+                            One-Arm Muscle up                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/77"
+                        title="One-Arm Muscle up" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/78" title="">
+                            Scapular Pull                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/78"
+                        title="Scapular Pull" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/79" title="">
+                            Arch Hang                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/79"
+                        title="Arch Hang" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/80" title="">
+                            Pull-Up Negative                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A negative is performed by jumping up to the top position of a pull-up and slowly lowering yourself. 
+	This is a great way to develop the strength required to perform the regular/concentric pull-up. As a rule of thumb or goal assume that being able to perform seven negatives pull-ups of 10 seconds each means you can now perform one regular pull-up.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/80"
+                        title="Pull-Up Negative" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/81" title="">
+                            Chin-Ups Negative                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A pull-up with a underhand/supinated grip where the palms face towards the body. A negative is performed by jumping up to the top position of a chin-up and slowly lowering yourself. 
+	This is a great way to develop the strength required to perform the regular/concentric chin-up. As a rule of thumb or goal assume that being able to perform seven negatives chin-ups of 10 seconds each means you can now perform one regular chin-up.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/81"
+                        title="Chin-Ups Negative" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/82" title="">
+                            Chin-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>A pull-up with a underhand/supinated grip where the palms face towards the body. This works the biceps more than a regular pull-up.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/82"
+                        title="Chin-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/83" title="">
+                            Typewriter Pull-Up                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/83"
+                        title="Typewriter Pull-Up" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/84" title="">
+                            One-Arm Pull-Up Negative                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/84"
+                        title="One-Arm Pull-Up Negative" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/85" title="">
+                            Human Flag                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/85"
+                        title="Human Flag" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/86" title="">
+                            Vertical Flag                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/86"
+                        title="Vertical Flag" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/87" title="">
+                            Straddle Flag                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/87"
+                        title="Straddle Flag" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/88" title="">
+                            Rows                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        
+	<p>A pulling exercise that is sometimes recommended for developing the strength required to perform a pull-up. 
+	However the row also develops the scapular muscles in a way the pull-up does not.</p><p>This exercise can also be performed with a sturdy table if there is no suitable horizontal bar present.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/88"
+                        title="Rows" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/89" title="">
+                            Archer Row                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>Shifting more weight onto one side improves the strength required for and developed with the exercise.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/89"
+                        title="Archer Row" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/90" title="">
+                            One-Arm Row                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p>Shifting more weight onto one side improves the strength required for and developed with the exercise.</p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/90"
+                        title="One-Arm Row" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/91" title="">
+                            Vertical Row                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/91"
+                        title="Vertical Row" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/92" title="">
+                            Incline Row                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/92"
+                        title="Incline Row" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/93" title="">
+                            German Hang                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/93"
+                        title="German Hang" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/94" title="">
+                            Skin the Cat                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/94"
+                        title="Skin the Cat" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/95" title="">
+                            Front Lever                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/95"
+                        title="Front Lever" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/96" title="">
+                            Front Lever Row                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/96"
+                        title="Front Lever Row" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/97" title="">
+                            360° Pull                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/97"
+                        title="360° Pull" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/98" title="">
+                            Back Lever                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/98"
+                        title="Back Lever" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/99" title="">
+                            Handstand to Back Lever                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/99"
+                        title="Handstand to Back Lever" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/100" title="">
+                            Tuck Skin the Cat                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/100"
+                        title="Tuck Skin the Cat" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/101" title="">
+                            Tuck Back Lever                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/101"
+                        title="Tuck Back Lever" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/102" title="">
+                            One-leg/Straddle Back Lever                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/102"
+                        title="One-leg/Straddle Back Lever" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/103" title="">
+                            Back Lever Pullout                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/103"
+                        title="Back Lever Pullout" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/104" title="">
+                            Tuck Front Lever                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/104"
+                        title="Tuck Front Lever" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/105" title="">
+                            One-leg/Straddle Front Lever                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/105"
+                        title="One-leg/Straddle Front Lever" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/106" title="">
+                            Front Lever to Inverted                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/106"
+                        title="Front Lever to Inverted" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/107" title="">
+                            L-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/107"
+                        title="L-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/108" title="">
+                            45° V-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/108"
+                        title="45° V-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/109" title="">
+                            Manna                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/109"
+                        title="Manna" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/110" title="">
+                            Foot Supported L-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/110"
+                        title="Foot Supported L-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/111" title="">
+                            Tuck L-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/111"
+                        title="Tuck L-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/112" title="">
+                            One-Leg L-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/112"
+                        title="One-Leg L-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/113" title="">
+                            Maximum Compression L-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/113"
+                        title="Maximum Compression L-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/114" title="">
+                            90° V-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/114"
+                        title="90° V-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/115" title="">
+                            120° V-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/115"
+                        title="120° V-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/116" title="">
+                            140° V-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/116"
+                        title="140° V-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/117" title="">
+                            155° V-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/117"
+                        title="155° V-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/118" title="">
+                            170° V-Sit                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/118"
+                        title="170° V-Sit" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/119" title="">
+                            Reverse Plank                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/119"
+                        title="Reverse Plank" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/120" title="">
+                            Bridge                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/120"
+                        title="Bridge" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/121" title="">
+                            One-Arm One-Leg Bridge                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/121"
+                        title="One-Arm One-Leg Bridge" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/122" title="">
+                            Frog Stand                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/122"
+                        title="Frog Stand" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/123" title="">
+                            Straddle Planch                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/123"
+                        title="Straddle Planch" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/124" title="">
+                            Planch                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/124"
+                        title="Planch" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/125" title="">
+                            Straddle Planch Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/125"
+                        title="Straddle Planch Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/126" title="">
+                            Inverted Cross                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/126"
+                        title="Inverted Cross" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/127" title="">
+                            Planch Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/127"
+                        title="Planch Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/128" title="">
+                            Dips                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/128"
+                        title="Dips" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/129" title="">
+                            Ring Dips                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/129"
+                        title="Ring Dips" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/130" title="">
+                            Ring Turned Out Dips                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/130"
+                        title="Ring Turned Out Dips" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/131" title="">
+                            Pike Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/131"
+                        title="Pike Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/132" title="">
+                            Handstand                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/132"
+                        title="Handstand" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/133" title="">
+                            Ring Handstand                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/133"
+                        title="Ring Handstand" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/134" title="">
+                            Wall plank                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/134"
+                        title="Wall plank" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/135" title="">
+                            Wall Headstand                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/135"
+                        title="Wall Headstand" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/136" title="">
+                            Wall Handstand                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/136"
+                        title="Wall Handstand" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/137" title="">
+                            Straddle One-Arm Handstand                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/137"
+                        title="Straddle One-Arm Handstand" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/138" title="">
+                            Handstand Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/138"
+                        title="Handstand Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/139" title="">
+                            Wall Handstand Negative Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/139"
+                        title="Wall Handstand Negative Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/140" title="">
+                            Wall Handstand Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/140"
+                        title="Wall Handstand Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+                    <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
+                    <h3>
+                        <a href="/18laminas/public/detail/detail/141" title="">
+                            Ring Handstand Push-Ups                        </a>
+                    </h3>
+                    <p class="minimize-text">
+                        <p></p>                    </p>
+                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <a 
+                        href="/18laminas/public/album/join/141"
+                        title="Ring Handstand Push-Ups" 
+                        class="thumbnail"
+                        >
+                        <img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" />
+                    </a>
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+        
+        <article class="search-result row">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <a href="#" title="Lorem ipsum" class="thumbnail"><img src="/fitpro/public/img/people.jpg" alt="Lorem ipsum" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <ul class="meta-search">
+                    <li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
+                    <li><i class="glyphicon glyphicon-time"></i> <span>4:28 pm</span></li>
+                    <li><i class="glyphicon glyphicon-tags"></i> <span>People</span></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+                <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>						
+                <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+            </div>
+            <span class="clearfix borda"></span>
+        </article>
+        <article class="search-result row">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <a href="#" title="Lorem ipsum" class="thumbnail"><img src="/fitpro/public/img/food1.jpg" alt="Lorem ipsum" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <ul class="meta-search">
+                    <li><i class="glyphicon glyphicon-calendar"></i> <span>02/13/2014</span></li>
+                    <li><i class="glyphicon glyphicon-time"></i> <span>8:32 pm</span></li>
+                    <li><i class="glyphicon glyphicon-tags"></i> <span>Food</span></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>						
+                <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+            </div>
+            <span class="clearfix borda"></span>
+        </article>
+        <article class="search-result row">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <a href="#" title="Lorem ipsum" class="thumbnail"><img src="/fitpro/public/img/sports1.jpg" alt="Lorem ipsum" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <ul class="meta-search">
+                    <li><i class="glyphicon glyphicon-calendar"></i> <span>01/11/2014</span></li>
+                    <li><i class="glyphicon glyphicon-time"></i> <span>10:13 am</span></li>
+                    <li><i class="glyphicon glyphicon-tags"></i> <span>Sport</span></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>						
+                <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+            </div>
+            <span class="clearfix border"></span>
+        </article>			
+    </section>
+</div>
+            <hr>
+            <!--footer>
+                <p>&copy; 2021 <a href="https://getlaminas.org/">Laminas Project</a> a Series of LF Projects, LLC.</p>
+            </footer-->
+        </div>
+        <script type="text&#x2F;javascript" src="&#x2F;18laminas&#x2F;public&#x2F;js&#x2F;jquery-3.5.1.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;18laminas&#x2F;public&#x2F;js&#x2F;bootstrap.min.js"></script>    </body>
+</html>
+
+<br/>here/18laminas/public<br/>/18laminas/public/cache/cached-search.html<br/>C:/wamp64-3.2.0/www

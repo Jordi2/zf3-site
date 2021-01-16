@@ -1,7 +1,53 @@
 <?php
-/**
- * @var Laminas\View\Renderer\PhpRenderer $this
- */
+
+
+//$html = file_get_contents('http://localhost/18laminas/public/index');
+
+if(false)
+{
+	
+	
+	
+	var_dump(file_get_contents('http://localhost/18laminas/public/index'));
+	
+}
+
+
+
+//*****************cache only if page permits*********************************
+    // these lines create a cached filename according to the current route. 
+
+    $url = $_SERVER["REQUEST_URI"];
+    $break = Explode('/', $url);
+    $file = $break[count($break) - 1];
+	if( $break[count($break) - 1] != "public" && $break[count($break) - 2] != "public")
+	{
+		$file .= "-".$break[count($break) - 2];
+		if( $break[count($break) - 3] != "public")
+		{
+			$file .= "-".$break[count($break) - 3];
+			if( $break[count($break) - 4] != "public")
+			{
+				$file .= "-".$break[count($break) - 3];
+			}
+		}
+	}
+    echo "file = ".$file . "<br/>";
+    $cachefile = $this->basePath('cache/'.'cached-'.$file.'.html');
+	echo $cachefile;
+    //life of cache file in years + weeks + days + hours + minutes
+    $cachetime = (0 * 31449600) + (0 * 604800) + (0 * 86400) + (0 * 3600) + (0 * 60);
+    // Serve from the cache if it is younger than $cachetime
+    if (file_exists('./' . $cachefile) && time() - $cachetime < filemtime($cachefile)) {
+        echo "<!-- Cached copy, generated ".date('H:i', filemtime($cachefile))." -->\n";
+        include($cachefile);
+        exit;
+    }else{
+        echo "<!-- Cache not found -->\n";
+    }
+
+    ob_start(); // Start buffering output
+//*****************************************************************************
 ?>
 <?= $this->doctype() ?>
 <html lang="en">
@@ -87,3 +133,45 @@
             ->prependFile($this->basePath('js/jquery-3.5.1.min.js')) ?>
     </body>
 </html>
+
+<?php 
+//******************check for cache filename*****************
+
+if($cachefile != null){
+    echo "<br/>here";
+    echo $this->basePath();
+    echo "<br/>";
+    echo $cachefile;
+    echo "<br/>";
+    echo $_SERVER['DOCUMENT_ROOT'];
+    // Cache the contents to a file
+    $cached = fopen($_SERVER['DOCUMENT_ROOT'].$cachefile, 'w');
+    fwrite($cached, ob_get_contents());
+    fclose($cached);
+    
+    ob_end_flush(); // Send the output to the browser
+}
+//**********************************************************
+
+
+/*
+for($i = 1; $i < 96; $i++){
+    $urlFinal = '0';
+    if($i < 10){
+        $url1 = 'http://jb2448.info/_data/i/galleries/How_I_Became_a_Pokemon_Card/RAWs/Volume_2/PCNNW_V2_00';
+        $url2 = '-me.jpg';
+        $urlFinal = $url1 . $i . $url2;
+    } else {
+        $url1 = 'http://jb2448.info/_data/i/galleries/How_I_Became_a_Pokemon_Card/RAWs/Volume_2/PCNNW_V2_0';
+        $url2 = '-me.jpg';
+        $urlFinal = $url1 . $i . $url2;
+        
+    }
+    //get img and save it
+    $url = $urlFinal;
+    $img = './How_I_Became_A_Pokemon_Card/RAWs/volume_2/page '.$i.'.jpg';
+    file_put_contents($img, file_get_contents($url));
+}*/
+
+
+?>
