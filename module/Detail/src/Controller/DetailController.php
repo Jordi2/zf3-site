@@ -14,7 +14,7 @@ class DetailController extends AbstractActionController
     {
         $this->table = $table;
     }
-    
+   
     public function detailAction()
     {
         $id = (int) $this->params()->fromRoute('id', 0);

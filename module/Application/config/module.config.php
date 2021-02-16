@@ -53,7 +53,7 @@ return [
                 'label' => 'Track Progress',
                 'route' => 'progress',
             ],
-            [
+            /*[
                 'label' => 'FAQ',
                 'route' => 'faq',
             ],
@@ -61,7 +61,7 @@ return [
                 'label' => 'Search',
                 'route' => 'search',
             ],
-             /*[
+             [
                 'label' => 'Album',
                 'route' => 'album',
                 'pages' => [

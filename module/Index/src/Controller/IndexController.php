@@ -15,6 +15,11 @@ class IndexController extends AbstractActionController
         $this->table = $table;
     }
     
+    public function index2Action() 
+    {
+        return $this->redirect()->toRoute('index', ['action' => 'index']);
+    }
+    
     public function indexAction()
     {
         try {

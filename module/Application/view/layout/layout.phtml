@@ -1,57 +1,83 @@
 <?php
 
-
-//$html = file_get_contents('http://localhost/18laminas/public/index');
-
-if(false)
-{
-	
-	
-	
-	var_dump(file_get_contents('http://localhost/18laminas/public/index'));
-	
-}
-
-
-
 //*****************cache only if page permits*********************************
-    // these lines create a cached filename according to the current route. 
 
+$cachefile = null;
+if(true)
+{
+    // these lines create a cached filename according to the current route (controller/action/param). 
+
+    $destinationFolder = "/cache/";
+    
     $url = $_SERVER["REQUEST_URI"];
+  //  echo "url = " . $url . "<br/>";
     $break = Explode('/', $url);
-    $file = $break[count($break) - 1];
-	if( $break[count($break) - 1] != "public" && $break[count($break) - 2] != "public")
-	{
-		$file .= "-".$break[count($break) - 2];
-		if( $break[count($break) - 3] != "public")
-		{
-			$file .= "-".$break[count($break) - 3];
-			if( $break[count($break) - 4] != "public")
-			{
-				$file .= "-".$break[count($break) - 3];
-			}
-		}
-	}
-    echo "file = ".$file . "<br/>";
-    $cachefile = $this->basePath('cache/'.'cached-'.$file.'.html');
-	echo $cachefile;
+    // Determine Controller if any
+    if(array_key_exists(3, $break) )
+    {
+        $file = $break[3];
+        $destinationFolder .= $break[3] . "/";
+    //   echo "file 1 = " . $file . "<br/>";
+    //    echo "dest 1 = " . $destinationFolder . "<br/>";
+
+        // Determine action if any
+        if(array_key_exists(4, $break) && $break[4] != "public" && $break[4] != "public" && $break[4] != "index" && $break[4] != "progress")
+        {
+                $file = $break[4];
+                $destinationFolder .= $break[4] . "/";
+        //        echo "file 2 = " . $file . "<br/>";
+        //        echo "dest 2 = " . $destinationFolder . "<br/>";
+
+                // Determine parameters if any
+                if(array_key_exists(5, $break))
+                {
+                        $file = $break[5];
+        //                echo "file 3 = " . $file . "<br/>";
+        //                echo "dest 3 = " . $destinationFolder . "<br/>"; 
+                }
+        }
+    }
+        
+    //echo "file = ".$file . "<br/>";
+
+	// for home page only
+	if(strlen($file) <= 0)
+		$file = "index";
+
+    $cachefile = $this->basePath($destinationFolder.$file.'.html');
+	//echo $cachefile;
+        
     //life of cache file in years + weeks + days + hours + minutes
     $cachetime = (0 * 31449600) + (0 * 604800) + (0 * 86400) + (0 * 3600) + (0 * 60);
     // Serve from the cache if it is younger than $cachetime
     if (file_exists('./' . $cachefile) && time() - $cachetime < filemtime($cachefile)) {
         echo "<!-- Cached copy, generated ".date('H:i', filemtime($cachefile))." -->\n";
-        include($cachefile);
-        exit;
+       // include($cachefile);
+       // exit;
     }else{
         echo "<!-- Cache not found -->\n";
     }
 
     ob_start(); // Start buffering output
+
+}
 //*****************************************************************************
+
 ?>
 <?= $this->doctype() ?>
 <html lang="en">
     <head>
+        <!-- Google Analytics -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-T1J95ND608"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-T1J95ND608');
+        </script>
+        
         <meta charset="utf-8">
         <?= $this->headTitle('FitnessPlan for Clever Progress')->setSeparator(' - ')->setAutoEscape(false) ?>
 
@@ -74,7 +100,7 @@ if(false)
 
         
     </head>
-    <body>
+    <body>     
         <svg height="0" width="0" style="position: absolute; margin-left: -100%;"> 
             <defs>
                 <g id="shape-logo">
@@ -138,18 +164,46 @@ if(false)
 //******************check for cache filename*****************
 
 if($cachefile != null){
-    echo "<br/>here";
+    /*echo "<br/>here";
     echo $this->basePath();
     echo "<br/>";
     echo $cachefile;
     echo "<br/>";
-    echo $_SERVER['DOCUMENT_ROOT'];
+    echo $_SERVER['DOCUMENT_ROOT'];*/
     // Cache the contents to a file
-    $cached = fopen($_SERVER['DOCUMENT_ROOT'].$cachefile, 'w');
-    fwrite($cached, ob_get_contents());
+    $cached = fopen($_SERVER['DOCUMENT_ROOT'].$cachefile, 'wb');
+	$contents = ob_get_contents();
+	
+	$contents = str_replace("&#x2F;", "/", $contents);
+	$replaceForGitLabHosting = true;
+	if($replaceForGitLabHosting)
+	{
+		$contents = str_replace("<link href=\"/18laminas/public/", "<link href=\"/zf3-site/", $contents);
+		$contents = str_replace("href=\"/18laminas/public/", "href=\"/zf3-site/", $contents);
+		$contents = str_replace("href='/18laminas/public/", "href='/zf3-site/", $contents);
+		$contents = str_replace("src=\"/18laminas/public/", "src=\"/zf3-site/", $contents);
+		$contents = str_replace("showDetail(\"/18laminas/public/", "showDetail(\"/zf3-site/", $contents);
+		$contents = str_replace("/progress", "/progress/progress", $contents);
+		$contents = str_replace("/faq", "/faq/faq", $contents);
+	}
+	else {
+		$contents = str_replace("<link href=\"/18laminas/public/", "<link href=\"./", $contents);
+		$contents = str_replace("<a href=\"/18laminas/public/", "<a href=\"./", $contents);
+	}
+	//echo $contents;
+    fwrite($cached, $contents);
     fclose($cached);
     
     ob_end_flush(); // Send the output to the browser
+	
+	/*
+	todo:
+	
+	fix url links
+	- remove all files before refresh
+	- /progress/ needs to lead to /progress/progress/
+	
+	*/
 }
 //**********************************************************
 

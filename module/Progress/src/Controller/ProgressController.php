@@ -15,6 +15,11 @@ class ProgressController extends AbstractActionController
         $this->table = $table;
     }
     
+    public function indexAction() 
+    {
+        return $this->redirect()->toRoute('progress', ['action' => 'progress']);
+    }
+    
     public function progressAction()
     {
         $classificationTypes = $this->table->getAllClassifications()->toArray();

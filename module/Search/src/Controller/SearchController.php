@@ -15,6 +15,11 @@ class SearchController extends AbstractActionController
         $this->table = $table;
     }
     
+    public function indexAction() 
+    {
+        return $this->redirect()->toRoute('search', ['action' => 'search']);
+    }
+    
     public function searchAction()
     {
         $request = $this->getRequest();

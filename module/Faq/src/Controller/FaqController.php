@@ -12,6 +12,11 @@ class FaqController extends AbstractActionController
 
     }
     
+    public function indexAction() 
+    {
+        return $this->redirect()->toRoute('faq', ['action' => 'faq']);
+    }
+    
     public function faqAction()
     {
         
