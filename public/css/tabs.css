@@ -248,3 +248,10 @@ ul.tree.content-current {
 		z-index: 1;
 	}
 }
+
+
+@media (max-width: 767px) {
+    ul.tree {
+        padding-left: 2rem;
+    }
+}

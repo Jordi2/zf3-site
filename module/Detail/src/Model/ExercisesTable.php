@@ -164,7 +164,7 @@ class ExercisesTable
     {
         $exerciseID = (int) $id;
         
-        $sql = new Sql($this->dbAdapter);
+        /*$sql = new Sql($this->dbAdapter);
         $select2 = $sql->select();
         $select2->from(array('a' => 'exercises')) 
            ->join(array('b' => 'exercises'),   
@@ -173,6 +173,14 @@ class ExercisesTable
 
         $selectString = $sql->getSqlStringForSqlObject($select2);
         $results = $this->dbAdapter->query($selectString, $this->dbAdapter::QUERY_MODE_EXECUTE);
+
+        return $results;*/
+
+        $results = $this->dbAdapter->query('
+             SELECT * FROM exercises where exercise_parent_id = '.$exerciseID.' OR exercise_parent_id IN (
+             SELECT exercise_parent_id FROM exercises where id = '.$exerciseID.')
+
+             ', $this->dbAdapter::QUERY_MODE_EXECUTE);
 
         return $results;
     }
