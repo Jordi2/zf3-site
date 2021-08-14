@@ -3,7 +3,7 @@
 //*****************cache only if page permits*********************************
 
 $cachefile = null;
-if(true)
+if(false)
 {
     // these lines create a cached filename according to the current route (controller/action/param). 
 
@@ -157,6 +157,8 @@ if(true)
         <?= $this->inlineScript()
             ->prependFile($this->basePath('js/bootstrap.min.js'))
             ->prependFile($this->basePath('js/jquery-3.5.1.min.js')) ?>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </body>
 </html>
 
@@ -178,13 +180,22 @@ if($cachefile != null){
 	$replaceForGitLabHosting = true;
 	if($replaceForGitLabHosting)
 	{
-		$contents = str_replace("<link href=\"/18laminas/public/", "<link href=\"/zf3-site/", $contents);
+		/*$contents = str_replace("<link href=\"/18laminas/public/", "<link href=\"/zf3-site/", $contents);
 		$contents = str_replace("href=\"/18laminas/public/", "href=\"/zf3-site/", $contents);
 		$contents = str_replace("href='/18laminas/public/", "href='/zf3-site/", $contents);
 		$contents = str_replace("src=\"/18laminas/public/", "src=\"/zf3-site/", $contents);
 		$contents = str_replace("showDetail(\"/18laminas/public/", "showDetail(\"/zf3-site/", $contents);
 		$contents = str_replace("/progress", "/progress/progress", $contents);
+		$contents = str_replace("/faq", "/faq/faq", $contents);*/
+		
+		$contents = str_replace("<link href=\"/18laminas/public/", "<link href=\"/", $contents);
+		$contents = str_replace("href=\"/18laminas/public/", "href=\"/", $contents);
+		$contents = str_replace("href='/18laminas/public/", "href='/", $contents);
+		$contents = str_replace("src=\"/18laminas/public/", "src=\"/", $contents);
+		$contents = str_replace("showDetail(\"/18laminas/public/", "showDetail(\"/", $contents);
+		$contents = str_replace("/progress", "/progress/progress", $contents);
 		$contents = str_replace("/faq", "/faq/faq", $contents);
+		
 	}
 	else {
 		$contents = str_replace("<link href=\"/18laminas/public/", "<link href=\"./", $contents);
